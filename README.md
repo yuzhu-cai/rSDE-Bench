@@ -28,6 +28,7 @@ pip install -r requirement.txt
 ## 💽 Usage
 > [!WARNING]
 > **Operating System:** Ensure that you are running this project on an operating system with a graphical user interface. Currently, **Windows** and **macOS** are supported.
+> 
 > **Dependencies:** Make sure all dependencies are correctly installed and the appropriate Python environment is activated.
 
 Use the following command to generate the software included in `RSD-Bench` using the GPT, Claude, or Gemini APIs. The generated code will be stored in the `codes` directory.
