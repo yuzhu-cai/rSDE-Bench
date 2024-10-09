@@ -1,0 +1,126 @@
+# Health Consultation Platform Requirements Document
+
+## 1. Objective
+Develop a web application that allows users to schedule health consultations, track their appointments, and provide feedback, all while storing information in local text files.
+
+## 2. Language
+The required development language for this project is Python.
+
+## 3. Page Design
+
+### 3.1. Login Page
+- **Page Title:** Login
+- **Overview:** This page allows users to log into their accounts.Upon successful login, users will be redirected to the Schedule Consultation page.
+- **Elements:**
+  - **Element ID:** `username_field`
+    - **Type:** Text Input
+    - **Placeholder:** "Enter your username"
+  - **Element ID:** `password_field`
+    - **Type:** Password Input
+    - **Placeholder:** "Enter your password"
+  - **Element ID:** `login_button`
+    - **Type:** Button
+    - **Text:** "Login"
+  - **Element ID:** `register_link`
+    - **Type:** Link
+    - **Text:** "Register"
+    - **Redirects To:** User Registration Page
+  - **Element ID:** `error_message`
+    - **Type:** Div
+    - **Display:** Hidden by default, visible when login fails.
+
+### 3.2. Registration Page
+- **Page Title:** User Registration
+- **Overview:** This page allows new users to register for an account.
+- **Elements:**
+  - **Element ID:** `reg_username_input`
+    - **Type:** Text Input
+    - **Placeholder:** "Enter your desired username"
+  - **Element ID:** `reg_password_input`
+    - **Type:** Password Input
+    - **Placeholder:** "Enter your desired password"
+  - **Element ID:** `reg_email_input`
+    - **Type:** Text Input
+    - **Placeholder:** "Enter your email"
+  - **Element ID:** `register_button`
+    - **Type:** Button
+    - **Text:** "Register"
+  - **Element ID:** `registration_success_message`
+    - **Type:** Div
+    - **Display:** Hidden by default, visible when registration is successful.
+
+### 3.3. Consultation Scheduling Page
+- **Page Title:** Schedule Consultation
+- **Overview:** Users can select an available time slot to schedule a new consultation.
+- **Elements:**
+  - **Element ID:** `consultation_form`
+    - **Type:** Form
+  - **Element ID:** `date_field`
+    - **Type:** Date Input
+  - **Element ID:** `time_slot_field`
+    - **Type:** Time Input
+    - **Options:** Predefined time slots
+  - **Element ID:** `submit_schedule_button`
+    - **Type:** Button
+    - **Text:** "Schedule Consultation"
+  - **Element ID:** `Tracking_Page_link`
+    - **Type:** Link
+    - **Text:** "Tracking_Page"
+    - **Redirects To:** My Appointments Page
+  - **Element ID:** `confirmation_message`
+    - **Type:** Div
+    - **Display:** Hidden by default, visible when consultation is successfully scheduled.
+
+### 3.4. Appointment Tracking Page
+- **Page Title:** My Appointments
+- **Overview:** Displays a list of upcoming appointments and past consultations for the user.
+- **Elements:**
+  - **Element ID:** `appointments_list`
+    - **Type:** Table
+    - **Columns:** Date, Time
+  - **Element ID:** `feedback_button`
+    - **Type:** Button
+    - **Text:** "Leave Feedback"
+  - **Element ID:** `logout_button`
+    - **Type:** Button
+    - **Text:** "Logout"
+
+### 3.5. Feedback Page
+- **Page Title:** Feedback
+- **Overview:** Users can provide feedback on their recent consultations.
+- **Elements:**
+  - **Element ID:** `feedback_form`
+    - **Type:** Form
+  - **Element ID:** `feedback_textarea`
+    - **Type:** Textarea
+    - **Placeholder:** "Enter your feedback"
+  - **Element ID:** `submit_feedback_button`
+    - **Type:** Button
+    - **Text:** "Submit Feedback"
+
+## 4. Data Storage
+
+### 4.1. Data Format
+The data will be stored in plain text files within a directory called 'data'. Each file will store a specific type of data in a structured format that is easily readable. Each record will be separated by a newline character.
+
+### 4.2. Data Examples
+
+1. **User Credentials (users.txt):**
+   ```
+   username1,password1
+   username2,password2
+   ```
+
+2. **Scheduled Consultations (consultations.txt):**
+   ```
+   username1,2023-10-15,10:00
+   username2,2023-10-16,11:00
+   ```
+
+3. **Feedback (feedback.txt):**
+   ```
+   username1,Great service
+   username2,Really helpful consultation
+   ```
+
+Above examples show how data will be structured and stored in their respective text files located in the `data` directory. It is important to ensure that the data remains consistent and correctly formatted for retrieval and processing in the application.
