@@ -1,6 +1,6 @@
 '''
-This file contains the frontend code for the category post page of the PersonalFinanceBlog application.
-It displays all blog posts related to the selected category and allows users to view, edit, or delete posts.
+This file implements the frontend for the category post page of the PersonalFinanceBlog web application.
+It displays all blog posts related to the selected category and provides options to edit or delete posts.
 '''
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +11,50 @@ It displays all blog posts related to the selected category and allows users to 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="category-post-container">
-        <h1>Posts in Category: {{ category }}</h1>
+    <div class="container">
+        <h1>Posts in Category: {{ request.view_args['category_name'] }}</h1>
         <div id="post_list">
             <ul>
                 {% for post in posts %}
                     <li>
-                        {{ post.title }} - {{ post.date }} 
-                        <button id="edit_post_button" onclick="window.location.href='{{ url_for('post_details', post_id=post.post_id) }}'">Edit</button>
-                        <button id="delete_post_button" onclick="if(confirm('Are you sure you want to delete this post?')) { window.location.href='{{ url_for('delete_post', post_id=post.post_id) }}'; }">Delete</button>
+                        {{ post.title }} ({{ post.date }}) 
+                        <input type="text" id="post_title_field" value="{{ post.title }}" style="display:none;">
+                        <button id="edit_post_button" onclick="window.location.href='{{ url_for('post_details', post_id=post.id) }}'">Edit</button>
+                        <button id="delete_post_button" onclick="deletePost('{{ post.id }}')">Delete</button>
                     </li>
+                {% else %}
+                    <li>No posts available in this category.</li>
                 {% endfor %}
             </ul>
         </div>
-        <button id="back_button" onclick="window.location.href='{{ url_for('search_post') }}'">Back to Search</button>
+        <div>
+            <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+        </div>
     </div>
+    <script>
+        function deletePost(postId) {
+            if (confirm('Are you sure you want to delete this post?')) {
+                fetch(`/delete_post/${postId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())  // Parse JSON response
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(data.message); // Inform user of success
+                        window.location.reload(); // Reload the page to see the changes
+                    } else {
+                        alert('Failed to delete the post. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while deleting the post.');
+                });
+            }
+        }
+    </script>
 </body>
 </html>

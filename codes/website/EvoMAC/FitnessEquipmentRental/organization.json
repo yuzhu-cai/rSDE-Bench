@@ -1,12 +1,13 @@
 {
     "composition": {
-        "Programmer 1": "Implement the backend code in app.py. Fix the issues related to the rendering of elements on the login page, rental form page, and return equipment page. Ensure that the login functionality is properly implemented to validate user credentials and establish a session for the user upon successful login. Additionally, verify that the routing for all frontend pages is correctly set up and that the necessary data is passed to the templates. Address the issue where the login process is not redirecting to the homepage after successful login. Ensure that the application can be accessed through local port 5000.",
+        "Programmer 1": "Implement the backend code in app.py. Fix the issues related to the rendering of elements on the login page, rental form page, and return equipment page. Ensure that the login functionality is properly implemented to validate user credentials and establish a session for the user upon successful login. Additionally, verify that the routing for all frontend pages is correctly set up and that the necessary data is passed to the templates. Address the issue where the login process is not redirecting to the homepage after successful login.",
         "Programmer 2": "Implement the frontend code for the login page in login.html. Fix the issue where the `login_form` element is not being found during tests. Ensure that the form specifies the method for handling the login action correctly, set to POST, and that the corresponding route in the Flask application handles this POST request to authenticate the user. Verify that the element IDs match those expected in the tests.",
         "Programmer 3": "Implement the frontend code for the rental form page in rental_form.html. Fix the issue where the `rental_form` element is not being found during tests. Ensure that the form correctly submits the rental request and that the equipment ID is passed properly. Verify that the element IDs match those expected in the tests.",
-        "Programmer 4": "Implement the frontend code for the return equipment page in return_equipment.html. Fix the issue where the `return_equipment_button` element is not being found during tests. Ensure that the form submits the rental ID correctly and that the return confirmation message is displayed upon successful return. Verify that the element IDs match those expected in the tests.",
-        "Programmer 5": "Implement the frontend code for the homepage in home.html. Ensure that all required elements such as `welcome_message`, `equipment_listing`, `promotions_section`, `browse_button`, `my_rental_button`, and `help_button` are present and correctly rendered. Verify that the homepage displays correctly after a successful login.",
-        "Programmer 6": "Implement the frontend code for the My Rentals page in my_rentals.html. Ensure that all required elements such as `my_current_rentals_listing`, `return_equipment_button`, and `my_past_rentals_listing` are present and correctly rendered. Verify that the page displays the user's rentals correctly.",
-        "Programmer 7": "Implement the frontend code for the Help page in help.html. Ensure that all required elements such as `faq_section` and `accessibility_info` are present and correctly rendered. Verify that the help page is accessible at any time."
+        "Programmer 4": "Implement the frontend code for the equipment page in equipment.html. Fix the issue where the `show_details_button` element is not being found during tests. Ensure that the equipment listing is populated correctly and that the button is rendered for each piece of equipment. Verify that the element IDs match those expected in the tests.",
+        "Programmer 5": "Implement the frontend code for the return equipment page in return_equipment.html. Fix the issue where the `return_equipment_button` element is not being found during tests. Ensure that the form submits the rental ID correctly and that the return confirmation message is displayed upon successful return. Verify that the element IDs match those expected in the tests.",
+        "Programmer 6": "Implement the frontend code for the homepage in home.html. Ensure that all required elements such as `welcome_message`, `equipment_listing`, `promotions_section`, `browse_button`, `my_rental_button`, and `help_button` are present and correctly rendered. Verify that the homepage displays correctly after a successful login.",
+        "Programmer 7": "Implement the frontend code for the My Rentals page in my_rentals.html. Ensure that all required elements such as `my_current_rentals_listing`, `return_equipment_button`, and `my_past_rentals_listing` are present and correctly rendered. Verify that the page displays the user's rentals correctly.",
+        "Programmer 8": "Implement the frontend code for the Help page in help.html. Ensure that all required elements such as `faq_section` and `accessibility_info` are present and correctly rendered. Verify that the help page is accessible at any time."
     },
     "workflow": {
         "Programmer 1": [],
@@ -26,6 +27,9 @@
             "Programmer 1"
         ],
         "Programmer 7": [
+            "Programmer 1"
+        ],
+        "Programmer 8": [
             "Programmer 1"
         ]
     }

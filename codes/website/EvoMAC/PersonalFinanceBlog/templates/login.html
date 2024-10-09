@@ -1,5 +1,5 @@
 '''
-This file contains the frontend code for the login page of the PersonalFinanceBlog application.
+This file implements the frontend for the login page of the PersonalFinanceBlog web application.
 It allows users to log into the application with their credentials.
 '''
 <!DOCTYPE html>
@@ -11,24 +11,29 @@ It allows users to log into the application with their credentials.
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="login-container">
+    <div class="container">
         <h1>Login</h1>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul class="flashes">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
         <form action="{{ url_for('login') }}" method="POST">
-            <input type="text" id="username_field" name="username" placeholder="Username" required>
-            <input type="password" id="password_field" name="password" placeholder="Password" required>
-            <button type="submit" id="login_button">Login</button>
+            <div>
+                <label for="username_field">Username:</label>
+                <input type="text" id="username_field" name="username" required>
+            </div>
+            <div>
+                <label for="password_field">Password:</label>
+                <input type="password" id="password_field" name="password" required>
+            </div>
+            <div>
+                <button type="submit" id="login_button">Login</button>
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div id="error_message">
+                        {{ messages[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
         </form>
-        <p id="error_message">{{ error_message }}</p>
-        <p>Don't have an account? <a id="register_link" href="{{ url_for('register') }}">Register here</a></p>
+        <p>Don't have an account? <a href="{{ url_for('register') }}" id="register_link">Register here</a></p>
     </div>
 </body>
 </html>

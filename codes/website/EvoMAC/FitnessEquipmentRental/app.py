@@ -15,27 +15,24 @@ RETURNS_FILE = os.path.join(DATA_DIR, 'returns.txt')
 def read_users():
     users = []
     with open(USERS_FILE, 'r') as file:
-        next(file)  # Skip the header line
-        for line in file.readlines():
-            if line.strip():
+        for line in file.readlines():  # Read all lines including the header
+            if line.strip():  # Check if the line is not empty
                 username, password, full_name, email = line.strip().split(',')
                 users.append({'username': username, 'password': password, 'full_name': full_name, 'email': email})
     return users
 def read_equipment():
     equipment = []
     with open(EQUIPMENT_FILE, 'r') as file:
-        next(file)  # Skip the header line
-        for line in file.readlines():
-            if line.strip():
+        for line in file.readlines():  # Read all lines including the header
+            if line.strip():  # Check if the line is not empty
                 equipment_id, name, description, availability, rental_price = line.strip().split(',')
                 equipment.append({'equipment_id': equipment_id, 'name': name, 'description': description, 'availability': int(availability), 'rental_price': float(rental_price)})
     return equipment
 def read_rentals():
     rentals = []
     with open(RENTALS_FILE, 'r') as file:
-        next(file)  # Skip the header line
-        for line in file.readlines():
-            if line.strip():
+        for line in file.readlines():  # Read all lines including the header
+            if line.strip():  # Check if the line is not empty
                 rental_id, username, equipment_id, rental_duration, start_date, status = line.strip().split(',')
                 rentals.append({'rental_id': rental_id, 'username': username, 'equipment_id': equipment_id, 'rental_duration': int(rental_duration), 'start_date': start_date, 'status': status})
     return rentals

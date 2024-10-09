@@ -1,14 +1,10 @@
 {
     "composition": {
-        "Programmer 1": "Implement the backend code in `app.py` to handle routing for all frontend pages and manage file read/write operations for user and blog post data. \n- The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n- The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code.\n- File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text.\n- Frontend code files  `login.html`, `register.html`, `dashboard.html`, `add_post.html`, `search_post.html`, `category_post.html`, `post_details.html`, `user_profile.html`.",
-        "Programmer 2": "Develop the frontend code for the `login.html` page, which allows users to log into the application with their credentials.\n- Element IDs  `username_field`, `password_field`, `login_button`, `error_message`, `register_link`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 3": "Develop the frontend code for the `register.html` page, which allows new users to create an account.\n- Element IDs  `register_username_field`, `register_password_field`, `confirm_password_field`, `occupation_field`, `register_button`, `registration_success_message`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 4": "Develop the frontend code for the `dashboard.html` page, which displays the user's list of blog posts and provides options to add or search posts.\n- Element IDs  `posts_list`, `add_post_button`, `search_post_button`, `user_profile_button`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 5": "Develop the frontend code for the `add_post.html` page, which allows users to create a new blog post by entering a title, date, category, and content.\n- Element IDs  `post_title_field`, `post_date_field`, `post_category_field`, `post_content_field`, `save_post_button`, `cancel_button`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 6": "Develop the frontend code for the `search_post.html` page, which allows users to navigate to specific category pages where posts related to different aspects of personal finance are listed.\n- Element IDs  `investment_button`, `banking_button`, `insurance_button`, `back_button`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 7": "Develop the frontend code for the `category_post.html` page, which displays all blog posts related to the selected category and allows users to view, edit, or delete posts.\n- Element IDs  `post_list`, `post_title_field`, `edit_post_button`, `delete_post_button`, `back_button`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 8": "Develop the frontend code for the `post_details.html` page, which displays detailed information about a specific post selected by the user.\n- Element IDs  `post_title_field`, `post_date`, `post_category`, `post_content`, `save_button`, `back_button`.\n- All URLs in the frontend code should be routes, not HTML file names.",
-        "Programmer 9": "Develop the frontend code for the `user_profile.html` page, which displays and allows users to edit their account information.\n- Element IDs  `profile_username_display`, `profile occupation display`, `logout_button`.\n- All URLs in the frontend code should be routes, not HTML file names."
+        "Programmer 1": "Implement the backend code in `app.py` to handle routing for all frontend pages and manage file read/write operations. Fix the following issues \n- Ensure that the login page correctly handles the display of the `error_message` element only when there is an error during login attempts.\n- Modify the `register` function to ensure that the `registration_success_message` is displayed after a successful registration.\n- Update the `post_details` function to ensure that the `post_title_field` is rendered correctly when navigating to a post's details.",
+        "Programmer 2": "Develop the frontend code for the `login.html` page, ensuring that it allows users to log into the application with their credentials. Fix the issue related to the `error_message` element by ensuring it is only checked for presence after an invalid login attempt.",
+        "Programmer 3": "Develop the frontend code for the `register.html` page, ensuring that it allows new users to create an account. Fix the issue related to the `registration_success_message` element by ensuring it is displayed correctly after a successful registration.",
+        "Programmer 4": "Develop the frontend code for the `post_details.html` page, ensuring that it displays detailed information about a specific post selected by the user. Fix the issue related to the `post_title_field` element by ensuring it is rendered correctly when navigating to a post's details.",
+        "Programmer 5": "Implement the frontend code for the `dashboard.html` page, ensuring that it displays the user's list of blog posts and provides options to add or search posts. Ensure that all required elements are present as specified in the requirements document."
     },
     "workflow": {
         "Programmer 1": [],
@@ -22,18 +18,6 @@
             "Programmer 1"
         ],
         "Programmer 5": [
-            "Programmer 1"
-        ],
-        "Programmer 6": [
-            "Programmer 1"
-        ],
-        "Programmer 7": [
-            "Programmer 1"
-        ],
-        "Programmer 8": [
-            "Programmer 1"
-        ],
-        "Programmer 9": [
             "Programmer 1"
         ]
     }

@@ -1,5 +1,5 @@
 '''
-This file contains the frontend code for the dashboard page of the PersonalFinanceBlog application.
+This file implements the frontend for the dashboard page of the PersonalFinanceBlog web application.
 It displays the user's list of blog posts and provides options to add or search posts.
 '''
 <!DOCTYPE html>
@@ -11,18 +11,23 @@ It displays the user's list of blog posts and provides options to add or search 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="dashboard-container">
-        <h1>Your Blog Posts</h1>
+    <div class="container">
+        <h1>Dashboard</h1>
         <div id="posts_list">
+            <h2>Your Blog Posts</h2>
             <ul>
                 {% for post in posts %}
-                    <li>{{ post.title }} - {{ post.date }} ({{ post.category }})</li>
+                    <li>{{ post.title }} ({{ post.date }}) - <a href="{{ url_for('post_details', post_id=post.id) }}">View</a></li>
+                {% else %}
+                    <li>No blog posts available.</li>
                 {% endfor %}
             </ul>
         </div>
-        <button id="add_post_button" onclick="window.location.href='{{ url_for('add_post') }}'">Add Post</button>
-        <button id="search_post_button" onclick="window.location.href='{{ url_for('search_post') }}'">Search Post</button>
-        <button id="user_profile_button" onclick="window.location.href='{{ url_for('user_profile') }}'">User Profile</button>
+        <div>
+            <button id="add_post_button" onclick="window.location.href='{{ url_for('add_post') }}'">Add Post</button>
+            <button id="search_post_button" onclick="window.location.href='{{ url_for('search_post') }}'">Search Posts</button>
+            <button id="user_profile_button" onclick="window.location.href='{{ url_for('user_profile') }}'">User Profile</button>
+        </div>
     </div>
 </body>
 </html>

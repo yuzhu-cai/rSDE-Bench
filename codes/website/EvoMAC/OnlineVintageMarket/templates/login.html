@@ -11,15 +11,6 @@ It allows users to log in to their accounts and provides a link for forgotten pa
 </head>
 <body>
     <h1>Login</h1>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul>
-            {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
     <form id="login-form" method="POST" action="{{ url_for('home') }}">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>

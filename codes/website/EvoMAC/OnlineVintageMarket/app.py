@@ -2,7 +2,7 @@
 This file implements the backend logic for the OnlineVintageMarket web application.
 It handles routing for the login, home, listing, and item details pages, as well as user authentication and data management.
 '''
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Set a secret key for session management
 # Function to read users from the users.txt file
@@ -31,7 +31,17 @@ def login():
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if 'username' not in session:  # Check if user is logged in
-        flash("You need to log in to access this page.", "warning")  # Add this line
+        if request.method == 'POST':
+            # Handle login
+            username = request.form['username']
+            password = request.form['password']
+            users = read_users()
+            if username in users and users[username] == password:
+                session['username'] = username  # Store username in session
+                listings = read_listings()  # Read all listings after login
+                return render_template('home.html', listings=listings)  # Render home page directly
+            else:
+                return "Invalid credentials", 403
         return redirect(url_for('login'))  # Redirect to login if not logged in
     listings = read_listings()  # Read all listings
     search_results = []

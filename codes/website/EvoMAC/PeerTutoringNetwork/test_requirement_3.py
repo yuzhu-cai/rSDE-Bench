@@ -13,66 +13,74 @@ class TestPeerTutoringNetwork(unittest.TestCase):
         self.username = "johndoe"  # Example username from data
         self.password = "password123"  # Example password from data
     def test_login_page_elements(self):
+        """Check for elements on the Login Page."""
         driver = self.driver
-        self.assertTrue(driver.find_element(By.ID, 'txt_username'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_password'))
-        self.assertTrue(driver.find_element(By.ID, 'btn_login'))
-        self.assertTrue(driver.find_element(By.ID, 'link_register'))
+        self.assertTrue(driver.find_element(By.ID, "txt_username"))
+        self.assertTrue(driver.find_element(By.ID, "txt_password"))
+        self.assertTrue(driver.find_element(By.ID, "btn_login"))
+        self.assertTrue(driver.find_element(By.ID, "link_register"))
     def test_registration_page_elements(self):
+        """Check for elements on the Registration Page."""
         driver = self.driver
-        driver.find_element(By.ID, 'link_register').click()
+        driver.find_element(By.ID, "link_register").click()
         time.sleep(1)  # Wait for the page to load
-        self.assertTrue(driver.find_element(By.ID, 'txt_new_username'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_new_password'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_email'))
-        self.assertTrue(driver.find_element(By.ID, 'btn_register'))
-        self.assertTrue(driver.find_element(By.ID, 'link_login'))
+        self.assertTrue(driver.find_element(By.ID, "txt_new_username"))
+        self.assertTrue(driver.find_element(By.ID, "txt_new_password"))
+        self.assertTrue(driver.find_element(By.ID, "txt_email"))
+        self.assertTrue(driver.find_element(By.ID, "btn_register"))
+        self.assertTrue(driver.find_element(By.ID, "link_login"))
     def test_dashboard_page_elements(self):
+        """Check for elements on the Dashboard Page."""
         self.login()
         driver = self.driver
-        self.assertTrue(driver.find_element(By.ID, 'btn_view_tutors'))
-        self.assertTrue(driver.find_element(By.ID, 'btn_request_tutoring'))
-        self.assertTrue(driver.find_element(By.ID, 'link_logout'))
-        self.assertTrue(driver.find_element(By.ID, 'link_profile'))
-        self.assertTrue(driver.find_element(By.ID, 'link_contact_us'))
+        self.assertTrue(driver.find_element(By.ID, "btn_view_tutors"))
+        self.assertTrue(driver.find_element(By.ID, "btn_request_tutoring"))
+        self.assertTrue(driver.find_element(By.ID, "link_logout"))
+        self.assertTrue(driver.find_element(By.ID, "link_profile"))
+        self.assertTrue(driver.find_element(By.ID, "link_contact_us"))
     def test_tutors_page_elements(self):
+        """Check for elements on the Tutors Page."""
         self.login()
         driver = self.driver
-        driver.find_element(By.ID, 'btn_view_tutors').click()
+        driver.find_element(By.ID, "btn_view_tutors").click()
         time.sleep(1)  # Wait for the page to load
-        self.assertTrue(driver.find_element(By.ID, 'div_tutor_list'))
+        self.assertTrue(driver.find_element(By.ID, "div_tutor_list"))
     def test_request_tutoring_page_elements(self):
+        """Check for elements on the Request Tutoring Page."""
         self.login()
         driver = self.driver
-        driver.find_element(By.ID, 'btn_request_tutoring').click()
+        driver.find_element(By.ID, "btn_request_tutoring").click()
         time.sleep(1)  # Wait for the page to load
-        self.assertTrue(driver.find_element(By.ID, 'txt_subject'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_details'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_date'))
-        self.assertTrue(driver.find_element(By.ID, 'btn_submit_request'))
-        self.assertTrue(driver.find_element(By.ID, 'link_cancel'))
+        self.assertTrue(driver.find_element(By.ID, "txt_subject"))
+        self.assertTrue(driver.find_element(By.ID, "txt_details"))
+        self.assertTrue(driver.find_element(By.ID, "txt_date"))
+        self.assertTrue(driver.find_element(By.ID, "btn_submit_request"))
+        self.assertTrue(driver.find_element(By.ID, "link_cancel"))
     def test_profile_page_elements(self):
+        """Check for elements on the Profile Page."""
         self.login()
         driver = self.driver
-        driver.find_element(By.ID, 'link_profile').click()
+        driver.find_element(By.ID, "link_profile").click()
         time.sleep(1)  # Wait for the page to load
-        self.assertTrue(driver.find_element(By.ID, 'txt_username_display'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_email_display'))
-        self.assertTrue(driver.find_element(By.ID, 'link_logout'))
+        self.assertTrue(driver.find_element(By.ID, "txt_username_display"))
+        self.assertTrue(driver.find_element(By.ID, "txt_email_display"))
+        self.assertTrue(driver.find_element(By.ID, "link_logout"))
     def test_contact_us_page_elements(self):
+        """Check for elements on the Contact Us Page."""
         self.login()
         driver = self.driver
-        driver.find_element(By.ID, 'link_contact_us').click()
+        driver.find_element(By.ID, "link_contact_us").click()
         time.sleep(1)  # Wait for the page to load
-        self.assertTrue(driver.find_element(By.ID, 'txt_contact_name'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_contact_email'))
-        self.assertTrue(driver.find_element(By.ID, 'txt_contact_message'))
-        self.assertTrue(driver.find_element(By.ID, 'btn_send'))
+        self.assertTrue(driver.find_element(By.ID, "txt_contact_name"))
+        self.assertTrue(driver.find_element(By.ID, "txt_contact_email"))
+        self.assertTrue(driver.find_element(By.ID, "txt_contact_message"))
+        self.assertTrue(driver.find_element(By.ID, "btn_send"))
     def login(self):
+        """Helper method to log in to the application."""
         driver = self.driver
-        driver.find_element(By.ID, 'txt_username').send_keys(self.username)
-        driver.find_element(By.ID, 'txt_password').send_keys(self.password)
-        driver.find_element(By.ID, 'btn_login').click()
+        driver.find_element(By.ID, "txt_username").send_keys(self.username)
+        driver.find_element(By.ID, "txt_password").send_keys(self.password)
+        driver.find_element(By.ID, "btn_login").click()
         time.sleep(1)  # Wait for the dashboard to load
     def tearDown(self):
         self.driver.quit()

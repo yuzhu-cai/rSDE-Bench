@@ -1,5 +1,5 @@
 '''
-This file contains the frontend code for the add post page of the PersonalFinanceBlog application.
+This file implements the frontend for the add post page of the PersonalFinanceBlog web application.
 It allows users to create a new blog post by entering a title, date, category, and content.
 '''
 <!DOCTYPE html>
@@ -11,20 +11,33 @@ It allows users to create a new blog post by entering a title, date, category, a
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="add-post-container">
-        <h1>Add New Blog Post</h1>
+    <div class="container">
+        <h1>Add Post</h1>
         <form action="{{ url_for('add_post') }}" method="POST">
-            <input type="text" id="post_title_field" name="post_title_field" placeholder="Post Title" required>
-            <input type="date" id="post_date_field" name="post_date_field" required>
-            <select id="post_category_field" name="post_category_field" required>
-                <option value="" disabled selected>Select Category</option>
-                <option value="Investment">Investment</option>
-                <option value="Banking">Banking</option>
-                <option value="Insurance">Insurance</option>
-            </select>
-            <textarea id="post_content_field" name="post_content_field" placeholder="Post Content" required></textarea>
-            <button type="submit" id="save_post_button">Save Post</button>
-            <button type="button" id="cancel_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Cancel</button>
+            <div>
+                <label for="post_title_field">Post Title:</label>
+                <input type="text" id="post_title_field" name="post_title_field" required>
+            </div>
+            <div>
+                <label for="post_date_field">Post Date:</label>
+                <input type="date" id="post_date_field" name="post_date_field" required>
+            </div>
+            <div>
+                <label for="post_category_field">Post Category:</label>
+                <select id="post_category_field" name="post_category_field" required>
+                    <option value="Investment">Investment</option>
+                    <option value="Banking">Banking</option>
+                    <option value="Insurance">Insurance</option>
+                </select>
+            </div>
+            <div>
+                <label for="post_content_field">Post Content:</label>
+                <textarea id="post_content_field" name="post_content_field" required></textarea>
+            </div>
+            <div>
+                <button type="submit" id="save_post_button">Save Post</button>
+                <button type="button" id="cancel_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Cancel</button>
+            </div>
         </form>
     </div>
 </body>

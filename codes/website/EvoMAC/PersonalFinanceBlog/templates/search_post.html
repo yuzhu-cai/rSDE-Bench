@@ -1,5 +1,5 @@
 '''
-This file contains the frontend code for the search post page of the PersonalFinanceBlog application.
+This file implements the frontend for the search post page of the PersonalFinanceBlog web application.
 It allows users to navigate to specific category pages where posts related to different aspects of personal finance are listed.
 '''
 <!DOCTYPE html>
@@ -11,12 +11,16 @@ It allows users to navigate to specific category pages where posts related to di
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <div class="search-post-container">
-        <h1>Search Blog Posts by Category</h1>
-        <button id="investment_button" onclick="window.location.href='{{ url_for('category_post', category='Investment') }}'">Investment</button>
-        <button id="banking_button" onclick="window.location.href='{{ url_for('category_post', category='Banking') }}'">Banking</button>
-        <button id="insurance_button" onclick="window.location.href='{{ url_for('category_post', category='Insurance') }}'">Insurance</button>
-        <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    <div class="container">
+        <h1>Search Post</h1>
+        <div>
+            <button id="investment_button" onclick="window.location.href='{{ url_for('category_post', category_name='Investment') }}'">Investment</button>
+            <button id="banking_button" onclick="window.location.href='{{ url_for('category_post', category_name='Banking') }}'">Banking</button>
+            <button id="insurance_button" onclick="window.location.href='{{ url_for('category_post', category_name='Insurance') }}'">Insurance</button>
+        </div>
+        <div>
+            <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+        </div>
     </div>
 </body>
 </html>

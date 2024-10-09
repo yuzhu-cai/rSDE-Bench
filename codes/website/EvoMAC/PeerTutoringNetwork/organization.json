@@ -1,23 +1,11 @@
 {
     "composition": {
-        "Programmer 1": "Update the `login` function in `app.py` to handle POST requests for user authentication. This includes validating the username and password against the stored user data in `data/users.txt`. If the credentials are valid, redirect the user to the dashboard. If invalid, render the login page again with an error message.",
-        "Programmer 2": "Update the `request_tutoring` function in `app.py` to ensure it correctly handles the POST request. This includes ensuring that the username is retrieved from the session after a successful login, so that the tutoring request can be associated with the logged-in user.",
-        "Programmer 3": "Implement the `dashboard.html` file to ensure it displays the correct elements after a successful login. This includes ensuring that the page is rendered only after the user is authenticated and that the necessary data is passed to the template.",
-        "Programmer 4": "Implement the `profile.html` file to display the logged-in user's username and email. Ensure that this information is retrieved from the session after a successful login.",
-        "Programmer 5": "Implement the `contact_us.html` file to ensure that the contact form submission correctly handles POST requests and that the data is saved in `data/contacts.txt`. Ensure that the user is redirected to the dashboard after submission."
+        "Programmer 1": "Implement the backend code in `app.py` to handle routing for all frontend pages and manage file read/write operations. \n    - Fix the `profile` function to retrieve the logged-in user's information (username and email) from the session or data file and pass it to the `profile.html` template for rendering.\n    - Ensure that the website is accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n    - Maintain the existing routing for all frontend pages, ensuring that each route corresponds to the frontend code.",
+        "Programmer 2": "Develop the frontend code for the Profile Page in `profile.html`.\n    - Ensure that the page displays the username and email correctly by utilizing the data passed from the `app.py` backend.\n    - Include a link to logout (`link_logout`)."
     },
     "workflow": {
         "Programmer 1": [],
         "Programmer 2": [
-            "Programmer 1"
-        ],
-        "Programmer 3": [
-            "Programmer 1"
-        ],
-        "Programmer 4": [
-            "Programmer 1"
-        ],
-        "Programmer 5": [
             "Programmer 1"
         ]
     }

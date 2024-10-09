@@ -3,8 +3,8 @@
         "total": 539,
         "total_basic": 292,
         "total_advanced": 247,
-        "basic": 260,
-        "advanced": 157
+        "basic": 265,
+        "advanced": 166
     },
     "MovieRecommendationSystem": {
         "total": 13,
@@ -410,48 +410,6 @@
             "registration_page_functionality": 1
         }
     },
-    "VolunteerMatch": {
-        "total": 7,
-        "total_basic": 4,
-        "total_advanced": 3,
-        "basic": 4,
-        "advanced": 2,
-        "test_cases": {
-            "set_up": 1,
-            "dashboard_page_elements": 1,
-            "login_page_elements": 1,
-            "login_page_functionality": 1,
-            "opportunity_details_page_elements": 1,
-            "opportunity_details_page_functionality": 1,
-            "dashboard_page_functionality": 0
-        }
-    },
-    "PersonalFinanceBlog": {
-        "total": 17,
-        "total_basic": 9,
-        "total_advanced": 8,
-        "basic": 3,
-        "advanced": 1,
-        "test_cases": {
-            "set_up": 1,
-            "login_elements": 1,
-            "registration_elements": 1,
-            "registration_functionality": 1,
-            "login_functionality": 0,
-            "add_post_elements": 0,
-            "add_post_functionality": 0,
-            "category_post_elements": 0,
-            "category_post_functionality": 0,
-            "dashboard_elements": 0,
-            "dashboard_functionality": 0,
-            "post_details_elements": 0,
-            "post_details_functionality": 0,
-            "search_post_elements": 0,
-            "search_post_functionality": 0,
-            "user_profile_elements": 0,
-            "user_profile_functionality": 0
-        }
-    },
     "DigitalArtworkGallery": {
         "total": 9,
         "total_basic": 5,
@@ -658,32 +616,6 @@
             "view_expenses_elements": 0
         }
     },
-    "FitnessEquipmentRental": {
-        "total": 17,
-        "total_basic": 9,
-        "total_advanced": 8,
-        "basic": 6,
-        "advanced": 5,
-        "test_cases": {
-            "set_up": 1,
-            "login_page_elements": 1,
-            "register_functionality": 1,
-            "register_page_elements": 1,
-            "login_functionality": 0,
-            "equipment_functionality": 0,
-            "equipment_page_elements": 0,
-            "help_page_elements": 0,
-            "help_page_functionality": 0,
-            "homepage_elements": 0,
-            "homepage_functionality": 0,
-            "my_rentals_functionality": 0,
-            "my_rentals_page_elements": 0,
-            "rental_form_elements": 0,
-            "rental_form_functionality": 0,
-            "return_equipment_functionality": 0,
-            "return_equipment_page_elements": 0
-        }
-    },
     "PetCareCommunity": {
         "total": 9,
         "total_basic": 5,
@@ -778,24 +710,6 @@
             "new_post_functionality": 0,
             "view_post_functionality": 0,
             "registration_functionality": 0
-        }
-    },
-    "OnlineVintageMarket": {
-        "total": 7,
-        "total_basic": 4,
-        "total_advanced": 3,
-        "basic": 2,
-        "advanced": 0,
-        "test_cases": {
-            "set_up": 1,
-            "login_page_elements": 1,
-            "login_page_functionality": 0,
-            "home_page_elements": 0,
-            "home_page_functionality": 0,
-            "item_details_page_elements": 0,
-            "item_details_page_functionality": 0,
-            "listing_page_elements": 0,
-            "listing_page_functionality": 0
         }
     },
     "RemoteInternshipMarketplace": {
@@ -928,6 +842,32 @@
             "registration_elements": 0
         }
     },
+    "PersonalFinanceBlog": {
+        "total": 17,
+        "total_basic": 9,
+        "total_advanced": 8,
+        "basic": 5,
+        "advanced": 5,
+        "test_cases": {
+            "set_up": 1,
+            "add_post_elements": 1,
+            "add_post_functionality": 1,
+            "dashboard_elements": 1,
+            "dashboard_functionality": 1,
+            "login_functionality": 1,
+            "registration_functionality": 1,
+            "search_post_elements": 1,
+            "user_profile_elements": 1,
+            "user_profile_functionality": 1,
+            "search_post_functionality": 0,
+            "category_post_elements": 0,
+            "category_post_functionality": 0,
+            "login_elements": 0,
+            "post_details_elements": 0,
+            "post_details_functionality": 0,
+            "registration_elements": 0
+        }
+    },
     "PeerTutoringNetwork": {
         "total": 15,
         "total_basic": 8,
@@ -950,6 +890,66 @@
             "tutors_elements": 1,
             "tutors_functionality": 1,
             "registration_functionality": 0
+        }
+    },
+    "VolunteerMatch": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 3,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_page_elements": 1,
+            "dashboard_page_functionality": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "opportunity_details_page_elements": 1,
+            "opportunity_details_page_functionality": 1
+        }
+    },
+    "OnlineVintageMarket": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 5,
+        "advanced": 4,
+        "test_cases": {
+            "set_up": 1,
+            "home_page_elements": 1,
+            "home_page_functionality": 1,
+            "item_details_page_elements": 1,
+            "item_details_page_functionality": 1,
+            "listing_page_elements": 1,
+            "listing_page_functionality": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1
+        }
+    },
+    "FitnessEquipmentRental": {
+        "total": 17,
+        "total_basic": 9,
+        "total_advanced": 8,
+        "basic": 6,
+        "advanced": 5,
+        "test_cases": {
+            "set_up": 1,
+            "help_page_elements": 1,
+            "help_page_functionality": 1,
+            "homepage_elements": 1,
+            "homepage_functionality": 1,
+            "login_functionality": 1,
+            "login_page_elements": 1,
+            "my_rentals_functionality": 1,
+            "my_rentals_page_elements": 1,
+            "register_functionality": 1,
+            "register_page_elements": 1,
+            "equipment_functionality": 0,
+            "equipment_page_elements": 0,
+            "rental_form_elements": 0,
+            "rental_form_functionality": 0,
+            "return_equipment_functionality": 0,
+            "return_equipment_page_elements": 0
         }
     }
 }

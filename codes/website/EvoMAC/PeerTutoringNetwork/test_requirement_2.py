@@ -10,27 +10,26 @@ class TestLoginPage(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get("http://localhost:5000")
-        time.sleep(2)  # Wait for the page to load
-    def test_login_page_title(self):
-        """Test if the first page is the login page."""
-        self.assertIn("Login", self.driver.title)
+    def test_login_page(self):
+        driver = self.driver
+        # Check if the title of the page is correct
+        self.assertIn("Login", driver.title)
         print("Login page title is correct.")
-    def test_login_functionality(self):
-        """Test if the login functionality works with example data."""
+        # Locate username and password fields
+        username_field = driver.find_element(By.ID, "txt_username")
+        password_field = driver.find_element(By.ID, "txt_password")
+        login_button = driver.find_element(By.ID, "btn_login")
+        # Input example data
         username = "johndoe"
         password = "password123"
-        # Locate the username and password fields and the login button
-        username_field = self.driver.find_element(By.ID, "txt_username")
-        password_field = self.driver.find_element(By.ID, "txt_password")
-        login_button = self.driver.find_element(By.ID, "btn_login")
-        # Input the username and password
         username_field.send_keys(username)
         password_field.send_keys(password)
         login_button.click()
-        time.sleep(2)  # Wait for the login process to complete
-        # Check if redirected to the dashboard page
-        self.assertIn("Dashboard", self.driver.title)
-        print("Login functionality works correctly.")
+        # Wait for the dashboard to load
+        time.sleep(2)
+        # Check if we are redirected to the dashboard page
+        self.assertIn("Dashboard", driver.title)
+        print("Successfully logged in and redirected to the Dashboard page.")
     def tearDown(self):
         self.driver.quit()
 if __name__ == "__main__":

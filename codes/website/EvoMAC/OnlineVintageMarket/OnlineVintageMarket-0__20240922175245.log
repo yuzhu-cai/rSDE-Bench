@@ -41969,7 +41969,6 @@ It handles routing for the login, home, listing, and item details pages, as well
 from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Set a secret key for session management
-
 # Function to read users from the users.txt file
 def read_users():
     users = {}
@@ -41978,7 +41977,6 @@ def read_users():
             username, password = line.strip().split(',')
             users[username] = password
     return users
-
 # Function to read listings from the listings.txt file
 def read_listings():
     listings = []
@@ -41991,11 +41989,9 @@ def read_listings():
                 'price': item_price
             })
     return listings
-
 @app.route('/')
 def login():
     return render_template('login.html')
-
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if 'username' not in session:  # Check if user is logged in
@@ -42006,11 +42002,11 @@ def home():
             users = read_users()
             if username in users and users[username] == password:
                 session['username'] = username  # Store username in session
-                return redirect(url_for('home'))  # Redirect to home page after successful login
+                listings = read_listings()  # Read all listings after login
+                return render_template('home.html', listings=listings)  # Render home page directly
             else:
                 return "Invalid credentials", 403
         return redirect(url_for('login'))  # Redirect to login if not logged in
-
     listings = read_listings()  # Read all listings
     search_results = []
     # Handle search functionality
@@ -42018,7 +42014,6 @@ def home():
     if search_query:
         search_results = [item for item in listings if search_query.lower() in item['name'].lower()]
     return render_template('home.html', listings=listings, search_results=search_results)  # Pass search results to template
-
 @app.route('/listing', methods=['GET', 'POST'])
 def listing():
     if request.method == 'POST':
@@ -42029,7 +42024,6 @@ def listing():
             file.write(f"{item_name},{item_description},{item_price}\n")
         return redirect(url_for('home'))
     return render_template('listing.html')
-
 @app.route('/item/<int:item_id>')
 def item_details(item_id):
     listings = read_listings()
@@ -42037,33 +42031,8 @@ def item_details(item_id):
         item = listings[item_id]
         return render_template('item_details.html', item=item)
     return "Item not found", 404
-
 if __name__ == '__main__':
     app.run(port=5000)
-```
-
-[2024-22-09 18:12:06 INFO] flask app.py did not start for online log
-[2024-22-09 18:12:06 INFO] **[Update Codes]**
-
-app.py updated.
-
-
-```
-'''
-
-'''
---- Old
-+++ New
-@@ -38,8 +38,7 @@
-             users = read_users()
-             if username in users and users[username] == password:
-                 session['username'] = username  # Store username in session
--                listings = read_listings()  # Read all listings after login
--                return render_template('home.html', listings=listings)  # Render home page directly
-+                return redirect(url_for('home'))  # Redirect to home page after successful login
-             else:
-                 return "Invalid credentials", 403
-         return redirect(url_for('login'))  # Redirect to login if not logged in
 ```
 
 [2024-22-09 18:12:06 INFO] flask app.py did not start for online log
@@ -45638,11 +45607,9 @@ app.py
 This file implements the backend logic for the OnlineVintageMarket web application.
 It handles routing for the login, home, listing, and item details pages, as well as user authentication and data management.
 '''
-from flask import Flask, render_template, request, redirect, url_for, session, flash
-
+from flask import Flask, render_template, request, redirect, url_for, session
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Set a secret key for session management
-
 # Function to read users from the users.txt file
 def read_users():
     users = {}
@@ -45651,7 +45618,6 @@ def read_users():
             username, password = line.strip().split(',')
             users[username] = password
     return users
-
 # Function to read listings from the listings.txt file
 def read_listings():
     listings = []
@@ -45664,26 +45630,31 @@ def read_listings():
                 'price': item_price
             })
     return listings
-
 @app.route('/')
 def login():
     return render_template('login.html')
-
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if 'username' not in session:  # Check if user is logged in
-        flash("You need to log in to access this page.", "warning")  # Add this line
+        if request.method == 'POST':
+            # Handle login
+            username = request.form['username']
+            password = request.form['password']
+            users = read_users()
+            if username in users and users[username] == password:
+                session['username'] = username  # Store username in session
+                listings = read_listings()  # Read all listings after login
+                return render_template('home.html', listings=listings)  # Render home page directly
+            else:
+                return "Invalid credentials", 403
         return redirect(url_for('login'))  # Redirect to login if not logged in
-    
     listings = read_listings()  # Read all listings
     search_results = []
     # Handle search functionality
     search_query = request.args.get('search')
     if search_query:
         search_results = [item for item in listings if search_query.lower() in item['name'].lower()]
-    
     return render_template('home.html', listings=listings, search_results=search_results)  # Pass search results to template
-
 @app.route('/listing', methods=['GET', 'POST'])
 def listing():
     if request.method == 'POST':
@@ -45694,7 +45665,6 @@ def listing():
             file.write(f"{item_name},{item_description},{item_price}\n")
         return redirect(url_for('home'))
     return render_template('listing.html')
-
 @app.route('/item/<int:item_id>')
 def item_details(item_id):
     listings = read_listings()
@@ -45702,7 +45672,6 @@ def item_details(item_id):
         item = listings[item_id]
         return render_template('item_details.html', item=item)
     return "Item not found", 404
-
 if __name__ == '__main__':
     app.run(port=5000)
 ```
@@ -45722,15 +45691,6 @@ It allows users to log in to their accounts and provides a link for forgotten pa
 </head>
 <body>
     <h1>Login</h1>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <ul>
-            {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
     <form id="login-form" method="POST" action="{{ url_for('home') }}">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -45873,77 +45833,6 @@ with an option to return to the homepage.
 ``` 
 
 These modifications ensure that the application provides a better user experience by notifying users when they attempt to access the home page without being logged in.
-
-[2024-22-09 18:12:58 INFO] flask app.py did not start for online log
-[2024-22-09 18:12:58 INFO] **[Update Codes]**
-
-app.py updated.
-
-
-```
-'''
-
-'''
---- Old
-+++ New
-@@ -2,7 +2,7 @@
- This file implements the backend logic for the OnlineVintageMarket web application.
- It handles routing for the login, home, listing, and item details pages, as well as user authentication and data management.
- '''
--from flask import Flask, render_template, request, redirect, url_for, session
-+from flask import Flask, render_template, request, redirect, url_for, session, flash
- app = Flask(__name__)
- app.secret_key = 'your_secret_key'  # Set a secret key for session management
- # Function to read users from the users.txt file
-@@ -31,16 +31,7 @@
- @app.route('/home', methods=['GET', 'POST'])
- def home():
-     if 'username' not in session:  # Check if user is logged in
--        if request.method == 'POST':
--            # Handle login
--            username = request.form['username']
--            password = request.form['password']
--            users = read_users()
--            if username in users and users[username] == password:
--                session['username'] = username  # Store username in session
--                return redirect(url_for('home'))  # Redirect to home page after successful login
--            else:
--                return "Invalid credentials", 403
-+        flash("You need to log in to access this page.", "warning")  # Add this line
-         return redirect(url_for('login'))  # Redirect to login if not logged in
-     listings = read_listings()  # Read all listings
-     search_results = []
-```
-
-[2024-22-09 18:12:58 INFO] flask app.py did not start for online log
-[2024-22-09 18:12:58 INFO] **[Update Codes]**
-
-login.html updated.
-
-
-```
-'''
-
-'''
---- Old
-+++ New
-@@ -11,6 +11,15 @@
- </head>
- <body>
-     <h1>Login</h1>
-+    {% with messages = get_flashed_messages(with_categories=true) %}
-+        {% if messages %}
-+            <ul>
-+            {% for category, message in messages %}
-+                <li class="{{ category }}">{{ message }}</li>
-+            {% endfor %}
-+            </ul>
-+        {% endif %}
-+    {% endwith %}
-     <form id="login-form" method="POST" action="{{ url_for('home') }}">
-         <label for="username">Username:</label>
-         <input type="text" id="username" name="username" required>
-```
 
 [2024-22-09 18:12:58 INFO] flask app.py did not start for online log
 [2024-22-09 18:12:58 INFO] **[Software Info]**:
