@@ -20,7 +20,7 @@ conda activate rsd_bench
 
 Check out and install this repository:
 ```
-git clone ...
+git clone https://github.com/yuzhu-cai/RSD-Bench.git
 cd RSD-Bench
 pip install -r requirement.txt
 ```
