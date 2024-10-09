@@ -10,7 +10,7 @@ Requirements:
 3. If the ghost controlled by the player eats a superpellet (the big pellets), it gains the ability to eat other ghosts .
 4. If the ghost controlled by the player eat another ghost (i. e. collide with it when the player has the superpellet powerup), the ghost disappears.
 5. If the ghost controlled by the player collides with another ghost when the player doesn't have the superpellet powerup, it will cause an invalid move , just like hit the wall.
-6. If a game isn't over after 10 game ticks have elapsed, a monster is activated(initial position:[1,1]), which will chase the player's ghost.When the monster collide with the player's ghost, the game is over(lose). You should output the corresponding information.
+6. If a game isn't over after 50 game ticks have elapsed, a monster is activated(initial position:[1,1]), which will chase the player's ghost.When the monster collide with the player's ghost, the game is over(lose). You should output the corresponding information.
 7. There are some walls in the map, and ghosts cannot pass through them.
 8. As the game starts, a log file named 'game.log' should be created to record the game's progress. The content of the game.log file should be appended with a new entry after each player action.The content of the game.log file should be cleared (if any) at the start of each game session.
 Each log entry should follow this format:
@@ -63,7 +63,7 @@ Task: Develop a Battle of Balls Game
 Requirements:
 1. Different balls will be distinguished by their colors.
 2. The player moves using the up, down, left, and right arrow keys, but with the player's ball as a reference frame, other balls move relative to the player's ball, and the player's ball always remains in the center of the game interface.
-3. When two balls collide, the smaller ball (with a smaller radius) will be consumed by the larger ball (with a larger radius), causing the larger ball to grow in size proportionately to the radius of the consumed ball. Player ball can also consume smaller enemy balls. When the ball is consumed, the radius should be recorded as -1.
+3. When two balls collide, the smaller ball (with a smaller radius) will be consumed by the larger ball (with a larger radius), causing the larger ball to grow in size proportionately to the radius of the consumed ball. Player ball can also consume smaller enemy balls. When the ball is consumed, the corresponding radius should be recorded as -1 in the log.
 4. The game ends if the player's ball is consumed.
 5. In addition to the player's ball, initialize four enemy balls that have the same radius but are slightly smaller than the player's ball. One fixed enemy ball and three active enemy balls.
 6. Small, non-player, and enemy balls will continuously spawn on the map (much smaller than the initial sizes of the player and enemy balls). When consumed, they will increase in size.
@@ -95,8 +95,7 @@ Requirements:
                 "position": [xe4, ye4],  
                 "radius": radius4
             },
-        ],
-    }
+        ]
 }
 """},
 
