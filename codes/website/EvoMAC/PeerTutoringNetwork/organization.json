@@ -1,0 +1,24 @@
+{
+    "composition": {
+        "Programmer 1": "Update the `login` function in `app.py` to handle POST requests for user authentication. This includes validating the username and password against the stored user data in `data/users.txt`. If the credentials are valid, redirect the user to the dashboard. If invalid, render the login page again with an error message.",
+        "Programmer 2": "Update the `request_tutoring` function in `app.py` to ensure it correctly handles the POST request. This includes ensuring that the username is retrieved from the session after a successful login, so that the tutoring request can be associated with the logged-in user.",
+        "Programmer 3": "Implement the `dashboard.html` file to ensure it displays the correct elements after a successful login. This includes ensuring that the page is rendered only after the user is authenticated and that the necessary data is passed to the template.",
+        "Programmer 4": "Implement the `profile.html` file to display the logged-in user's username and email. Ensure that this information is retrieved from the session after a successful login.",
+        "Programmer 5": "Implement the `contact_us.html` file to ensure that the contact form submission correctly handles POST requests and that the data is saved in `data/contacts.txt`. Ensure that the user is redirected to the dashboard after submission."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

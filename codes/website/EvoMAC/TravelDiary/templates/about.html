@@ -1,0 +1,23 @@
+'''
+This file implements the frontend code for the About Page of the TravelDiary web application.
+It includes a header title, a section displaying information about the TravelDiary application, and a link to the contact support page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="headerTitle">About TravelDiary</h1>
+        <section id="contentInfo">
+            <p>TravelDiary is a web application designed to help users document and share their travel experiences. 
+            Users can create diary entries, view their past travels, and connect with others through their stories.</p>
+        </section>
+        <p>If you have any questions or need support, please <a href="{{ url_for('contact_support') }}" id="linkContact">contact us</a>.</p>
+    </div>
+</body>
+</html>

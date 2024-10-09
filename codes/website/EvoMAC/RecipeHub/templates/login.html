@@ -1,0 +1,28 @@
+'''
+This is the login page for the RecipeHub web application.
+It allows users to enter their username and password to log in.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="username_input">Username:</label>
+        <input type="text" id="username_input" name="username_input" required>
+        <br>
+        <label for="password_input">Password:</label>
+        <input type="password" id="password_input" name="password_input" required>
+        <br>
+        <button type="submit" id="login_button">Login</button>
+        <button type="button" id="register_button" onclick="window.location.href='{{ url_for('register') }}'">Register</button>
+    </form>
+    {% if error_message %}
+        <p id="error_message">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

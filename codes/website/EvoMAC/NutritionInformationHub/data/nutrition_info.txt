@@ -1,0 +1,2 @@
+apple,52 calories,0.2g fat,14g carbs,0.3g protein
+banana,89 calories,0.3g fat,23g carbs,1.1g protein

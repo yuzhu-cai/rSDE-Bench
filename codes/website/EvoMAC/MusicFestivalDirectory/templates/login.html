@@ -1,0 +1,33 @@
+'''
+This HTML file contains the structure and elements for the login page, including the username and password fields, login button, and error message display.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login to Music Festival Directory</title>
+</head>
+<body>
+    <div id="login">
+        <h2>Login</h2>
+        <form action="{{ url_for('do_login') }}" method="post">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit" id="login_button">Login</button>
+        </form>
+        <div id="error_message">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p></p>  <!-- Ensure error_message is always rendered -->
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

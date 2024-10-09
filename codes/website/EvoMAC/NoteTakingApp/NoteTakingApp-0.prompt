@@ -1,0 +1,96 @@
+# Requirement Document for NoteTakingApp
+
+## 1. Objective
+Develop a comprehensive web application called 'NoteTakingApp' that enables users to create, view, and manage notes without the need for a SQL database, leveraging Python and storing data in local text files.
+
+## 2. Language
+The required development language for the NoteTakingApp is Python.
+
+## 3. Page Design
+
+### 3.1. Login Page
+- **Page Title:** Login
+- **Overview:** This page allows users to log into the application with their credentials.
+- **Element IDs:**
+  - `login_page`: Wrapper for the login page
+  - `username_field`: Input field for the username
+  - `password_field`: Input field for the password
+  - `login_button`: Button to submit login credentials
+  - `error_message`: Display area for login errors
+  - `register_link`: Link to the registration page
+
+### 3.2. Registration Page
+- **Page Title:** Register
+- **Overview:** This page allows new users to create an account.
+- **Element IDs:**
+  - `registration_page`: Wrapper for the registration page
+  - `register_username_field`: Input field for the new username
+  - `register_password_field`: Input field for the new password
+  - `confirm_password_field`: Input field for confirming the password
+  - `register_button`: Button to submit registration details
+  - `registration_success_message`: Display area for registration confirmations or errors
+
+### 3.3. Dashboard Page
+- **Page Title:** Dashboard
+- **Overview:** This is the main page that displays the user's list of notes and provides options to create, edit, or delete notes.
+- **Element IDs:**
+  - `dashboard_page`: Wrapper for the dashboard
+  - `notes_list`: Container to display all notes
+  - `add_note_button`: Button to navigate to the Add Note page
+  - `view_note_button`: Button to navigate to the View Note page (for each note in the Dashboard)
+  - `search_note_button`: Button to navigate to the Search Note page
+  - `logout_button`: Button to log out of the application
+
+### 3.4. Add Note Page
+- **Page Title:** Add Note
+- **Overview:** This page allows users to create a new note by entering a title and content.
+- **Element IDs:**
+  - `add_note_page`: Wrapper for the add note page
+  - `note_title_field`: Input field for the note title
+  - `note_content_field`: Textarea for the note content
+  - `save_note_button`: Button to save the new note
+  - `cancel_button`: Button to discard changes and return to the dashboard
+
+### 3.5. Search Note Page
+- **Page Title:** Search Note
+- **Overview:** This page allows users to search note by entering a title.
+- **Element IDs:**
+  - `search_note_field`: Input field for the note title
+  - `search_note_button`: Button to search the note
+  - `search_note_result`: Container to display the search result
+  - `back_button`: Button to return to the dashboard
+
+### 3.6. View Note Page
+- **Page Title:** View Note
+- **Overview:** This page displays the details of a selected note, allowing users to read and edit it.
+- **Element IDs:**
+  - `view_note_page`: Wrapper for the view note page
+  - `note_title_filed`: Display and edit area for the note title
+  - `note_content_filed`: Display and edit area for the note content
+  - `edit_note_button`: Button to submit the edition
+  - `delete_note_button`: Button to delete the note
+  - `back_to_dashboard_button`: Button to return to the dashboard
+
+## 4. Data Storage
+
+### Data Format
+The application will store data in local text files located in the `data` directory. Each type of data will be saved in a separate file to organize the information efficiently.
+
+### Data Examples
+- **User Data File (`users.txt`)**:
+  - Format: `username:password`(there is no need for hash)
+  - Example:
+    ```
+    john_doe:abcd1234
+    jane_smith:xyz9876
+    ```
+
+- **Notes Data File (`notes.txt`)**:
+  - Format: `note_id|title|content`
+  - Example:
+    ```
+    1|Grocery List|Eggs, Milk, Bread
+    2|Meeting Notes|Discussed project milestones and deadlines.
+    ```
+
+All text files will be created and accessed from the local `data` directory to ensure easy retrieval and management of information.

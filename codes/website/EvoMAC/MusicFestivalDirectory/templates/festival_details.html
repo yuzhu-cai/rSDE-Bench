@@ -1,0 +1,21 @@
+'''
+This HTML file provides detailed information about a selected festival, including its name, location, date, and lineup, along with a button to navigate back to the festival list.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Festival Details</title>
+</head>
+<body>
+    <div id="festival_details">
+        <h1 id="festival_name">{{ festival.name }}</h1>
+        <p id="festival_location">Location: {{ festival.location }}</p>
+        <p id="festival_date">Date: {{ festival.date }}</p>
+        <p id="festival_lineup">Lineup: {{ festival.lineup }}</p>
+        <button id="back_to_list_button" onclick="window.location.href='{{ url_for('festival_list') }}'">Back to Festival List</button>
+    </div>
+</body>
+</html>

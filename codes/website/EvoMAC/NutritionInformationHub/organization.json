@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Improve the backend code in app.py\n- Ensure that the login page can be accessed through the local port 5000.\n- Implement explicit waits to ensure that elements are fully loaded before tests are executed.\n- Verify that the user authentication process is functioning correctly and that users can access the home, nutrition information, and recipe tracker pages after logging in.\n- Fix the issue in the `do_login` function where the test case checks for the presence of the `errorMessage` element. Modify the test to check for this element only after an unsuccessful login attempt.",
+        "Programmer 2": "Improve the frontend code in login.html\n- Ensure that the element with ID \"usernameField\" is correctly rendered and accessible.\n- Verify that the login form submits correctly and displays error messages when credentials are incorrect.\n- Modify the test case to not expect the `errorMessage` element on the initial load of the login page, as it is only rendered conditionally.\n- Ensure that the `errorMessage` div is displayed correctly when login fails.",
+        "Programmer 4": "Improve the frontend code in nutrition_info.html\n- Ensure that the element with ID \"foodList\" is correctly rendered and accessible after user authentication.\n- Implement functionality to display nutritional information based on user searches.\n- Fix the issue where the `foodList` div is not being displayed correctly when the page is loaded for the first time. Ensure that the search functionality is invoked before checking for the presence of `foodList`.\n- Add test cases to verify the search functionality for both existing and non-existing food items.",
+        "Programmer 5": "Improve the frontend code in recipe_tracker.html\n- Ensure that the element with ID \"savedRecipesList\" is correctly rendered and accessible after user authentication.\n- Implement functionality to display saved recipes after a user saves a new recipe.\n- Ensure that the saved recipes are loaded correctly when the page is accessed."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+'''
+This file implements the frontend code for the festival overview page of the Online Cultural Festivals web application.
+It displays a list of available cultural festivals and includes a button to navigate to the user submissions page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cultural Festivals Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Online Cultural Festivals Overview</h1>
+    <div id="festivals-list">
+        <ul>
+            {% for festival in festivals %}
+                <li>
+                    <a id="festival_item_{{ loop.index0 }}" href="{{ url_for('festival_details', festival_name=festival) }}">{{ festival }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button id="submit-experience-button" onclick="window.location.href='{{ url_for('submit_experience') }}'">Submit Your Experience</button>
+</body>
+</html>

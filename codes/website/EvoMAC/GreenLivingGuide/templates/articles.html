@@ -1,0 +1,42 @@
+'''
+This is the articles page for the GreenLivingGuide web application.
+It contains a collection of articles on sustainable living practices and news, allowing users to read and submit their articles.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="articles-list">
+        <h2>Articles on Sustainable Living</h2>
+        <ul>
+            {% for article in articles %}
+                <li><strong>{{ article[0] }}</strong>: {{ article[1] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="new-article-form">
+        <h3>Submit a New Article</h3>
+        <form method="POST" action="{{ url_for('submit_article') }}">
+            <label for="article-title">Article Title:</label>
+            <input type="text" id="article-title" name="article_title" required>
+            <label for="article-content">Article Content:</label>
+            <textarea id="article-content" name="article_content" required></textarea>
+            <button type="submit" id="submit-article-button">Submit Article</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div id="success-message">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

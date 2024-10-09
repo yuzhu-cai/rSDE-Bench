@@ -1,0 +1,41 @@
+'''
+This is the item details page for the OnlineThriftStore web application.
+It dynamically displays detailed information for a specific item selected by the user.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ item.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="item_title">{{ item.title }}</h1>
+        <p><strong>Seller:</strong> <span id="item_seller">{{ item.seller_username }}</span></p>
+        <p><strong>Price:</strong> $<span id="item_price">{{ item.price }}</span></p>
+        <p><strong>Status:</strong> <span id="item_status">{{ item_status }}</span></p>
+        <button id="add_to_cart_button" onclick="addToCart('{{ item.title }}')">Add to Cart</button>
+        <button id="back_button" onclick="location.href='{{ url_for('dashboard') }}'">Back</button>
+    </div>
+    <script>
+        function addToCart(itemTitle) {
+            fetch('/add_to_cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ title: itemTitle })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Item added to cart successfully!');
+                } else {
+                    alert('Failed to add item to cart.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

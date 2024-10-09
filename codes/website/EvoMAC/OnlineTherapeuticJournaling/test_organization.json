@@ -1,0 +1,17 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of ALL pages, ensuring that each page contains the required elements as specified in the task requirements. This includes \n- Login Page  Check for `login-form`, `username-input`, `password-input`, and `login-button`.\n- Dashboard Page  Check for `dashboard-header`, `create-entry-button`, `entry-list`, `edit-entry-button`, `about-button`, and `logout-button`.\n- Create Journal Entry Page  Check for `entry-form`, `entry-title-input`, `entry-content-textarea`, and `save-entry-button`.\n- Edit Journal Entry Page  Check for `edit-entry-form`, `edit-title-input`, `edit-content-input`, and `update-entry-button`.\n- About Page  Check for `about-header`, `about-description`, and `contact-info`."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1",
+            "Programmer 2"
+        ]
+    }
+}

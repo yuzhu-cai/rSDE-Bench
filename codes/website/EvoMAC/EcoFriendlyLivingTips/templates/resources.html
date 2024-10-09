@@ -1,0 +1,32 @@
+'''
+HTML template for the resources page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="resources-section">
+        <h2>Useful Resources</h2>
+        <ol id="resources-list">
+            {% for resource in resources %}
+                <li><a href="{{ resource }}">{{ resource }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div id="add-resource-section">
+        <h3>Add a New Resource</h3>
+        <form action="{{ url_for('resources') }}" method="post" id="add-resource-form">
+            <input type="text" id="resource-input" name="resource" placeholder="Enter resource link" required>
+            <button type="submit" id="add-resource-button">Add Resource</button>
+        </form>
+    </div>
+    <div>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

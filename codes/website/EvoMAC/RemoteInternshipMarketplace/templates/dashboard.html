@@ -1,0 +1,25 @@
+<!--
+This is the dashboard page for the RemoteInternshipMarketplace web application.
+It displays a welcome message, buttons to view internships and post an internship,
+a list of all internships' titles, and a logout button.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internships Dashboard</title>
+</head>
+<body>
+    <h1 id="heading_welcome">Welcome to the Internships Dashboard!</h1>
+    <button id="btn_view_internships" onclick="window.location.href='{{ url_for('internship_listings') }}'">View Internships</button>
+    <button id="btn_post_internship" onclick="window.location.href='{{ url_for('post_internship') }}'">Post Internship</button>
+    <h2>Available Internships:</h2>
+    <ul id="list_internships">
+        {% for internship in internships %}
+        <li>{{ internship[1] }}</li>
+        {% endfor %}
+    </ul>
+    <button id="btn_logout" onclick="window.location.href='{{ url_for('login') }}'">Logout</button>
+</body>
+</html>

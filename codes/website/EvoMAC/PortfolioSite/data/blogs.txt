@@ -1,0 +1,2 @@
+username1,blog_title1,blog_content1
+username1,blog_title2,blog_content2

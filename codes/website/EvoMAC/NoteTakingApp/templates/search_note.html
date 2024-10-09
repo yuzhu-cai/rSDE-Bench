@@ -1,0 +1,38 @@
+'''
+This is the search note page for the NoteTakingApp. It allows users to search notes by entering a title.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Note</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="search_note_page">
+        <h1>Search Note</h1>
+        <form method="POST" action="{{ url_for('search_note') }}">
+            <label for="search_note_field">Enter Note Title:</label>
+            <input type="text" id="search_note_field" name="search_note_field" required>
+            <button type="submit" id="search_note_button">Search</button>
+        </form>
+        <div id="search_note_result">
+            {% if search_note_result %}
+                <h2>Search Results:</h2>
+                <ul>
+                    {% for note in search_note_result %}
+                        <li>
+                            <span>{{ note.title }}</span>
+                            <button id="view_note_button" onclick="window.location.href='{{ url_for('view_note', note_id=note.id) }}'">View</button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No notes found with that title.</p>
+            {% endif %}
+        </div>
+        <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    </div>
+</body>
+</html>

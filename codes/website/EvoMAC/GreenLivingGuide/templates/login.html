@@ -1,0 +1,27 @@
+'''
+This is the login page for the GreenLivingGuide web application.
+It allows users to log in to access personalized content and features.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="login-form">
+        <h2>User Login</h2>
+        <form method="POST" action="{{ url_for('login') }}">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="login-button">Login</button>
+            <div id="error-message">{{ error }}</div>
+        </form>
+        <button id="register-button" onclick="window.location.href='{{ url_for('register') }}'">Register</button>
+    </div>
+</body>
+</html>

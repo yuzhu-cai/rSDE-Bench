@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Fix the backend logic in app.py to ensure that the login process correctly sets the session variable for the username and redirects to the Home page after successful login. This involves reviewing the handling of the POST request in the home function, ensuring that the session is established correctly, and that the user is redirected to the home page upon successful authentication. Additionally, ensure that the home function handles the search functionality correctly and that the search results are displayed properly.",
+        "Programmer 2": "Update home.html to include the missing element with ID `search-result` to ensure that the page can display search results correctly. This will involve adding a section to display search results based on user input.",
+        "Programmer 3": "Update listing.html to ensure that the listing form with ID `listing-form` is present. This will involve adding the correct ID to the form element to ensure it matches the test cases.",
+        "Programmer 4": "Update item_details.html to ensure that the item title with ID `item-title` is present. This will involve adding the correct ID to the title element to ensure it matches the test cases."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ]
+    }
+}

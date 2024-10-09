@@ -1,0 +1,2 @@
+john_doe|100|80
+jane_smith|80|90

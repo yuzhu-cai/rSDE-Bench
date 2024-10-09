@@ -1,0 +1,154 @@
+Task:
+# Requirements Document for FreelancerMarketplace Web Application
+
+## 1. Objective
+Develop a comprehensive web application named 'FreelancerMarketplace' using Python for managing freelancers and projects, allowing users to interact through a user-friendly interface. Note that the website should start from the login page.
+
+## 2. Language
+The development language required for this project is Python.
+
+## 3. Page Design
+The web application will consist of the following five pages:
+
+### 1. Login Page
+- **Page Title**: Login
+- **Elements**:
+  - **Username Field**:  
+    - ID: `username_field`
+  - **Password Field**:  
+    - ID: `password_field`
+  - **Login Button**:  
+    - ID: `login_button`
+  - **Register Button**:  
+    - ID: `register_button`
+  - **Error Message Container**:  
+    - ID: `error_message`
+
+### 2. Register Page
+- **Page Title**: Register
+- **Elements**:
+  - **Username Field**:  
+    - ID: `username_field`
+  - **Password Field**:  
+    - ID: `password_field`
+  - **Register Button**:  
+    - ID: `register_button`
+  - **Error Message Container**:  
+    - ID: `error_message`
+    
+### 3. Home Page
+- **Page Title**: Home
+- **Elements**:
+  - **Welcome Message**:  
+    - ID: `welcome_message`
+  - **Search Field**:  
+    - ID: `search_field`
+    - Search the targeted freelancer by his/her name
+  - **Search Button**:  
+    - ID: `search_button`
+  - **Search Result Section**:  
+    - ID: `search_result`
+    - Display the search result
+  - **Featured Freelancers Section**:  
+    - ID: `featured_freelancers`
+    - Description of freelancers with links their profiles.
+  - **View Freelancer Details Button**:  
+    - ID: `view_freelancer_details`
+    - Button for each freelancer: navigate to Freelancer Profile Page
+  - **Manage All Projects Button**:  
+    - ID: `manage_projects_button`
+    - Navigate to Projects Page
+  - **Manage Profile Button**:  
+    - ID: `manage_profile_button`
+    - Navigate to Profile Management Page
+    
+### 4. Freelancer Profile Page
+- **Page Title**: Freelancer Profile
+- **Elements**:
+  - **Freelancer Name**:  
+    - ID: `freelancer_name`
+  - **Information Section**:  
+    - ID: `information`
+
+### 5. Project Listing Page
+- **Page Title**: Projects
+- **Elements**:
+  - **New Project Name**:  
+    - ID: `pro_name`
+  - **New Project Description**:  
+    - ID: `pro_desc`
+  - **New Project's Freelancer_id**:  
+    - ID: `pro_fre_id`
+  - **Create New Project Button**:  
+    - ID: `create_project_button`
+  - **Project List Section**:  
+    - ID: `project_list`
+    
+### 6. Profile Management Page
+- **Page Title**: User Profile
+- **Elements**:
+  - **User Name Field**:  
+    - ID: `user_name_field`
+    - A text field displaying the current user's username, which can be cleared and a new username can be entered
+  - **Email Field**:  
+    - ID: `email_field`
+    - A text field displaying the current user's email, which can be cleared and a new email can be entered 
+  - **Update Profile Button**:  
+    - ID: `update_profile_button`
+  - **Message Container for Updates**:  
+    - ID: `update_message`
+
+## 4. Data Storage
+Data will be stored in plain text files within the `data` directory. Each type of data will have a corresponding text file.
+
+### Data Format:
+- User Data:  
+  - Format: `username,password`
+  - Example: `john_doe,securePassword123`
+  
+- Freelancer Data:  
+  - Format: `name,contact_info,portfolio_links`
+  - Example: `Jane Smith,jane@example.com,www.janesportfolio.com`
+  
+- Project Data:  
+  - Format: `project_name,description,freelancer_id`
+  - Example: `Website Development,A project to create a small business website,1`
+
+### Files Structure
+- User Data: `data/users.txt`
+- Freelancer Data: `data/freelancers.txt`
+- Project Data: `data/projects.txt`
+
+This structured approach ensures clarity in requirements and facilitates the development and testing process for the FreelancerMarketplace application.
+
+Config:
+ChatEnvConfig.with_memory: False
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+ChatEnvConfig.background_prompt: ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of 'changing the digital world through programming'.
+ChatEnvConfig.set_free_port: True
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+
+
+Ideas:
+
+
+Language:
+
+
+Code_Version:
+8.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

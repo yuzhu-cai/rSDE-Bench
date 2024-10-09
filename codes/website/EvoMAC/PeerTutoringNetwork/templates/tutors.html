@@ -1,0 +1,23 @@
+'''
+This page displays a list of available tutors for the PeerTutoringNetwork web application.
+It retrieves the list of tutors from the backend and presents them in a structured format.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutors</title>
+</head>
+<body>
+    <h1>Available Tutors</h1>
+    <div id="div_tutor_list">
+        <ul>
+            {% for tutor in tutors %}
+                <li>{{ tutor[0] }} - Subject: {{ tutor[1] }} - Available: {{ tutor[2] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

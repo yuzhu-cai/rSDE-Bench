@@ -1,0 +1,36 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in app.py.\n- The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n- The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code.\n- File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text.\n- Frontend code files to be routed  login.html, register.html, dashboard.html, create_project.html, project_details.html, profile_settings.html, about.html.",
+        "Programmer 2": "Implement the frontend code in login.html.\n- Users can access their accounts by entering their username and password.\n- Element IDs  usernameField, passwordField, loginButton, registerLink, aboutLink.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 3": "Implement the frontend code in register.html.\n- New users can create an account by filling out a registration form.\n- Element IDs  regUsernameField, regPasswordField, registerButton, loginLink.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 4": "Implement the frontend code in dashboard.html.\n- Users can view their projects, create new music projects, and access their profile settings.\n- Element IDs  projectList, createProjectButton, profileSettingsLink.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 5": "Implement the frontend code in create_project.html.\n- Users can create a new music project by entering project details.\n- Element IDs  projectNameField, projectDescriptionField, collaboratorsField, createButton.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 6": "Implement the frontend code in project_details.html.\n- Users can view and edit details of the selected project, including collaborators and project files.\n- Element IDs  projectDetailView, collaboratorsList, musicLinkInputField, uploadFileButton, uploadStatusMessage.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 7": "Implement the frontend code in profile_settings.html.\n- Users can update their account information, such as username and password.\n- Element IDs  updateUsernameField, updatePasswordField, updateButton.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 8": "Implement the frontend code in about.html.\n- Information about the application and its functionalities, along with contact details.\n- Element IDs  aboutContent, contactInfo.\n- All URLs in the frontend code should be routes, not HTML file names."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ],
+        "Programmer 7": [
+            "Programmer 1"
+        ],
+        "Programmer 8": [
+            "Programmer 1"
+        ]
+    }
+}

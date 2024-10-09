@@ -1,0 +1,24 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` to create a web application for the Daily Journal App. The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'. The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code. File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text. The frontend code files are `login.html`, `register.html`, `dashboard.html`, and `new_entry.html`.",
+        "Programmer 2": "Develop the frontend code for the login page in `templates/login.html`. This page authenticates users. Users must enter their credentials to access their journal entries. If a user does not have an account, they can navigate to the registration page.",
+        "Programmer 3": "Develop the frontend code for the registration page in `templates/register.html`. This page allows new users to create an account by registering their credentials.",
+        "Programmer 4": "Develop the frontend code for the dashboard page in `templates/dashboard.html`. This page displays the user's journal entries and provides navigation to create a new entry or log out.",
+        "Programmer 5": "Develop the frontend code for the new entry page in `templates/new_entry.html`. This page allows users to create a new journal entry and save it to a local text file."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

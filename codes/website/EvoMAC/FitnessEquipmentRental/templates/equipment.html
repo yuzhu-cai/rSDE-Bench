@@ -1,0 +1,28 @@
+'''
+HTML template for the equipment page listing available fitness equipment with rental options.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment</title>
+</head>
+<body>
+    <h1>Available Fitness Equipment</h1>
+    <div id="equipment_listing">
+        <ul>
+            {% for item in equipment %}
+                <li>
+                    <strong>{{ item.name }}</strong>: {{ item.description }} - ${{ item.rental_price }} 
+                    (Available: {{ item.availability }})
+                    <button id="show_details_button_{{ item.equipment_id }}" onclick="window.location.href='{{ url_for('rental_form') }}?equipment_id={{ item.equipment_id }}'">Show Details</button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button id="my_rental_button" onclick="window.location.href='{{ url_for('my_rentals') }}'">My Rentals</button>
+    <button id="help_button" onclick="window.location.href='{{ url_for('help_page') }}'">Help</button>
+    <button id="home_button" onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+</body>
+</html>

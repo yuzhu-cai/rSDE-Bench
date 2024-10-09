@@ -1,0 +1,26 @@
+'''
+This is the frontend code for the registration page of the Daily Journal App. It allows new users to create an account by registering their credentials.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="{{ url_for('register') }}" method="POST">
+            <input type="text" id="reg_username_input" name="reg_username_input" placeholder="Choose a Username" required>
+            <input type="password" id="reg_password_input" name="reg_password_input" placeholder="Choose a Password" required>
+            <button type="submit" id="register_button">Register</button>
+        </form>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <p><a id="login_link" href="{{ url_for('login') }}">Already have an account? Login here</a></p>
+    </div>
+</body>
+</html>

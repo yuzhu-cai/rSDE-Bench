@@ -1,0 +1,22 @@
+<!--
+This is the registration page for the Digital Storytelling Platform.
+It allows users to enter their username, password, and email to register.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="{{ url_for('register') }}" method="post">
+        <input type="text" id="reg_username_input" name="reg_username_input" placeholder="Enter Username" required>
+        <input type="password" id="reg_password_input" name="reg_password_input" placeholder="Enter Password" required>
+        <input type="email" id="reg_email_input" name="reg_email_input" placeholder="Enter Email" required>
+        <button type="submit" id="register_button">Register</button>
+    </form>
+    <p><a id="login_link" href="{{ url_for('login') }}">Already have an account? Login here</a></p>
+</body>
+</html>

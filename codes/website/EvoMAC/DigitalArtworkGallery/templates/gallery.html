@@ -1,0 +1,28 @@
+'''
+This is the gallery page for the DigitalArtworkGallery application. 
+It displays the uploaded digital artworks and provides options to view, upload, or delete artworks.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    <h1>Artwork Gallery</h1>
+    <div id="artwork_grid">
+        {% for artwork in artworks %}
+            <div class="artwork">
+                <h2>{{ artwork[1] }}</h2>
+                <p>{{ artwork[2] }}</p>
+                <button id="view_artwork_button" onclick="window.location.href='{{ url_for('view_artwork', artwork_id=artwork[0]) }}'">View</button>
+                <form action="{{ url_for('delete_artwork', artwork_id=artwork[0]) }}" method="POST" style="display:inline;">
+                    <button id="delete_artwork_button" onclick="return confirm('Are you sure you want to delete this artwork?');">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <button id="upload_artwork_button" onclick="window.location.href='{{ url_for('upload_artwork') }}'">Upload New Artwork</button>
+</body>
+</html>

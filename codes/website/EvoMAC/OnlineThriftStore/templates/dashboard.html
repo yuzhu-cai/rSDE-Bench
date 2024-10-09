@@ -1,0 +1,46 @@
+'''
+This is the dashboard page for the OnlineThriftStore web application.
+It allows users to search for items, navigate to the shopping cart, checkout, sell items, and view their profile.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Online Thrift Store</h1>
+        <div>
+            <input type="text" id="search_field" placeholder="Search for items...">
+            <button id="search_button" onclick="searchItem()">Search</button>
+        </div>
+        <div>
+            <button id="shopping_cart_button" onclick="location.href='{{ url_for('shopping_cart') }}'">Shopping Cart</button>
+            <button id="checkout_button" onclick="location.href='{{ url_for('checkout') }}'">Checkout</button>
+            <button id="sell_item_button" onclick="location.href='{{ url_for('sell_item') }}'">Sell Item</button>
+            <button id="user_profile_button" onclick="location.href='{{ url_for('user_profile') }}'">User Profile</button>
+        </div>
+        <h2>Items for Sale</h2>
+        <ul>
+            {% for item in items %}
+                <li>
+                    <a href="{{ url_for('item_details', title=item.title|urlencode) }}">{{ item.title }}</a> - ${{ item.price }}
+                </li>
+            {% else %}
+                <li>No items available for sale.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>
+        function searchItem() {
+            const searchValue = document.getElementById('search_field').value;
+            if (searchValue) {
+                location.href = '{{ url_for("item_details", title="") }}' + encodeURIComponent(searchValue);
+            }
+        }
+    </script>
+</body>
+</html>

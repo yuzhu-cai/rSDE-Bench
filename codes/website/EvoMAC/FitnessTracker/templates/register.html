@@ -1,0 +1,31 @@
+'''
+This is the registration page for the FitnessTracker web application.
+It allows new users to create an account.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{{ url_for('register') }}" method="post">
+        <label for="register_username_field">Username:</label>
+        <input type="text" id="register_username_field" name="register_username_field" required>
+        <label for="register_password_field">Password:</label>
+        <input type="password" id="register_password_field" name="register_password_field" required>
+        <label for="confirm_password_field">Confirm Password:</label>
+        <input type="password" id="confirm_password_field" name="confirm_password_field" required>
+        <label for="current_weight_field">Current Weight:</label>
+        <input type="number" id="current_weight_field" name="current_weight_field" required>
+        <label for="goal_weight_field">Goal Weight:</label>
+        <input type="number" id="goal_weight_field" name="goal_weight_field" required>
+        <button type="submit" id="register_button">Register</button>
+        <p id="registration_success_message">{{ get_flashed_messages(with_categories=True) }}</p>
+        <a href="{{ url_for('login') }}" id="login_link">Already have an account? Login</a>
+    </form>
+</body>
+</html>

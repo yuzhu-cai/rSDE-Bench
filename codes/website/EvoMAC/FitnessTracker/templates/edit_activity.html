@@ -1,0 +1,27 @@
+'''
+This is the edit activity page for the FitnessTracker web application.
+It allows users to edit details of their fitness activities (the original data is pre-filled).
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Activity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Edit Activity</h1>
+    <form action="{{ url_for('edit_activity') }}" method="post">
+        <label for="activity_type_field">Activity Type:</label>
+        <input type="text" id="activity_type_field" name="activity_type_field" value="{{ activity_type }}" required>
+        <label for="calories_burned_field">Calories Burned:</label>
+        <input type="number" id="calories_burned_field" name="calories_burned_field" value="{{ calories_burned }}" required>
+        <label for="current_weight_field">Current Weight:</label>
+        <input type="number" id="current_weight_field" name="current_weight_field" value="{{ current_weight }}" required>
+        <input type="hidden" name="username" value="{{ username }}"> <!-- Assuming username is passed from session -->
+        <button type="submit" id="save_activity_button">Save Activity</button>
+        <button type="button" id="cancel_button" onclick="window.location.href='{{ url_for('view_activity') }}'">Cancel</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of ALL pages, ensuring that the following elements are present on each page \n- Login Page  Check for `username_field`, `password_field`, `login_button`, `error_message`, `register_link`.\n- Registration Page  Check for `register_username_field`, `register_password_field`, `confirm_password_field`, `register_button`, `registration_success_message`.\n- Dashboard Page  Check for `search_field`, `search_button`, `shopping_cart_button`, `checkout_button`, `sell_item_button`, `user_profile_button`.\n- Item Details Page  Check for `item_title`, `item_seller`, `item_price`, `item_status`, `add_to_cart_button`, `back_button`.\n- Shopping Cart Page  Check for `cart_items_list`, `remove_item_button`, `total_price_display`, `checkout_button`, `back_button`.\n- Checkout Page  Check for `total_price_display`, `payment_method_field`, `confirm_purchase_button`, `cancel_purchase_button`.\n- Sell Item Page  Check for `item_title_field`, `item_description_field`, `item_price_field`, `post_item_button`, `cancel_button`.\n- User Profile Page  Check for `purchased_items_display`, `on_sale_items_display`, `logout_button`."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 2"
+        ]
+    }
+}

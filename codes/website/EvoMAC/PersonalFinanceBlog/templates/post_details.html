@@ -1,0 +1,25 @@
+'''
+This file contains the frontend code for the post details page of the PersonalFinanceBlog application.
+It displays detailed information about a specific post selected by the user.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="post-details-container">
+        <h1 id="post_title_field">{{ post.title }}</h1>
+        <input type="date" id="post_date" name="post_date" value="{{ post.date }}" required>
+        <input type="text" id="post_category" name="post_category" value="{{ post.category }}" required>
+        <textarea id="post_content" name="post_content" required>{{ post.content }}</textarea>
+        <form action="{{ url_for('post_details', post_id=post.post_id) }}" method="POST">
+            <button type="submit" id="save_button">Save Changes</button>
+        </form>
+        <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    </div>
+</body>
+</html>

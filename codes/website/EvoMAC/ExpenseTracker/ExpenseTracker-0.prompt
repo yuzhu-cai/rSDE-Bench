@@ -1,0 +1,184 @@
+# Requirements Document for 'ExpenseTracker' Web Application
+
+## 1. Objective
+Develop a comprehensive web application named 'ExpenseTracker' using Python, with data managed through local text files instead of a SQL database.
+
+## 2. Language
+The required development language for the 'ExpenseTracker' application is Python.
+
+## 3. Page Design
+
+The 'ExpenseTracker' web application will consist of the following five pages:
+
+### 1. Login Page
+- **Page Title**: User Login
+- **Overview**: A secure page for user authentication.
+- **Elements**:
+  - **ID: login-form**
+    - Description: Form to collect user credentials.
+  - **ID: username**
+    - Type: Input
+    - Description: Field for the user to input their username.
+  - **ID: password**
+    - Type: Input (password)
+    - Description: Field for the user to input their password.
+  - **ID: login-button**
+    - Type: Button
+    - Description: Button to submit user credentials for login.
+  - **ID: register-button**
+    - Type: Button
+    - Description: Button to navigate to registration page.
+  - **ID: login-error**
+    - Type: Div
+    - Description: Area to display error messages if login fails.
+
+### 2. Register Page
+- **Page Title**: User Register
+- **Overview**: A secure page for user registration.
+- **Elements**:
+  - **ID: register-form**
+    - Description: Form to collect user credentials.
+  - **ID: username**
+    - Type: Input
+    - Description: Field for the user to input their username.
+  - **ID: password**
+    - Type: Input (password)
+    - Description: Field for the user to input their password.
+  - **ID: register-button**
+    - Type: Button
+    - Description: Button to submit user credentials for registration.
+
+### 3. Dashboard Page
+- **Page Title**: Expense Dashboard
+- **Overview**: The main hub displaying the user's expense overview and navigation to other functionalities.
+- **Elements**:
+  - **ID: dashboard-header**
+    - Type: H1
+    - Description: Title of the dashboard.
+  - **ID: expense-summary**
+    - Type: Div
+    - Description: Summary of total expenses, income, and balance.
+  - **ID: add-expense-button**
+    - Type: Button
+    - Description: Button to navigate to the add expense page.
+  - **ID: view-expense-button**
+    - Type: Button
+    - Description: Button to navigate to the view expenses page.
+  - **ID: add-income-button**
+    - Type: Button
+    - Description: Button to navigate to the add income page.
+  - **ID: report-button**
+    - Type: Button
+    - Description: Button to navigate to the reports page.
+  - **ID: logout-button**
+    - Type: Button
+    - Description: Button to log out of the application, and then navigate to login page.
+
+### 4. Add Expense Page
+- **Page Title**: Add New Expense
+- **Overview**: A page for users to enter new expense records.
+- **Elements**:
+  - **ID: add-expense-form**
+    - Type: Form
+    - Description: Form to input a new expense.
+  - **ID: expense-name**
+    - Type: Input
+    - Description: Field to input the name of the expense.
+  - **ID: expense-amount**
+    - Type: Input
+    - Description: Field to input the amount spent.
+  - **ID: expense-date**
+    - Type: Input (date)
+    - Description: Field to input the date of the expense.
+  - **ID: expense-category**
+    - Type: Dropdown
+    - Description: Dropdown to select the category of the expense. Including the following categories: Clothing, Food, Housing, and Transportation
+  - **ID: submit-expense-button**
+    - Type: Button
+    - Description: Button to submit the expense entry.
+
+### 5. Add Income Page
+- **Page Title**: Add New Income
+- **Overview**: A page for users to enter new income records.
+- **Elements**:
+  - **ID: add-income-form**
+    - Type: Form
+    - Description: Form to input a new income.
+  - **ID: income-amount**
+    - Type: Input
+    - Description: Field to input the amount income.
+  - **ID: income-date**
+    - Type: Input (date)
+    - Description: Field to input the date of the income.
+  - **ID: income-category**
+    - Type: Dropdown
+    - Description: Dropdown to select the category of the income. Including the following categories: Salary, and Other.
+  - **ID: submit-income-button**
+    - Type: Button
+    - Description: Button to submit the income entry.
+
+### 6. View Expenses Page
+- **Page Title**: View All Expenses
+- **Overview**: A page displaying a list of all entered expenses.
+- **Elements**:
+  - **ID: expense-list**
+    - Type: Table
+    - Description: Table to display expenses with columns for date, name, amount, and category.
+  - **ID: delete-expense-button**
+    - Type: Button
+    - Description: Button to delete selected expense from the list (each row will have this button).
+
+### 7. Reports Page
+- **Page Title**: Expense Reports
+- **Overview**: A page for users to generate and view expense reports like monthly summaries and category analysis.
+- **Elements**:
+  - **ID: report-select**
+    - Type: Dropdown
+    - Description: Dropdown to select report type (Monthly, Yearly, by category).
+  - **ID: generate-report-button**
+    - Type: Button
+    - Description: Button to generate the selected report.
+  - **ID: report-output**
+    - Type: Div
+    - Description: Area to display generated report.
+
+## 4. Data Storage
+
+The 'ExpenseTracker' application will store data locally in text files organized in the directory 'data'. The following data formats and examples are defined:
+
+### 1. User Authentication Data
+- **File Name**: `users.txt`
+- **Data Format**: 
+  ```
+  username:password
+  ```
+- **Example Data**:
+  ```
+  user1:pass123
+  user2:password456
+  ```
+
+### 2. Expense Records
+- **File Name**: `expenses.txt`
+- **Data Format**: 
+  ```
+  date|name|amount|category
+  ```
+- **Example Data**:
+  ```
+  2024-10-01|Groceries|50.00|Food
+  2024-10-02|Transport|15.00|Transportation
+  ```
+
+### 3. Income Records
+- **File Name**: `income.txt`
+- **Data Format**: 
+  ```
+  date|amount|category
+  ```
+- **Example Data**:
+  ```
+  2024-10-01|50.00|Salary
+  ```
+
+All files will be saved in the `data` directory to ensure organization and easy access. The format uses a pipe (`|`) delimiter for better readability and parsing. Different types of data will be isolated to ensure efficient data management and retrieval.

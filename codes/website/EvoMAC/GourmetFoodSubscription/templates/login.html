@@ -1,0 +1,27 @@
+'''
+This is the login page for the GourmetFoodSubscription web application.
+It allows users to log in with their credentials.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="/" method="POST">
+            <label for="username_field">Username:</label>
+            <input type="text" id="username_field" name="username" required>
+            <label for="password_field">Password:</label>
+            <input type="password" id="password_field" name="password" required>
+            <button type="submit" id="login_button">Login</button>
+            <p id="error_message" style="color:red;"></p>
+        </form>
+        <p>Don't have an account? <a href="/register" id="register_link">Register here</a></p>
+    </div>
+</body>
+</html>

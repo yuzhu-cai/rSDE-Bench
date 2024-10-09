@@ -1,0 +1,19 @@
+'''
+This is the home page for the RecipeHub web application.
+It displays a welcome message and buttons for navigating to different functionalities.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1 id="welcome_message">Welcome to RecipeHub!</h1>
+    <button id="view_recipes_button" onclick="window.location.href='{{ url_for('browse_recipes') }}'">View Recipes</button>
+    <button id="submit_recipe_button" onclick="window.location.href='{{ url_for('submit_recipe') }}'">Submit a Recipe</button>
+    <button id="profile_button" onclick="window.location.href='{{ url_for('user_profile') }}'">User Profile</button>
+    <button id="logout_button" onclick="window.location.href='{{ url_for('login') }}'">Logout</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+'''
+This file contains the frontend code for the Add Event Page of the EventPlanner web application. 
+It allows users to create a new event by entering a title, date, location, and description.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+</head>
+<body>
+    <h1>Add Event</h1>
+    <form action="/add_event" method="POST">
+        <label for="event_title_field">Event Title:</label>
+        <input type="text" id="event_title_field" name="event_title_field" required>
+        <br>
+        <label for="event_date_field">Event Date:</label>
+        <input type="date" id="event_date_field" name="event_date_field" required>
+        <br>
+        <label for="event_location_field">Event Location:</label>
+        <input type="text" id="event_location_field" name="event_location_field" required>
+        <br>
+        <label for="event_description_field">Event Description:</label>
+        <textarea id="event_description_field" name="event_description_field" required></textarea>
+        <br>
+        <button type="submit" id="save_event_button">Save Event</button>
+        <button type="button" id="cancel_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Cancel</button>
+    </form>
+</body>
+</html>

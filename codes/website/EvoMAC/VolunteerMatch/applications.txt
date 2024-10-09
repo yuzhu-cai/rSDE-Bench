@@ -1,0 +1,4 @@
+'''
+This file contains the applications submitted by users for volunteer opportunities.
+It stores applications in the format: applicant_name,applicant_email,opportunity_id.
+'''

@@ -1,0 +1,27 @@
+'''
+HTML template for the home page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome to Eco-Friendly Living Tips</h1>
+    </div>
+    <div id="welcome-message">
+        <p>Join us in adopting a more environmentally friendly lifestyle! Explore tips, resources, and connect with our community.</p>
+    </div>
+    <div>
+        <a id="tips-link" href="{{ url_for('eco_friendly_tips') }}">Explore Tips</a>
+        <a id="resources-link" href="{{ url_for('resources') }}">Useful Resources</a>
+        <a id="post-link" href="{{ url_for('community_forum') }}">Community Forum</a>
+        <button id="profile-button" onclick="window.location.href='{{ url_for('profile') }}'">User Profile</button>
+        <button id="contact-button" onclick="window.location.href='{{ url_for('contact') }}'">Contact</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!--
+Home page template for the Task_Manager web application.
+This page allows users to view, add, and remove tasks.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager Home</h1>
+        <h2>Your Tasks</h2>
+        <ul id="task_list">
+            {% for task in tasks %}
+                <li>
+                    {{ task.title }} (Due: {{ task.due_date }})
+                    <form action="{{ url_for('home') }}" method="POST" style="display:inline;">
+                        <button type="submit" id="remove_task_button_{{ task.id }}" name="remove_task_button" value="{{ task.id }}">Remove</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Add New Task</h2>
+        <form action="{{ url_for('home') }}" method="POST">
+            <label for="add_task_input">Task Title:</label>
+            <input type="text" id="add_task_input" name="add_task_input" required>
+            <label for="due_date_input">Due Date:</label>
+            <input type="date" id="due_date_input" name="due_date_input" required>
+            <button type="submit" id="add_task_button">Add Task</button>
+        </form>
+        <br>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit" id="back_to_login_button">Back to Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+1|john_doe|My First Entry|Today I felt happy.|2023-10-01 10:00:00
+2|jane_smith|Thoughts on Life|Life has its ups and downs.|2023-10-01 11:00:00

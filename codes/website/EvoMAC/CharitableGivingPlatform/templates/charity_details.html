@@ -1,0 +1,47 @@
+'''
+This file contains the frontend code for the Charity Details Page of the CharitableGivingPlatform web application.
+It provides detailed information about a selected charity, including its mission, ongoing projects, and how to contribute.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Details</title>
+</head>
+<body>
+    <div id="charityDetailsPage">
+        <h1 id="charityTitle">{{ charity.name }}</h1>
+        <p id="charityDescription">{{ charity.description }}</p>
+        <label for="donationInput">Donation Amount:</label>
+        <input type="number" id="donationInput" name="donationAmount" required>
+        <button id="donateButton" onclick="donate('{{ charity.name }}')">Donate</button>
+        <button id="backToDashboardButton" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    </div>
+    <script>
+        function donate(charityName) {
+            const amount = document.getElementById('donationInput').value;
+            if (amount) {
+                // Send a POST request to the backend to record the donation
+                fetch('/donate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `charity_name=${charityName}&amount=${amount}`
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert(`Thank you for donating $${amount} to ${charityName}!`);
+                        window.location.href = '{{ url_for('dashboard') }}'; // Redirect to dashboard or charity details
+                    } else {
+                        alert('Error recording donation. Please try again.');
+                    }
+                });
+            } else {
+                alert('Please enter a valid donation amount.');
+            }
+        }
+    </script>
+</body>
+</html>

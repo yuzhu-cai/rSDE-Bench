@@ -1,0 +1,31 @@
+'''
+This is the frontend code for the Consultation Scheduling Page of the Health Consultation Platform.
+It allows users to select an available time slot to schedule a new consultation.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Consultation</title>
+</head>
+<body>
+    <h1>Schedule Consultation</h1>
+    <form id="consultation_form" action="{{ url_for('schedule_consultation') }}" method="POST">
+        <input type="date" id="date_field" name="date_field" required>
+        <select id="time_slot_field" name="time_slot_field" required>
+            <option value="">Select a time slot</option>
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="14:00">02:00 PM</option>
+            <option value="15:00">03:00 PM</option>
+        </select>
+        <button type="submit" id="submit_schedule_button">Schedule Consultation</button>
+    </form>
+    <div id="confirmation_message" style="display: {% if 'Consultation scheduled successfully!' in get_flashed_messages() %} block {% else %} none {% endif %};">
+        Consultation scheduled successfully!
+    </div>
+    <p><a id="Tracking_Page_link" href="{{ url_for('my_appointments') }}">My Appointments</a></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of ALL pages. This includes verifying the presence and functionality of the following elements on each page \n- Login Page  Check for Username Input Field (ID  `username-input`), Password Input Field (ID  `password-input`), Login Button (ID  `login-button`), and Register Button (ID  `register-button`).\n- Register Page  Check for Username Input Field (ID  `username-input`), Password Input Field (ID  `password-input`), and Register Button (ID  `register-button`).\n- Home Page  Check for Welcome Message (ID  `welcome-message`), Forum Link (ID  `forum-link`), Post Advice Link (ID  `post-advice-link`), My Account Link (ID  `my-account-link`), Contact Us Link (ID  `contact-us-link`), and Recent Posts Section (ID  `recent-posts`).\n- Forum Page  Check for Discussion Threads List (ID  `thread-list`), Create View Thread Button (ID  `view-thread-button`), Thread Title Input Field (ID  `thread-title-input`), Thread Content Input Area (ID  `thread-content-area`), and Submit Button (ID  `submit-thread-button`).\n- View Thread Page  Check for Thread Title Display (ID  `view-thread-title`), Thread Content Display (ID  `view-thread-content`), Comments Section (ID  `comments-section`), Comment Input Area (ID  `comment-input-area`), and Submit Comment Button (ID  `submit-comment-button`).\n- Post Advice Page  Check for Advice Title Input Field (ID  `advice-title-input`), Advice Content Input Area (ID  `advice-content-area`), and Submit Advice Button (ID  `submit-advice-button`).\n- My Account Page  Check for User Information Display (ID  `user-info-display`), Edit Profile Button (ID  `update-profile-button`), and Delete Account Button (ID  `delete-account-button`).\n- Contact Us Page  Check for Name Input Field (ID  `contact-name-input`), Email Input Field (ID  `contact-email-input`), Message Input Area (ID  `contact-message-area`), Send Message Button (ID  `send-message-button`), and Confirmation Message Display (ID  `confirmation-message`)."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1",
+            "Programmer 2"
+        ]
+    }
+}

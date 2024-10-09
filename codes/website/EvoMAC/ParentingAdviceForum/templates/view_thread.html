@@ -1,0 +1,35 @@
+'''
+This is the view thread page for the ParentingAdviceForum web application.
+It displays the title and content of a specific discussion thread along with comments and a comment submission area.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Thread</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="view-thread-container">
+        <h1 id="view-thread-title">{{ thread.title }}</h1>
+        <div id="view-thread-content">{{ thread.content }}</div>
+        <section id="comments-section">
+            <h2>Comments</h2>
+            {% for comment in comments %}
+                <div class="comment">
+                    <p>{{ comment.comment_content }}</p>
+                    <p><strong>Posted by:</strong> {{ comment.username }}</p>
+                </div>
+            {% endfor %}
+        </section>
+        <div>
+            <label for="comment-input-area">Add a Comment:</label>
+            <textarea id="comment-input-area" name="comment_content" required></textarea>
+            <form action="{{ url_for('submit_comment', thread_id=thread_id) }}" method="post">
+                <button id="submit-comment-button" type="submit">Submit Comment</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

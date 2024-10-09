@@ -1,0 +1,120 @@
+@ app.py
+```python
+import os
+
+# Constants
+DATA_DIR = 'data'
+USERS_FILE = os.path.join(DATA_DIR, 'users.txt')
+RETREATS_FILE = os.path.join(DATA_DIR, 'retreats.txt')
+
+# Ensure data directory exists
+os.makedirs(DATA_DIR, exist_ok=True)
+
+# User Management
+def register_user(username, password):
+    with open(USERS_FILE, 'a') as users_file:
+        users_file.write(f"{username}:{password}\n")
+
+def user_exists(username):
+    if os.path.isfile(USERS_FILE):
+        with open(USERS_FILE, 'r') as users_file:
+            return any(line.startswith(f"{username}:") for line in users_file)
+    return False
+
+def validate_user(username, password):
+    if os.path.isfile(USERS_FILE):
+        with open(USERS_FILE, 'r') as users_file:
+            return any(line.strip() == f"{username}:{password}" for line in users_file)
+    return False
+
+# Retreat Management
+def schedule_retreat(username, retreat_title, retreat_date, retreat_time, instructor):
+    retreat_id = generate_retreat_id()
+    with open(RETREATS_FILE, 'a') as retreats_file:
+        retreats_file.write(f"{retreat_id}|{username}|{retreat_title}|{retreat_date}|{retreat_time}|{instructor}\n")
+
+def generate_retreat_id():
+    if os.path.isfile(RETREATS_FILE):
+        with open(RETREATS_FILE, 'r') as retreats_file:
+            lines = retreats_file.readlines()
+            return str(len(lines) + 1)  # Simple ID generator based on the line count
+    return '1'
+
+def view_bookings(username):
+    if os.path.isfile(RETREATS_FILE):
+        with open(RETREATS_FILE, 'r') as retreats_file:
+            return [line.strip().split('|') for line in retreats_file if line.startswith(username)]
+    return []
+
+def cancel_retreat(username, retreat_title):
+    if os.path.isfile(RETREATS_FILE):
+        with open(RETREATS_FILE, 'r') as retreats_file:
+            lines = retreats_file.readlines()
+
+        with open(RETREATS_FILE, 'w') as retreats_file:
+            for line in lines:
+                if retreat_title not in line or not line.startswith(username):
+                    retreats_file.write(line)
+
+# Simple CLI for interacting with the application
+def main():
+    while True:
+        print("\nWelcome to Virtual Wellness Retreats")
+        print("1. Login")
+        print("2. Register")
+        print("3. Exit")
+        
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            username = input("Username: ")
+            password = input("Password: ")
+            if validate_user(username, password):
+                print("Logged in successfully!")
+                while True:
+                    print("\nDashboard")
+                    print("1. Schedule Retreat")
+                    print("2. View Bookings")
+                    print("3. Logout")
+                    
+                    dashboard_choice = input("Choose an option: ")
+                    if dashboard_choice == '1':
+                        title = input("Retreat Title: ")
+                        date = input("Retreat Date (YYYY-MM-DD): ")
+                        time = input("Retreat Time (HH:MM AM/PM): ")
+                        instructor = input("Instructor: ")
+                        schedule_retreat(username, title, date, time, instructor)
+                        print("Retreat scheduled successfully!")
+                    elif dashboard_choice == '2':
+                        bookings = view_bookings(username)
+                        print("\nYour Booked Retreats:")
+                        for booking in bookings:
+                            print(f"ID: {booking[0]}, Title: {booking[2]}, Date: {booking[3]}, Time: {booking[4]}, Instructor: {booking[5]}")
+                        title_to_cancel = input("Enter Retreat Title to Cancel: ")
+                        cancel_retreat(username, title_to_cancel)
+                        print("If it existed, the retreat has been canceled.")
+                    elif dashboard_choice == '3':
+                        print("Logging out...")
+                        break
+            else:
+                print("Invalid username or password.")
+        
+        elif choice == '2':
+            username = input("New Username: ")
+            password = input("New Password: ")
+            
+            if not user_exists(username):
+                register_user(username, password)
+                print("Registration successful!")
+            else:
+                print("Username already exists. Please choose a different one.")
+        
+        elif choice == '3':
+            print("Exiting the application.")
+            break
+        else:
+            print("Invalid option. Please try again.")
+
+if __name__ == "__main__":
+    main()
+```

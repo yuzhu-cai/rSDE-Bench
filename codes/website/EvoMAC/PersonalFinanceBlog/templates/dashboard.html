@@ -1,0 +1,28 @@
+'''
+This file contains the frontend code for the dashboard page of the PersonalFinanceBlog application.
+It displays the user's list of blog posts and provides options to add or search posts.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Your Blog Posts</h1>
+        <div id="posts_list">
+            <ul>
+                {% for post in posts %}
+                    <li>{{ post.title }} - {{ post.date }} ({{ post.category }})</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <button id="add_post_button" onclick="window.location.href='{{ url_for('add_post') }}'">Add Post</button>
+        <button id="search_post_button" onclick="window.location.href='{{ url_for('search_post') }}'">Search Post</button>
+        <button id="user_profile_button" onclick="window.location.href='{{ url_for('user_profile') }}'">User Profile</button>
+    </div>
+</body>
+</html>

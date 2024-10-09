@@ -1,0 +1,30 @@
+{
+    "composition": {
+        "Programmer 1": "Update the `login_post` function in `app.py` to ensure that it correctly handles POST requests for user authentication. This includes checking the provided credentials against the stored user data and managing the user session accordingly. Ensure that the function redirects to the dashboard upon successful login and returns an error message for failed attempts. Investigate the \"405 Method Not Allowed\" error to ensure the form submission is reaching this function correctly. Additionally, ensure that the `error_message` element is rendered correctly in `login.html` when login fails.",
+        "Programmer 2": "Update the `register` function in `app.py` to ensure that it correctly handles user registration. This includes checking if the username already exists and providing appropriate success or error messages. Ensure that the `registration_success_message` element is rendered correctly in `register.html` upon successful registration or when the username already exists.",
+        "Programmer 3": "Update the `dashboard.html` page to ensure that all required elements are present, including `dashboard_page`, `notes_list`, `add_note_button`, `view_note_button`, `search_note_button`, and `logout_button`. Ensure that the buttons navigate to the correct routes and that the page displays correctly when the user is logged in.",
+        "Programmer 4": "Update the `add_note.html` page to ensure that all required elements are present, including `add_note_page`, `note_title_field`, `note_content_field`, `save_note_button`, and `cancel_button`. Ensure that the form submits to the correct route for adding notes.",
+        "Programmer 5": "Update the `search_note.html` page to ensure that all required elements are present, including `search_note_field`, `search_note_button`, `search_note_result`, and `back_button`. Ensure that the form submits to the correct route for searching notes.",
+        "Programmer 6": "Update the `view_note.html` page to ensure that all required elements are present, including `view_note_page`, `note_title_filed`, `note_content_filed`, `edit_note_button`, `delete_note_button`, and `back_to_dashboard_button`. Ensure that the form submits to the correct route for viewing notes.",
+        "Programmer 7": "Implement a new `data` directory and create the necessary text files (`users.txt` and `notes.txt`) to ensure data storage is set up correctly. This will help in managing user data and notes effectively."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ],
+        "Programmer 7": []
+    }
+}

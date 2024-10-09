@@ -1,0 +1,3 @@
+cell phone|A brand new cell phone.|500.00|jane_smith
+lamp|A vintage lamp in excellent condition.|45.00|john_doe
+jacket|Stylish jacket, barely worn.|30.00|jane_smith

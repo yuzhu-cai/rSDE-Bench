@@ -1,0 +1,25 @@
+'''
+This is the login page for the PeerTutoringNetwork web application.
+It contains interactive elements for user login, including username and password fields, a login button, and a link to the registration page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="POST">
+        <label for="txt_username">Username:</label>
+        <input type="text" id="txt_username" name="username" required>
+        <br>
+        <label for="txt_password">Password:</label>
+        <input type="password" id="txt_password" name="password" required>
+        <br>
+        <button type="submit" id="btn_login">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{{ url_for('register') }}" id="link_register">Register here</a></p>
+</body>
+</html>

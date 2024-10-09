@@ -1,0 +1,27 @@
+'''
+This is the add note page for the NoteTakingApp. It allows users to create a new note by entering a title and content.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Note</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="add_note_page">
+        <h1>Add Note</h1>
+        <form method="POST" action="{{ url_for('add_note') }}">
+            <label for="note_title_field">Title:</label>
+            <input type="text" id="note_title_field" name="note_title_field" required>
+            <br>
+            <label for="note_content_field">Content:</label>
+            <textarea id="note_content_field" name="note_content_field" required></textarea>
+            <br>
+            <button type="submit" id="save_note_button">Save Note</button>
+            <button type="button" id="cancel_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

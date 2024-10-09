@@ -1,0 +1,36 @@
+'''
+This is the HTML code for the Movie Details page of the Movie Recommendation System. It displays the movie title, description, rating, and includes buttons to add the movie to favorites and go back to the home page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+</head>
+<body>
+    <h1 id="movieTitle">{{ movie.title }}</h1>
+    <p id="movieDescription">{{ movie.description }}</p>
+    <p id="movieRating">Rating: {{ movie.rating }}</p>
+    <button id="addToFavoritesButton" onclick="addToFavorites({{ movie.id }})">Add to Favorites</button>
+    <button id="backToHomeButton" onclick="window.location.href='/home'">Back to Home</button>
+    <script>
+        function addToFavorites(movieId) {
+            fetch(`/add_to_favorites/${movieId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ movieId: movieId })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Movie added to favorites!');
+                } else {
+                    alert('Failed to add movie to favorites.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

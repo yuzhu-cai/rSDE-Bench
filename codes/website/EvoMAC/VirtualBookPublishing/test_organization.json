@@ -1,0 +1,17 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of ALL pages, ensuring that each page contains the required elements as specified in the task requirements \n- Login Page  Check for Username Field (`username`), Password Field (`password`), Login Button (`loginBtn`), Registration Link (`registrationLink`), and About Link (`aboutLink`).\n- Registration Page  Check for Username Field (`regUsername`), Password Field (`regPassword`), Submit Button (`regSubmit`), and Login Link (`loginLink`).\n- Dashboard Page  Check for Welcome Message (`welcomeMsg`), Create New Book Button (`createBookBtn`), and View My Books Button (`viewBooksBtn`).\n- Create New Book Page  Check for Title Field (`bookTitle`), Author Field (`bookAuthor`), Content Area (`bookContent`), Submit Button (`submitBook`), and Cancel Button (`cancelCreate`).\n- View My Books Page  Check for Books List Container (`booksList`) and View Button for each book (`viewBook_<index>`).\n- View Book Details Page  Check for Title Display (`detailTitle`), Author Display (`detailAuthor`), Content Display (`detailContent`), and Back Button (`backToMyBooks`).\n- About Page  Check for App Description (`appDescription`), Version Info (`versionInfo`), and Contact Information (`contactInfo`)."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1",
+            "Programmer 2"
+        ]
+    }
+}

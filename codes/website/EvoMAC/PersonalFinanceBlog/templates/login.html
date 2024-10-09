@@ -1,0 +1,34 @@
+'''
+This file contains the frontend code for the login page of the PersonalFinanceBlog application.
+It allows users to log into the application with their credentials.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('login') }}" method="POST">
+            <input type="text" id="username_field" name="username" placeholder="Username" required>
+            <input type="password" id="password_field" name="password" placeholder="Password" required>
+            <button type="submit" id="login_button">Login</button>
+        </form>
+        <p id="error_message">{{ error_message }}</p>
+        <p>Don't have an account? <a id="register_link" href="{{ url_for('register') }}">Register here</a></p>
+    </div>
+</body>
+</html>

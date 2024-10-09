@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in app.py\n- The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n- The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code.\n- File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text.\n- Frontend code files  login.html, daily_tips.html, tips_archive.html.",
+        "Programmer 2": "Implement the login page in login.html\n- **Page Title**  User Login\n- **Overview**  This page allows users to log in to their accounts.\n- **Elements** \n  - **Username Field**  \n    - **ID**  `username_field`\n  - **Password Field**  \n    - **ID**  `password_field`\n  - **Login Button**  \n    - **ID**  `login_button`",
+        "Programmer 3": "Implement the daily tips page in daily_tips.html\n- **Page Title**  Daily Health Tips\n- **Overview**  This page displays the current daily health tip and allows users to view previous tips.\n- **Elements** \n  - **Tip Display Area**  \n    - **ID**  `tip_display_area`\n  - **Previous Tip Button**  \n    - **ID**  `previous_tip_button`\n  - **Next Tip Button**  \n    - **ID**  `next_tip_button`\n  - **View All Tips Button**  \n    - **ID**  `view_tips_button` (navigate to Tips Archive Page)\n  - **Submit Feedback Form**  \n    - **ID**  `feedback_form`\n    - **Feedback Text Area**  \n      - **ID**  `feedback_text_area`\n    - **Submit Feedback Button**  \n      - **ID**  `submit_feedback_button`",
+        "Programmer 4": "Implement the tips archive page in tips_archive.html\n- **Page Title**  Tips Archive\n- **Overview**  Users can view a historical list of all daily health tips. Users can search for the tips they need using the search button. The tips_list will display only the searched tips; if no matching tips are found, the tips_list will be empty.\n- **Elements** \n  - **Tips List**  \n    - **ID**  `tips_list`\n  - **Search Tips Form**  \n    - **ID**  `search_tips_form`\n    - **Search Input Field**  \n      - **ID**  `search_input`\n    - **Search Button**  \n      - **ID**  `search_button`"
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ]
+    }
+}

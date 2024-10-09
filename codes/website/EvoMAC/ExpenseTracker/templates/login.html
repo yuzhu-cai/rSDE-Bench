@@ -1,0 +1,31 @@
+'''
+This is the login page for the ExpenseTracker web application. 
+It allows users to input their credentials for authentication.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="login-form">
+        <h1>User Login</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="login-button">Login</button>
+            <button type="button" id="register-button" onclick="window.location.href='{{ url_for('register') }}'">Register</button>
+        </form>
+        <div id="login-error">
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

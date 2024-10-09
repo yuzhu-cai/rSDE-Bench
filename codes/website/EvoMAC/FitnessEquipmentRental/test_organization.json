@@ -1,0 +1,17 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of all pages, ensuring that each page contains the required elements as specified in the original task requirements. This includes \n- Login Page  Check for `login_form`, `username_field`, `password_field`, `login_button`, and `register_link`.\n- Register Page  Check for `register_form`, `username_field`, `password_field`, `name_field`, `email_field`, and `register_button`.\n- Homepage  Check for `welcome_message`, `equipment_listing`, `promotions_section`, `browse_button`, `my_rental_button`, and `help_button`.\n- Equipment Page  Check for `equipment_listing`, `show_details_button`, `equipment_details`, and `rent_button`.\n- Rental Form Page  Check for `rental_form`, `equipment_id_field`, `rental_duration_field`, `user_details_field`, `submit_rental_button`, and `rental_confirmation_msg`.\n- My Rentals Page  Check for `my_current_rentals_listing`, `return_equipment_button`, and `my_past_rentals_listing`.\n- Return Equipment Page  Check for `return_form`, `rental_id_field`, `confirm_return_button`, and `return_confirmation_msg`.\n- Help Page  Check for `faq_section` and `accessibility_info`."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1",
+            "Programmer 2"
+        ]
+    }
+}

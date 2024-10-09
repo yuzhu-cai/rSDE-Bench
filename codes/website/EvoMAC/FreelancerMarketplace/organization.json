@@ -1,0 +1,32 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` for the FreelancerMarketplace web application.\n- The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n- The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code.\n- File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text.\n- Frontend code files  `login.html`, `register.html`, `home.html`, `freelancer_profile.html`, `projects.html`, `profile_management.html`.",
+        "Programmer 2": "Develop the frontend code in `login.html` for the Login Page.\n- Page Title  Login\n- Elements  \n  - Username Field (ID  `username_field`)\n  - Password Field (ID  `password_field`)\n  - Login Button (ID  `login_button`)\n  - Register Button (ID  `register_button`)\n  - Error Message Container (ID  `error_message`)\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 3": "Develop the frontend code in `register.html` for the Register Page.\n- Page Title  Register\n- Elements  \n  - Username Field (ID  `username_field`)\n  - Password Field (ID  `password_field`)\n  - Register Button (ID  `register_button`)\n  - Error Message Container (ID  `error_message`)\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 4": "Develop the frontend code in `home.html` for the Home Page.\n- Page Title  Home\n- Elements  \n  - Welcome Message (ID  `welcome_message`)\n  - Search Field (ID  `search_field`)\n  - Search Button (ID  `search_button`)\n  - Search Result Section (ID  `search_result`)\n  - Featured Freelancers Section (ID  `featured_freelancers`)\n  - View Freelancer Details Button (ID  `view_freelancer_details`)\n  - Manage All Projects Button (ID  `manage_projects_button`)\n  - Manage Profile Button (ID  `manage_profile_button`)\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 5": "Develop the frontend code in `freelancer_profile.html` for the Freelancer Profile Page.\n- Page Title  Freelancer Profile\n- Elements  \n  - Freelancer Name (ID  `freelancer_name`)\n  - Information Section (ID  `information`)\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 6": "Develop the frontend code in `projects.html` for the Project Listing Page.\n- Page Title  Projects\n- Elements  \n  - New Project Name (ID  `pro_name`)\n  - New Project Description (ID  `pro_desc`)\n  - New Project's Freelancer_id (ID  `pro_fre_id`)\n  - Create New Project Button (ID  `create_project_button`)\n  - Project List Section (ID  `project_list`)\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 7": "Develop the frontend code in `profile_management.html` for the Profile Management Page.\n- Page Title  User Profile\n- Elements  \n  - User Name Field (ID  `user_name_field`)\n  - Email Field (ID  `email_field`)\n  - Update Profile Button (ID  `update_profile_button`)\n  - Message Container for Updates (ID  `update_message`)\n- All URLs in the frontend code should be routes, not HTML file names."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ],
+        "Programmer 7": [
+            "Programmer 1"
+        ]
+    }
+}

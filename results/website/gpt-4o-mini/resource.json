@@ -1,0 +1,376 @@
+,
+    "TaskManager": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 2,
+        "advanced": 0,
+        "test_cases": {
+            "set_up": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 0,
+            "home_page_elements": 0,
+            "home_page_functionality": 0,
+            "registration_page_elements": 0,
+            "registration_page_functionality": 0
+        }
+    },
+    "DailyJournalApp": {
+        "total": 9,
+        "total_basic": 5,
+        "total_advanced": 4,
+        "basic": 5,
+        "advanced": 4,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_elements": 1,
+            "dashboard_functionality": 1,
+            "login_elements": 1,
+            "login_functionality": 1,
+            "new_entry_elements": 1,
+            "new_entry_functionality": 1,
+            "registration_elements": 1,
+            "registration_functionality": 1
+        }
+    },
+    "DigitalStorytellingPlatform": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 3,
+        "test_cases": {
+            "set_up": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "registration_page_elements": 1,
+            "registration_page_functionality": 1,
+            "story_creation_page_elements": 1,
+            "story_creation_page_functionality": 1
+        }
+    },
+    "ElderCareResources": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 3,
+        "test_cases": {
+            "set_up": 1,
+            "contact_functionality": 1,
+            "contact_page_elements": 1,
+            "dashboard_functionality": 1,
+            "dashboard_page_elements": 1,
+            "login_elements": 1,
+            "login_functionality": 1
+        }
+    },
+    "FitnessChallenges": {
+        "total": 9,
+        "total_basic": 5,
+        "total_advanced": 4,
+        "basic": 3,
+        "advanced": 1,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_elements": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "dashboard_functionality": 0,
+            "challenges_list_elements": 0,
+            "challenges_list_functionality": 0,
+            "progress_tracker_elements": 0,
+            "progress_tracker_functionality": 0
+        }
+    },
+    "VolunteerMatch": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 1,
+        "advanced": 0,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_page_elements": 0,
+            "dashboard_page_functionality": 0,
+            "login_page_elements": 0,
+            "login_page_functionality": 0,
+            "opportunity_details_page_elements": 0,
+            "opportunity_details_page_functionality": 0
+        }
+    }
+
+
+
+    -1
+    ,
+    "TaskManager": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 3,
+        "advanced": 2,
+        "test_cases": {
+            "set_up": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "registration_page_elements": 1,
+            "registration_page_functionality": 1,
+            "home_page_elements": 0,
+            "home_page_functionality": 0
+        }
+    },
+    "DailyJournalApp": {
+        "total": 9,
+        "total_basic": 5,
+        "total_advanced": 4,
+        "basic": 3,
+        "advanced": 2,
+        "test_cases": {
+            "set_up": 1,
+            "login_elements": 1,
+            "login_functionality": 1,
+            "registration_elements": 1,
+            "registration_functionality": 1,
+            "dashboard_elements": 0,
+            "dashboard_functionality": 0,
+            "new_entry_elements": 0,
+            "new_entry_functionality": 0
+        }
+    },
+    "DigitalStorytellingPlatform": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 3,
+        "test_cases": {
+            "set_up": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "registration_page_elements": 1,
+            "registration_page_functionality": 1,
+            "story_creation_page_elements": 1,
+            "story_creation_page_functionality": 1
+        }
+    },
+    "ElderCareResources": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 2,
+        "test_cases": {
+            "set_up": 1,
+            "contact_functionality": 1,
+            "contact_page_elements": 1,
+            "dashboard_page_elements": 1,
+            "login_elements": 1,
+            "login_functionality": 1,
+            "dashboard_functionality": 0
+        }
+    },
+    "FitnessChallenges": {
+        "total": 9,
+        "total_basic": 5,
+        "total_advanced": 4,
+        "basic": 3,
+        "advanced": 1,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_elements": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "dashboard_functionality": 0,
+            "challenges_list_elements": 0,
+            "challenges_list_functionality": 0,
+            "progress_tracker_elements": 0,
+            "progress_tracker_functionality": 0
+        }
+    },
+    "VolunteerMatch": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 1,
+        "advanced": 0,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_page_elements": 0,
+            "dashboard_page_functionality": 0,
+            "login_page_elements": 0,
+            "login_page_functionality": 0,
+            "opportunity_details_page_elements": 0,
+            "opportunity_details_page_functionality": 0
+        }
+    }
+    -0
+    ,
+    "TaskManager": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 3,
+        "advanced": 1,
+        "test_cases": {
+            "set_up": 1,
+            "login_page_elements": 1,
+            "registration_page_elements": 1,
+            "registration_page_functionality": 1,
+            "login_page_functionality": 0,
+            "home_page_elements": 0,
+            "home_page_functionality": 0
+        }
+    },
+    "GreenLivingGuide": {
+        "total": 13,
+        "total_basic": 7,
+        "total_advanced": 6,
+        "basic": 7,
+        "advanced": 1,
+        "test_cases": {
+            "set_up": 1,
+            "articles_elements": 1,
+            "community_elements": 1,
+            "home_elements": 1,
+            "login_elements": 1,
+            "login_functionality": 1,
+            "register_elements": 1,
+            "tips_elements": 1,
+            "articles_functionality": 0,
+            "community_functionality": 0,
+            "home_functionality": 0,
+            "register_functionality": 0,
+            "tips_functionality": 0
+        }
+    },
+    "RecipeHub": {
+        "total": 15,
+        "total_basic": 8,
+        "total_advanced": 7,
+        "basic": 1,
+        "advanced": 0,
+        "test_cases": {
+            "set_up": 1,
+            "login_functionality": 0,
+            "browsing_elements": 0,
+            "browsing_functionality": 0,
+            "home_elements": 0,
+            "home_functionality": 0,
+            "login_elements": 0,
+            "profile_elements": 0,
+            "profile_functionality": 0,
+            "recipe_details_elements": 0,
+            "recipe_details_functionality": 0,
+            "recipe_submission_elements": 0,
+            "recipe_submission_functionality": 0,
+            "registration_elements": 0,
+            "registration_functionality": 0
+        }
+    },
+    "SkillShare": {
+        "total": 13,
+        "total_basic": 7,
+        "total_advanced": 6,
+        "basic": 3,
+        "advanced": 0,
+        "test_cases": {
+            "set_up": 1,
+            "login_elements": 1,
+            "register_elements": 1,
+            "login_functionality": 0,
+            "register_functionality": 0,
+            "about_elements": 0,
+            "about_functionality": 0,
+            "dashboard_elements": 0,
+            "dashboard_functionality": 0,
+            "profile_elements": 0,
+            "profile_functionality": 0,
+            "skills_elements": 0,
+            "skills_functionality": 0
+        }
+    },
+    "DailyJournalApp": {
+        "total": 9,
+        "total_basic": 5,
+        "total_advanced": 4,
+        "basic": 5,
+        "advanced": 4,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_elements": 1,
+            "dashboard_functionality": 1,
+            "login_elements": 1,
+            "login_functionality": 1,
+            "new_entry_elements": 1,
+            "new_entry_functionality": 1,
+            "registration_elements": 1,
+            "registration_functionality": 1
+        }
+    },
+    "DigitalStorytellingPlatform": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 3,
+        "test_cases": {
+            "set_up": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "registration_page_elements": 1,
+            "registration_page_functionality": 1,
+            "story_creation_page_elements": 1,
+            "story_creation_page_functionality": 1
+        }
+    },
+    "ElderCareResources": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 4,
+        "advanced": 2,
+        "test_cases": {
+            "set_up": 1,
+            "contact_functionality": 1,
+            "contact_page_elements": 1,
+            "dashboard_page_elements": 1,
+            "login_elements": 1,
+            "login_functionality": 1,
+            "dashboard_functionality": 0
+        }
+    },
+    "FitnessChallenges": {
+        "total": 9,
+        "total_basic": 5,
+        "total_advanced": 4,
+        "basic": 3,
+        "advanced": 1,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_elements": 1,
+            "login_page_elements": 1,
+            "login_page_functionality": 1,
+            "dashboard_functionality": 0,
+            "challenges_list_elements": 0,
+            "challenges_list_functionality": 0,
+            "progress_tracker_elements": 0,
+            "progress_tracker_functionality": 0
+        }
+    },
+    "VolunteerMatch": {
+        "total": 7,
+        "total_basic": 4,
+        "total_advanced": 3,
+        "basic": 1,
+        "advanced": 0,
+        "test_cases": {
+            "set_up": 1,
+            "dashboard_page_elements": 0,
+            "dashboard_page_functionality": 0,
+            "login_page_elements": 0,
+            "login_page_functionality": 0,
+            "opportunity_details_page_elements": 0,
+            "opportunity_details_page_functionality": 0
+        }
+    }

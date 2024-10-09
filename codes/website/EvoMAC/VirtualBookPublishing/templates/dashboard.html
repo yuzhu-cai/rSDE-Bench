@@ -1,0 +1,20 @@
+'''
+This file implements the frontend code for the Dashboard Page of the VirtualBookPublishing web application.
+It provides an overview for the logged-in user, including options to create a new book or view previously published books.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcomeMsg">Welcome to Virtual Book Publishing!</h1>
+        <button id="createBookBtn" onclick="window.location.href='{{ url_for('create_book_page') }}'">Create New Book</button>
+        <button id="viewBooksBtn" onclick="window.location.href='{{ url_for('my_books_page') }}'">View My Books</button>
+    </div>
+</body>
+</html>

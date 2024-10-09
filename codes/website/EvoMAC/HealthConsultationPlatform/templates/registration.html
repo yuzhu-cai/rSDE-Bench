@@ -1,0 +1,24 @@
+'''
+This is the frontend code for the User Registration Page of the Health Consultation Platform.
+It allows new users to register for an account.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="{{ url_for('register') }}" method="POST">
+        <input type="text" id="reg_username_input" name="reg_username_input" placeholder="Enter your desired username" required>
+        <input type="password" id="reg_password_input" name="reg_password_input" placeholder="Enter your desired password" required>
+        <input type="email" id="reg_email_input" name="reg_email_input" placeholder="Enter your email" required>
+        <button type="submit" id="register_button">Register</button>
+    </form>
+    <div id="registration_success_message" style="display: {% if registration_success_message %} block {% else %} none {% endif %};">
+        {{ registration_success_message }}
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+'''
+HTML template for the registration page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="register-form">
+        <h2>User Register</h2>
+        <form action="{{ url_for('register') }}" method="post">
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <button type="submit" id="register-button">Register</button>
+        </form>
+        <p>Already have an account? <a id="login-link" href="{{ url_for('login') }}">Log In</a></p>
+    </div>
+</body>
+</html>

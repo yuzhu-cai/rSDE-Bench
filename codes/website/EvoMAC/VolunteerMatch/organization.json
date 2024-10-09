@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Update the backend code in `app.py` to implement logic for reading volunteer opportunities from the `data/opportunities.txt` file and populating the `opportunities` list. Ensure that the opportunities are passed to the `dashboard.html` template for rendering. This will resolve the issue of the empty opportunities list on the dashboard.",
+        "Programmer 2": "Update the `dashboard.html` file to ensure that it correctly displays the opportunities passed from the backend. Verify that the HTML structure is intact and that the apply buttons are rendered for each opportunity. This is necessary to ensure that the test can find the elements with IDs that start with 'apply-button-' on the dashboard page.",
+        "Programmer 3": "Implement the logic in `app.py` to read from the `data/applications.txt` file and save application data when a user submits their application. This will ensure that the application form on the Opportunity Details Page functions correctly and stores user submissions.",
+        "Programmer 4": "Create the `data` directory and the necessary text files (`users.txt`, `opportunities.txt`, and `applications.txt`) with appropriate initial data to ensure that the application has the required data to function correctly. This will help in testing the application effectively.",
+        "Programmer 5": "Implement the `login_post` function in `app.py` to validate user credentials against the `data/users.txt` file. This will ensure that only valid users can log in and access the dashboard."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [],
+        "Programmer 5": []
+    }
+}

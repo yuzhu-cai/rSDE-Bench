@@ -1,0 +1,32 @@
+{
+    "composition": {
+        "Programmer 1": "Update the backend code in `app.py` to handle POST requests for the login functionality. This includes checking the submitted username and password against the stored user data. If the credentials are valid, redirect the user to the dashboard; otherwise, display an error message on the login page.",
+        "Programmer 2": "Develop the frontend code for the Login Page in `login.html` to allow users to log into the application with their credentials. Ensure that the form submits to the correct route that handles login logic. The element IDs to be included are `username_field`, `password_field`, `login_button`, `error_message`, and `register_link`.",
+        "Programmer 3": "Develop the frontend code for the Registration Page in `register.html` to allow new users to create an account. Ensure that the registration form is functional and displays success or error messages appropriately. The element IDs to be included are `register_username_field`, `register_password_field`, `confirm_password_field`, `register_button`, and `registration_success_message`.",
+        "Programmer 4": "Develop the frontend code for the Dashboard Page in `dashboard.html` to display the user's list of events and provide options to create, edit, or delete events. The element IDs to be included are `events_list`, `add_event_button`, `search_event_button`, `view_event_button`, and `logout_button`.",
+        "Programmer 5": "Develop the frontend code for the Add Event Page in `add_event.html` to allow users to create a new event by entering a title, date, location, and description. The element IDs to be included are `event_title_field`, `event_date_field`, `event_location_field`, `event_description_field`, `save_event_button`, and `cancel_button`.",
+        "Programmer 6": "Develop the frontend code for the Search Event Page in `search_event.html` to allow users to search for events by entering a title or date. The element IDs to be included are `search_event_field`, `search_event_button`, `search_event_result`, and `back_button`.",
+        "Programmer 7": "Develop the frontend code for the View Event Page in `view_event.html` to display the details of a selected event, allowing users to read and edit it. The element IDs to be included are `event_title_field`, `event_date_field`, `event_location_field`, `event_description_field`, `edit_event_button`, `delete_event_button`, and `back_to_dashboard_button`."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ],
+        "Programmer 7": [
+            "Programmer 1"
+        ]
+    }
+}

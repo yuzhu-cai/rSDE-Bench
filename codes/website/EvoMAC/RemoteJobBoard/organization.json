@@ -1,0 +1,12 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in app.py to handle user profile editing functionality. \n- Add a new route for editing the user profile at '/edit_profile' that processes POST requests.\n- Ensure that the route retrieves the updated username and email from the form and updates the corresponding entry in the users.txt file.\n- Redirect the user back to the User Profile Page after successful editing and flash a success message.",
+        "Programmer 2": "Implement the frontend code for the User Profile Page in templates/user_profile.html.\n- Update the form action to point to the newly created '/edit_profile' route.\n- Ensure that the form correctly submits the updated username and email to the backend for processing."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ]
+    }
+}

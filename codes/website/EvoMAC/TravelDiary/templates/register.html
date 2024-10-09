@@ -1,0 +1,34 @@
+'''
+This file implements the frontend code for the Registration Page of the TravelDiary web application.
+It includes input fields for username, password, and email, a register button, and a link to the login page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST" action="{{ url_for('register') }}">
+            <div>
+                <label for="inputUsername">Username:</label>
+                <input type="text" id="inputUsername" name="inputUsername" required>
+            </div>
+            <div>
+                <label for="inputPassword">Password:</label>
+                <input type="password" id="inputPassword" name="inputPassword" required>
+            </div>
+            <div>
+                <label for="inputEmail">Email:</label>
+                <input type="email" id="inputEmail" name="inputEmail" required>
+            </div>
+            <button type="submit" id="btnRegister">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}" id="linkLogin">Login here</a></p>
+    </div>
+</body>
+</html>

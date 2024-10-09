@@ -1,0 +1,30 @@
+{
+    "composition": {
+        "Programmer 1": "Update the backend code in `app.py` to implement the login logic correctly. This includes validating the user's credentials against the stored user data, managing the session for logged-in users, and redirecting them to the dashboard upon successful login. Ensure that the login function processes both GET and POST requests appropriately. Additionally, address the \"405 Method Not Allowed\" error by verifying that the form action in `login.html` is correctly set to submit a POST request to the `/login` route.",
+        "Programmer 2": "Update the backend code in `app.py` for the `shopping_cart` function. This function attempts to render the `shopping_cart.html` template and passes `cart_items` to it. However, within the `shopping_cart.html` template, there is a line that tries to call `read_items()`, which is not defined in the template's context. The `read_items` function should be called in the `shopping_cart` function, and its result should be passed to the template to avoid this error.",
+        "Programmer 3": "Update the backend code in `app.py` for the `checkout` function. Similar to the `shopping_cart` function, the `checkout` function does not pass the necessary item details to the `checkout.html` template. Ensure that all required data is passed to the template to prevent any undefined errors during rendering.",
+        "Programmer 4": "Update the frontend code for the `shopping_cart.html` page to ensure that it correctly displays the items in the user's cart. This includes implementing the logic to calculate and display the total price of items in the cart. Ensure that the `remove_item_button` correctly removes items from the cart.",
+        "Programmer 5": "Update the frontend code for the `checkout.html` page to ensure that it correctly displays the total price and handles the payment method input. This includes ensuring that the total price is passed from the backend and displayed correctly.",
+        "Programmer 6": "Update the frontend code for the `item_details.html` page to ensure that it correctly displays the item details. This includes checking that the item status is displayed correctly based on whether the item is on sale or sold. Ensure that the `add_to_cart_button` correctly adds the item to the user's cart.",
+        "Programmer 7": "Implement a new HTML file `item_not_found.html` to handle cases where an item is not found. This page should inform users that the item they are looking for does not exist and provide a button to return to the dashboard."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 2"
+        ],
+        "Programmer 5": [
+            "Programmer 3"
+        ],
+        "Programmer 6": [
+            "Programmer 2"
+        ],
+        "Programmer 7": []
+    }
+}

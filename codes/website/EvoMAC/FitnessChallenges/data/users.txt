@@ -1,0 +1,2 @@
+johnsmith:password123
+janedoe:supersecurepass

@@ -1,0 +1,44 @@
+'''
+This is the HTML code for the Contact Page of the OnlineCulturalExchange web application.
+It includes a form for contact inquiries with appropriate IDs and an area for submission status.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="contact-form">
+        <h2>Contact Us</h2>
+        <form method="POST" action="{{ url_for('contact') }}">
+            <label for="contact-name">Name:</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+            <br>
+            <label for="contact-email">Email:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+            <br>
+            <label for="contact-message">Message:</label>
+            <textarea id="contact-message" name="contact-message" required></textarea>
+            <br>
+            <button type="submit" id="send-message-button">Send Message</button>
+        </form>
+        <div id="contact-confirmation">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    <div>
+        <a id="home-link" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

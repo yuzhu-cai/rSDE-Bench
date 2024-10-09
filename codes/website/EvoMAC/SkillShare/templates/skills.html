@@ -1,0 +1,39 @@
+'''
+This is the skills page for the SkillShare web application. 
+Users can browse, add, or remove skills they are interested in or currently working on.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+</head>
+<body>
+    <h1>Skills</h1>
+    <ul id="skillsList">
+        {% for skill in skills %}
+            <li>
+                {{ skill }} 
+                <button id="removeSkillButton_{{ skill }}" onclick="removeSkill('{{ skill }}')">Remove</button>
+            </li>
+        {% endfor %}
+    </ul>
+    <input type="text" id="newSkillInput" placeholder="Add a new skill">
+    <button id="addSkillButton" onclick="addSkill()">Add Skill</button>
+    <script>
+        function addSkill() {
+            const skillInput = document.getElementById('newSkillInput');
+            const skill = skillInput.value;
+            if (skill) {
+                // Redirect to add skill route
+                window.location.href = "{{ url_for('add_skill') }}?skill=" + encodeURIComponent(skill);
+            }
+        }
+        function removeSkill(skill) {
+            // Redirect to remove skill route
+            window.location.href = "{{ url_for('remove_skill') }}?skill=" + encodeURIComponent(skill);
+        }
+    </script>
+</body>
+</html>

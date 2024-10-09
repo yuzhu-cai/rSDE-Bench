@@ -1,0 +1,28 @@
+'''
+This is the registration page for the PeerTutoringNetwork web application.
+It contains interactive elements for user registration, including fields for new username, new password, email address, a registration button, and a link to the login page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="txt_new_username">New Username:</label>
+        <input type="text" id="txt_new_username" name="new_username" required>
+        <br>
+        <label for="txt_new_password">New Password:</label>
+        <input type="password" id="txt_new_password" name="new_password" required>
+        <br>
+        <label for="txt_email">Email Address:</label>
+        <input type="email" id="txt_email" name="email" required>
+        <br>
+        <button type="submit" id="btn_register">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}" id="link_login">Login here</a></p>
+</body>
+</html>

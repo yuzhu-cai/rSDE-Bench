@@ -1,0 +1,28 @@
+'''
+This is the view note page for the NoteTakingApp. It displays the details of a selected note, allowing users to read and edit it.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Note</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="view_note_page">
+        <h1>View Note</h1>
+        <form method="POST" action="{{ url_for('view_note', note_id=note.id) }}">
+            <label for="note_title_field">Title:</label>
+            <input type="text" id="note_title_field" name="note_title_field" value="{{ note.title }}" required>
+            <br>
+            <label for="note_content_field">Content:</label>
+            <textarea id="note_content_field" name="note_content_field" required>{{ note.content }}</textarea>
+            <br>
+            <button type="submit" id="edit_note_button" name="edit_note_button">Edit Note</button>
+            <button type="submit" id="delete_note_button" name="delete_note_button">Delete Note</button>
+            <button type="button" id="back_to_dashboard_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+        </form>
+    </div>
+</body>
+</html>

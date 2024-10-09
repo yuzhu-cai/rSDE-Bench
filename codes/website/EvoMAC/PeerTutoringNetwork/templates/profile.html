@@ -1,0 +1,18 @@
+'''
+This is the profile page for the PeerTutoringNetwork web application.
+It displays the user's username and email, along with a logout link.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <p>Username: <span id="txt_username_display">{{ username }}</span></p>
+    <p>Email: <span id="txt_email_display">{{ email }}</span></p>
+    <a href="{{ url_for('login') }}" id="link_logout">Logout</a>
+</body>
+</html>

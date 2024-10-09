@@ -1,0 +1,34 @@
+'''
+HTML template for the homepage displaying rental equipment and promotions.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1 id="welcome_message">Welcome to Fitness Equipment Rental</h1>
+    <h2>Latest Offers</h2>
+    <div id="promotions_section">
+        <p>Check out our latest promotions on fitness equipment!</p>
+        <!-- Promotional banners can be added here -->
+    </div>
+    <h2>Available Equipment</h2>
+    <div id="equipment_listing">
+        <ul>
+            {% for item in equipment %}
+                <li>
+                    <strong>{{ item.name }}</strong>: {{ item.description }} - ${{ item.rental_price }} 
+                    (Available: {{ item.availability }})
+                    <button id="show_details_button" onclick="window.location.href='{{ url_for('equipment') }}'">Show Details</button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button id="browse_button" onclick="window.location.href='{{ url_for('equipment') }}'">Browse All Equipment</button>
+    <button id="my_rental_button" onclick="window.location.href='{{ url_for('my_rentals') }}'">My Rentals</button>
+    <button id="help_button" onclick="window.location.href='{{ url_for('help_page') }}'">Help</button>
+</body>
+</html>

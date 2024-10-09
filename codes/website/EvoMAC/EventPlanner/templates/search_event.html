@@ -1,0 +1,35 @@
+'''
+This file contains the frontend code for the Search Event Page of the EventPlanner web application. 
+It allows users to search for events by entering a title or date.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Event</title>
+</head>
+<body>
+    <h1>Search Event</h1>
+    <form action="/search_event" method="POST">
+        <label for="search_event_field">Search by Title or Date:</label>
+        <input type="text" id="search_event_field" name="search_event_field" required>
+        <br>
+        <button type="submit" id="search_event_button">Search</button>
+    </form>
+    <div id="search_event_result">
+        <h2>Search Results:</h2>
+        <ul>
+            {% for event in search_results %}
+                <li>
+                    {{ event.title }} - {{ event.date }} 
+                    <a href="{{ url_for('view_event', event_id=event.id) }}">View</a>
+                </li>
+            {% else %}
+                <li>No events found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+</body>
+</html>

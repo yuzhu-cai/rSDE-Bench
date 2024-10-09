@@ -1,0 +1,39 @@
+'''
+This is the forum page for the ParentingAdviceForum web application.
+It displays discussion threads and allows users to create new threads.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="forum-container">
+        <h1>Forum</h1>
+        <section id="thread-list">
+            <h2>Discussion Threads</h2>
+            {% for thread in threads %}
+                <div class="thread">
+                    <h3><a href="{{ url_for('view_thread', thread_id=thread.thread_id) }}">{{ thread.thread_title }}</a></h3>
+                    <p>{{ thread.thread_content }}</p>
+                    <p><strong>Posted by:</strong> {{ thread.username }}</p>
+                    <a href="{{ url_for('view_thread', thread_id=thread.thread_id) }}" id="view-thread-button">View Thread</a>
+                </div>
+            {% endfor %}
+        </section>
+        <div>
+            <h2>Create a New Thread</h2>
+            <form action="{{ url_for('create_thread') }}" method="post">
+                <label for="thread-title-input">Thread Title:</label>
+                <input type="text" id="thread-title-input" name="thread_title" required>
+                <label for="thread-content-area">Thread Content:</label>
+                <textarea id="thread-content-area" name="thread_content" required></textarea>
+                <button type="submit" id="submit-thread-button">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

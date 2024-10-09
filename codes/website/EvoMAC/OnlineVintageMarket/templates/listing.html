@@ -1,0 +1,30 @@
+'''
+This file implements the frontend code for the listing page of the OnlineVintageMarket web application.
+It allows users to create a new listing for a vintage item by entering the item's name, description, and price.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing</title>
+</head>
+<body>
+    <h1>Create Listing</h1>
+    <form id="listing-form" method="POST" action="{{ url_for('listing') }}">
+        <label for="item-name">Item Name:</label>
+        <input type="text" id="item-name" name="item-name" required>
+        <br>
+        <label for="item-description">Item Description:</label>
+        <textarea id="item-description" name="item-description" required></textarea>
+        <br>
+        <label for="item-price">Item Price:</label>
+        <input type="number" id="item-price" name="item-price" step="0.01" required>
+        <br>
+        <button type="submit" id="submit-listing-button">Submit Listing</button>
+    </form>
+    <a href="{{ url_for('home') }}">
+        <button id="back-button">Back to Home</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!--
+This is the edit quote page for the MotivationalQuotesApp. It allows users to edit an existing quote and author.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Quote</title>
+</head>
+<body>
+    <h1>Edit Quote</h1>
+    <form action="{{ url_for('edit_quote', quote_id=quote.id) }}" method="post">
+        <label for="edit_quote_input">Quote:</label>
+        <textarea id="edit_quote_input" name="edit_quote_input" required>{{ quote.quote }}</textarea>
+        <br>
+        <label for="edit_author_input">Author:</label>
+        <input type="text" id="edit_author_input" name="edit_author_input" required value="{{ quote.author }}">
+        <br>
+        <button type="submit" id="update_quote_button">Update Quote</button>
+    </form>
+    <button id="cancel_button" onclick="window.location.href='{{ url_for('home') }}'">Cancel</button>
+</body>
+</html>

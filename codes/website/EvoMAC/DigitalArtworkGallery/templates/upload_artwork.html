@@ -1,0 +1,24 @@
+'''
+This page allows users to upload a new digital artwork by providing a title and description.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Artwork</title>
+</head>
+<body>
+    <h1>Upload Artwork</h1>
+    <form action="{{ url_for('upload_artwork') }}" method="POST">
+        <label for="artwork_title_field">Artwork Title:</label>
+        <input type="text" id="artwork_title_field" name="artwork_title" required>
+        <br>
+        <label for="artwork_description_field">Artwork Description:</label>
+        <textarea id="artwork_description_field" name="artwork_description" required></textarea>
+        <br>
+        <button type="submit" id="upload_button">Upload</button>
+        <button type="button" id="cancel_button" onclick="window.location.href='{{ url_for('gallery') }}'">Cancel</button>
+    </form>
+</body>
+</html>

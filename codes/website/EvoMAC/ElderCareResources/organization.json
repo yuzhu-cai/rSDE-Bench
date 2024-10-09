@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` to handle user authentication, routing for all frontend pages, and file operations for user data and inquiries. The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'. The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code. File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text. Frontend code files include  `login.html`, `dashboard.html`, and `contact.html`.",
+        "Programmer 2": "Develop the frontend code for the Login Page in `templates/login.html`. This page allows users to sign in to their account to access the resources. It should include a form with fields for username and password, and a login button. All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 3": "Develop the frontend code for the Dashboard Page in `templates/dashboard.html`. This page serves as the main hub for accessing different resources related to elder care. It should display a welcome message, a list of resources, and buttons for contacting and logging out. All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 4": "Develop the frontend code for the Contact Page in `templates/contact.html`. This page allows users to submit inquiries or feedback related to elder care. It should include a form with fields for name, email, and message, and a submit button. All URLs in the frontend code should be routes, not HTML file names."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ]
+    }
+}

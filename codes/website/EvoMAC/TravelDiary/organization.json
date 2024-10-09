@@ -1,0 +1,12 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in app.py\n- Fix the issue in the about function by ensuring the contact_support route is defined and accessible.\n- Ensure that the edit_diary function can handle requests with valid entry IDs, and update the logic to check for valid IDs before rendering the edit page.",
+        "Programmer 8": "Implement the frontend code for the About Page in about.html\n- Ensure the link to the contact support page points to the defined route in the backend."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 8": [
+            "Programmer 1"
+        ]
+    }
+}

@@ -1,0 +1,113 @@
+# GreenLivingGuide Requirements Document
+
+## 1. Objective
+The GreenLivingGuide project aims to develop a comprehensive web application that encourages sustainable living by providing users with resources, tips, and community engagement, all implemented using a user-friendly interface. Note that the website should start from the login page.
+
+## 2. Language
+Python is the required development language for the GreenLivingGuide web application.
+
+## 3. Page Design
+The application will consist of five pages with the following titles, content, and functionality described below:
+
+### Page 1: Login
+- **Page Title:** User Login
+- **Overview:** Users can log in to access personalized content and features.
+- **Element IDs:**
+  - `#login-form` (form that contains login fields)
+  - `#username` (input field for username)
+  - `#password` (input field for password)
+  - `#login-button` (button to submit login form)
+  - `#register-button` (button to navigate to register page)
+  - `#error-message` (div to display login errors)
+
+### Page 2: Register
+- **Page Title:** User Register
+- **Overview:** Users can create a new account.
+- **Element IDs:**
+  - `#register-form` (form that contains register fields)
+  - `#username` (input field for username)
+  - `#password` (input field for password)
+  - `#register-button` (button to submit register form)
+  - `#error-message` (div to display login errors)
+
+### Page 3: Home
+- **Page Title:** Home
+- **Overview:** The landing page that introduces users to sustainable living tips, recent articles, and navigation to other sections of the application.
+- **Element IDs:**
+  - `#welcome-message` (div to greet users)
+  - `#tips-section` (div that lists sustainable living tips)
+  - `#articles-section` (div that showcases recent articles)
+  - `#articles-link` (navigation link to Articles Page)
+  - `#community-link` (navigation link to Community Page)
+  - `#explore-button` (button to explore more tips: navigate to Tips Page)
+
+### Page 4: Tips
+- **Page Title:** Green Tips
+- **Overview:** A page dedicated to various tips for living sustainably, allowing users to view and submit new tips.
+- **Element IDs:**
+  - `#tips-list` (section displaying all tips)
+  - `#new-tip-form` (form for submitting a new tip)
+  - `#tip-title` (input field for tip title)
+  - `#tip-description` (textarea for tip description)
+  - `#submit-tip-button` (button to submit the new tip)
+  - `#success-message` (div to display confirmation of tip submission)
+
+### Page 5: Articles
+- **Page Title:** Articles
+- **Overview:** A collection of articles on sustainable living practices and news, which users can read and submit their articles.
+- **Element IDs:**
+  - `#articles-list` (section displaying all articles)
+  - `#article-title` (input field for article title)
+  - `#article-content` (input field for article content)
+  - `#submit-article-button` (button to submit article)
+
+### Page 6: Community
+- **Page Title:** Community Forum
+- **Overview:** A space for users to engage with one another, share experiences, and ask questions about sustainable living.
+- **Element IDs:**
+  - `#forum-posts` (section displaying community posts)
+  - `#new-post-form` (form for creating a new post)
+  - `#post-title` (input field for post title)
+  - `#post-content` (textarea for post content)
+  - `#post-button` (button to submit the new post)
+
+## 4. Data Storage
+Data will be stored in a directory named `data`, with separate text files designated for different types of information. The following data formats and examples will be maintained:
+
+### 1. User Data
+- **File Name:** `users.txt`
+- **Data Format:** `username,password`
+- **Example Data:**
+  ```
+  user1,password123
+  user2,securepassword
+  ```
+
+### 2. Tips Data
+- **File Name:** `tips.txt`
+- **Data Format:** `tip_title:tip_description`
+- **Example Data:**
+  ```
+  Reduce Plastic Use:Switch to reusable bags for shopping.
+  Compost Organic Waste:Create a compost pile to reduce waste.
+  ```
+
+### 3. Articles Data
+- **File Name:** `articles.txt`
+- **Data Format:** `article_title:article_content`
+- **Example Data:**
+  ```
+  The Benefits of Solar Energy:Solar energy is a clean and renewable energy source...
+  How to Start a Vegetable Garden:Gardening can significantly reduce your carbon footprint...
+  ```
+
+### 4. Community Posts Data
+- **File Name:** `community_posts.txt`
+- **Data Format:** `post_title:post_content`
+- **Example Data:**
+  ```
+  Tips for Shopping Sustainably:Always carry your reusable bags...
+  How to Reduce Water Usage:Limit your shower time to 5 minutes...
+  ```
+
+This structure and organization are essential for keeping user and content data streamlined, improving performance, and simplifying the development and testing processes of the GreenLivingGuide web application.

@@ -1,0 +1,26 @@
+'''
+This file contains the frontend code for the dashboard page of the Music_Collaborator web application.
+It allows users to view their projects, create new music projects, and access their profile settings.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard</h1>
+        <h2>Your Projects</h2>
+        <ul id="projectList">
+            <!-- Example project items; these should be dynamically generated from the backend -->
+            <li><a href="{{ url_for('project_details', project_name='Summer_Song') }}" id="project_0">Summer Song</a></li>
+            <li><a href="{{ url_for('project_details', project_name='Winter_Melody') }}" id="project_1">Winter Melody</a></li>
+        </ul>
+        <button id="createProjectButton" onclick="window.location.href='{{ url_for('create_project') }}'">Create New Project</button>
+        <p><a href="{{ url_for('profile_settings') }}" id="profileSettingsLink">Profile Settings</a></p>
+    </div>
+</body>
+</html>

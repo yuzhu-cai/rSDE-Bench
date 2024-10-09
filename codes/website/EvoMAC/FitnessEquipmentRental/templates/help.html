@@ -1,0 +1,31 @@
+'''
+HTML template for the help page containing FAQs, support information, and accessibility options.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+</head>
+<body>
+    <h1>Help Page</h1>
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <div id="faq_section">
+        <ul>
+            <li><strong>How do I rent equipment?</strong><br>To rent equipment, navigate to the Equipment page, select the equipment you want, and fill out the rental form.</li>
+            <li><strong>What payment methods are accepted?</strong><br>We accept various payment methods, including credit cards and PayPal.</li>
+            <li><strong>How can I return rented equipment?</strong><br>You can return rented equipment by navigating to the My Rentals page and selecting the return option.</li>
+        </ul>
+    </div>
+    <h2>Contact Support</h2>
+    <p>If you need further assistance, please contact our support team at <a href="mailto:support@fitnessequipmentrental.com">support@fitnessequipmentrental.com</a>.</p>
+    <h2>Accessibility Information</h2>
+    <div id="accessibility_info">
+        <p>We are committed to ensuring accessibility for all users. If you require assistance or have any accessibility-related questions, please reach out to our support team.</p>
+    </div>
+    <button onclick="window.location.href='{{ url_for('home') }}'">Back to Home</button>
+    <button onclick="window.location.href='{{ url_for('my_rentals') }}'">My Rentals</button>
+    <button onclick="window.location.href='{{ url_for('equipment') }}'">Browse Equipment</button>
+</body>
+</html>

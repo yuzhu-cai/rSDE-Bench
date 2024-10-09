@@ -1,0 +1,12 @@
+{
+    "composition": {
+        "Programmer 1": "- Fix the login functionality in app.py to ensure that the application correctly handles user login attempts and redirects to the home page after a successful login. \n- Update the login function to ensure that the expected URL matches the actual URL returned after login, and handle any redirects appropriately.",
+        "Programmer 5": "- Implement the frontend code for the tips page in tips.html. \n- Ensure that the `tips.html` file contains the required element with ID `#tips-list` and that it correctly displays the tips passed from the backend. \n- Modify the success message handling to ensure that the `success-message` div is displayed upon successful submission of a new tip, and consider adding a default message indicating no tips have been submitted yet when the page loads. \n- Address the issue where the `success-message` div is conditionally rendered based on the presence of flashed messages. Ensure that the test for the tips page elements checks for the presence of the success message only after a tip has been successfully submitted, or modify the test to handle the absence of this element gracefully."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

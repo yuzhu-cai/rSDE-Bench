@@ -1,0 +1,46 @@
+'''
+This is the HTML template for the Job Listings Page of the RemoteJobBoard web application.
+It displays a list of available remote job postings with options to filter/search.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="job-listings-container">
+        <h1>Available Remote Job Postings</h1>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search jobs..." onkeyup="filterJobs()">
+        </div>
+        <ul id="job-list-container">
+            {% for job in jobs %}
+                <li class="job-posting" id="job-posting-{{ loop.index }}">
+                    <strong>{{ job[0] }}</strong> at {{ job[1] }}<br>
+                    <p>{{ job[2] }}</p>
+                    <button id="apply-button-{{ loop.index }}" onclick="applyForJob('{{ job[0] }}', '{{ job[1] }}', '{{ job[2] }}')">Apply</button>
+                </li>
+            {% endfor %}
+        </ul>
+        <button id="back-button" onclick="window.location.href='{{ url_for('home') }}'">Back to Home</button>
+    </div>
+    <script>
+        function filterJobs() {
+            const input = document.getElementById('search-input');
+            const filter = input.value.toLowerCase();
+            const jobList = document.getElementById('job-list-container');
+            const jobPostings = jobList.getElementsByTagName('li');
+            for (let i = 0; i < jobPostings.length; i++) {
+                const jobTitle = jobPostings[i].getElementsByTagName('strong')[0];
+                if (jobTitle) {
+                    const txtValue = jobTitle.textContent || jobTitle.innerText;
+                    jobPostings[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

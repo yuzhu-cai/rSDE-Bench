@@ -1,0 +1,24 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in app.py\n- The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n- The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code.\n- File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text.\n- Frontend code files  login.html, gallery.html, view_artwork.html, upload_artwork.html.",
+        "Programmer 2": "Implement the frontend code for the Login Page in templates/login.html\n- This page allows users to log into the application with their credentials.\n- Element IDs  username_field, password_field, login_button, error_message.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 3": "Implement the frontend code for the Gallery Page in templates/gallery.html\n- This is the main page that displays the gallery of uploaded digital artworks and provides options to view, upload, or delete artworks.\n- Element IDs  artwork_grid, view_artwork_button, delete_artwork_button, upload_artwork_button.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 4": "Implement the frontend code for the View Artwork Page in templates/view_artwork.html\n- This page allows the user to view detailed text information about the target full-size artwork.\n- Element IDs  full-size_artwork, back_button.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 5": "Implement the frontend code for the Upload Artwork Page in templates/upload_artwork.html\n- This page allows users to upload a new digital artwork by providing a title and description.\n- Element IDs  artwork_title_field, artwork_description_field, upload_button, cancel_button.\n- All URLs in the frontend code should be routes, not HTML file names."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

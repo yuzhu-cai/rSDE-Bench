@@ -1,0 +1,23 @@
+'''
+This is the login page for the GardeningForBeginners web application.
+It allows users to enter their username and password to log in.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="login_page">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <input type="text" id="username_input" name="username" placeholder="Username" required>
+            <input type="password" id="password_input" name="password" placeholder="Password" required>
+            <button type="submit" id="login_button">Login</button>
+        </form>
+    </div>
+</body>
+</html>

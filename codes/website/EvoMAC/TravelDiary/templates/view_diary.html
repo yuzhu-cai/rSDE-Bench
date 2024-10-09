@@ -1,0 +1,31 @@
+'''
+This file implements the frontend code for the View Diary Page of the TravelDiary web application.
+It includes a list of all diary entries, buttons to edit and delete selected diary entries, and a button to return to the home page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Diary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="headerTitle">Your Diary Entries</h1>
+        <div id="listDiaryEntries">
+            <ul>
+                {% for entry in entries %}
+                    <li>{{ entry.split(',')[2] }} - {{ entry.split(',')[3] }} 
+                        <button onclick="window.location.href='{{ url_for('edit_diary', entry_id=entry.split(',')[0]) }}'" id="btnEdit">Edit</button>
+                        <form method="POST" action="{{ url_for('delete_diary', entry_id=entry.split(',')[0]) }}" style="display:inline;">
+                            <button type="submit" id="btnDelete">Delete</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <button id="btnReturn" onclick="window.location.href='{{ url_for('home') }}'">Return to Home</button>
+    </div>
+</body>
+</html>

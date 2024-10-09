@@ -1,0 +1,22 @@
+'''
+This file contains the frontend code for the search post page of the PersonalFinanceBlog application.
+It allows users to navigate to specific category pages where posts related to different aspects of personal finance are listed.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="search-post-container">
+        <h1>Search Blog Posts by Category</h1>
+        <button id="investment_button" onclick="window.location.href='{{ url_for('category_post', category='Investment') }}'">Investment</button>
+        <button id="banking_button" onclick="window.location.href='{{ url_for('category_post', category='Banking') }}'">Banking</button>
+        <button id="insurance_button" onclick="window.location.href='{{ url_for('category_post', category='Insurance') }}'">Insurance</button>
+        <button id="back_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    </div>
+</body>
+</html>

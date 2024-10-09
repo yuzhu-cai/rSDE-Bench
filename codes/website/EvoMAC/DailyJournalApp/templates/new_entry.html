@@ -1,0 +1,23 @@
+'''
+This is the frontend code for the new journal entry page of the Daily Journal App. It allows users to create a new journal entry and save it to a local text file.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Journal Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>New Journal Entry</h1>
+        <form action="{{ url_for('new_entry') }}" method="POST">
+            <input type="text" id="entry_title_field" name="entry_title_field" placeholder="Enter Entry Title" required>
+            <textarea id="entry_content_field" name="entry_content_field" placeholder="Write your journal entry here..." required></textarea>
+            <button type="submit" id="save_entry_button">Save Entry</button>
+        </form>
+        <button onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    </div>
+</body>
+</html>

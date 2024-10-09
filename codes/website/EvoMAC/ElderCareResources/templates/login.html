@@ -1,0 +1,24 @@
+'''
+This file implements the frontend for the Login Page of the ElderCareResources web application.
+It allows users to sign in to their account to access the resources.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+</head>
+<body>
+    <h1>User Login</h1>
+    <form id="login-form" method="POST" action="{{ url_for('dashboard') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit" id="login-button">Login</button>
+    </form>
+</body>
+</html>

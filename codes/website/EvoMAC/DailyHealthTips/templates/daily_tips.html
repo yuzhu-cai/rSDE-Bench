@@ -1,0 +1,31 @@
+'''
+This is the daily tips page for the DailyHealthTips web application.
+It displays the current daily health tip and allows users to view previous tips.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Health Tips</title>
+</head>
+<body>
+    <h1>Daily Health Tips</h1>
+    <div id="tip_display_area">
+        <p>{{ tip }}</p>
+    </div>
+    <form action="/daily_tips" method="POST">
+        <button type="submit" id="previous_tip_button" name="previous_tip_button">Previous Tip</button>
+        <button type="submit" id="next_tip_button" name="next_tip_button">Next Tip</button>
+        <button type="button" id="view_tips_button" onclick="window.location.href='/tips_archive'">View All Tips</button>
+        <br>
+        <h2>Submit Feedback</h2>
+        <div id="feedback_form">
+            <textarea id="feedback_text_area" name="feedback_text_area" required></textarea>
+            <br>
+            <input type="hidden" name="username" value="{{ username }}">
+            <button type="submit" id="submit_feedback_button" name="submit_feedback_button">Submit Feedback</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,2 @@
+johndoe|password123
+janedoe|securepass456

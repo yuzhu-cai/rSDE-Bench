@@ -1,0 +1,28 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` to handle routing for all frontend pages and manage user authentication and retreat scheduling. The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'. The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code. File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text. The frontend code files are  `login.html`, `register.html`, `dashboard.html`, `schedule_retreat.html`, and `view_bookings.html`.",
+        "Programmer 2": "Develop the frontend code for the login page in `login.html`. This page allows users to log into the application with their credentials. The element IDs include `username_field`, `password_field`, `login_button`, `error_message`, and `register_link`. All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 3": "Develop the frontend code for the registration page in `register.html`. This page allows new users to create an account. The element IDs include `register_username_field`, `register_password_field`, `confirm_password_field`, `register_button`, and `registration_success_message`. All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 4": "Develop the frontend code for the dashboard page in `dashboard.html`. This is the main page that provides options to book or manage bookings of retreats. The element IDs include `schedule_retreat_button`, `view_bookings_button`, and `logout_button`. All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 5": "Develop the frontend code for the schedule retreat page in `schedule_retreat.html`. This page allows users to schedule retreats by entering detailed information. The element IDs include `retreat_title_field`, `retreat_date_field`, `retreat_time_field`, `retreat_instructor_field`, `schedule_retreat_button`, and `back_to_dashboard_button`. All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 6": "Develop the frontend code for the view bookings page in `view_bookings.html`. This page allows users to view their scheduled wellness retreats, with options to cancel. The element IDs include `booked_retreats_title`, `booked_retreats_date`, `booked_retreats_time`, `booked_retreats_instructor`, `retreat_title_field`, and `cancel_button`. All URLs in the frontend code should be routes, not HTML file names."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ]
+    }
+}

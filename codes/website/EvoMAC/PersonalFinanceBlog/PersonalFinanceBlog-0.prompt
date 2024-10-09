@@ -1,0 +1,117 @@
+# Requirements Document for PersonalFinanceBlog
+
+## 1. Objective
+Develop a comprehensive web application called 'PersonalFinanceBlog' that enables users to create, view, manage, and search personal finance-related blog posts without the need for a SQL database, leveraging Python and storing data in local text files.
+
+## 2. Language
+The required development language for this application is Python.
+
+## 3. Page Design
+
+### 3.1. Login Page
+- **Page Title:** Login
+- **Overview:** This page allows users to log into the application with their credentials.
+- **Element IDs:**
+  - `username_field`: Input field for the username
+  - `password_field`: Input field for the password
+  - `login_button`: Button to submit login credentials
+  - `error_message`: Display area for login errors
+  - `register_link`: Link to the registration page
+
+### 3.2. Registration Page
+- **Page Title:** Register
+- **Overview:** This page allows new users to create an account.
+- **Element IDs:**
+  - `register_username_field`: Input field for the new username
+  - `register_password_field`: Input field for the new password
+  - `confirm_password_field`: Input field for confirming the password
+  - `occupation_field`: Input field for occupation
+  - `register_button`: Button to submit registration details
+  - `registration_success_message`: Display area for registration confirmations or errors
+
+### 3.3. Dashboard Page
+- **Page Title:** Dashboard
+- **Overview:** This is the main page that displays the user's list of blog posts and provides options to add or search posts.
+- **Element IDs:**
+  - `posts_list`: Container to display all blog post titles
+  - `add_post_button`: Button to navigate to the Add Post page
+  - `search_post_button`: Button to navigate to the Search Post page
+  - `user_profile_button`: Button to navigate to the User Profile page
+
+### 3.4. Add Post Page
+- **Page Title:** `Add Post`
+- **Overview:** This page allows users to create a new blog post by entering a title, date, category, and content.
+- **Element IDs:**
+  - `post_title_field`: Input field for the post title
+  - `post_date_field`: Input field for the post date
+  - `post_category_field`: Input field for the post category (options: Investment|Banking|Insurance)
+  - `post_content_field`: Input textarea for the post content
+  - `save_post_button`: Button to save the new post and return to the dashboard
+  - `cancel_button`: Button to discard changes and return to the dashboard
+
+### 3.5. Search Post Page
+- **Page Title**: Search Post
+- **Overview**: This page allows users to navigate to specific category pages where posts related to different aspects of personal finance are listed. Users can choose a category to view all related posts.
+- **Element IDs**:
+  - `investment_button`: Button to navigate to the Investment Post page
+  - `banking_button`: Button to navigate to the Banking Post page
+  - `insurance_button`: Button to navigate to the Insurance Post page
+  - `back_button`: Button to return to the Dashboard page
+
+### 3.6. Category Post Page
+- **Page Title**: `Category` Post
+- **Overview**: This page displays all blog posts related to the selected `Category` (options: Investment, Banking, Insurance). Users can view, edit, or delete posts from this page.
+- **Element IDs**:
+  - `post_list`: Container to display the titles of all posts whose category is same as this `Category`
+  - `post_title_field`: Input field for the post title to manage the post
+  - `edit_post_button`: Button to navigate to the specific Post Detail page for the post whose title is same as that entered in `post_title_field` with pre-filled original information
+  - `delete_post_button`: Button to delete the post whose title is same as that entered in `post_title_field`
+  - `back_button`: Button to return to the Dashboard page
+
+### 3.7. Post Details Page
+- **Page Title:** `Post Title`
+- **Overview:** This page displays detailed information about a specific post selected by the user. The page title dynamically reflects the title of the selected post (e.g., if the post title is "Bank Update," the Page Title will be "Bank Update"). This page allows users to view the full content of the post and edit the post.
+- **Element IDs:**
+  - `post_title_field`: Input field for the post title with pre-filled title
+  - `post_date`: Input field for the post date with pre-filled date
+  - `post_category`: Input field for the post category with pre-filled category
+  - `post_content`: Input field for the post content with pre-filled content
+  - `save_button`: Button to save changes on the post details
+  - `back_button`: Button to return to the Dashboard page
+  
+### 3.8. User Profile Page
+- **Page Title**: User Profile
+- **Overview**: This page displays and allows users to edit their account information.
+- **Element IDs**:
+  - `profile_username_display`: Display area for the username
+  - `profile occupation display`: Display area for the user's occupation
+  - `logout_button`: Button to log out of the application and back to the Login Page
+
+## 4. Data Storage
+
+### Data Format
+The application will store data in local text files located in the `data` directory. Each type of data will be saved in a separate file to organize the information efficiently.
+
+### Data Files
+- **User Data File (`users.txt`)**:
+  - Format: `username:password:occupation`
+  - Example:
+    ```
+    john_doe:abcd1234:banker
+    jane_smith:xyz9876:broker
+    ```
+
+- **Blog Post Data File (`posts.txt`)**:
+  - Format: `post_id|username|title|date|category|content`
+  - Example:
+    ```
+    1|john_doe|Bank Update|2024-08-28|Banking|An update on bank account.
+    2|john_doe|How to Invest|2023-09-15|Investment|A tutorial on investment.
+    3|jane_smith|Flight Insurance|2023-12-23|Insurance|Flight Insurance.
+    4|john_doe|Life Insurance|2022-01-01|Insurance|Life Insurance.
+    ```
+
+All text files will be created and accessed from the local `data` directory to ensure easy retrieval and management of information.
+
+
+

@@ -1,0 +1,32 @@
+'''
+This is the community feed page for the PetCareCommunity web application.
+It allows users to post content and view posts from other users.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="feed-page">
+        <h1>Community Feed</h1>
+        <form action="{{ url_for('community_feed') }}" method="POST">
+            <textarea id="post-input" name="post-content" placeholder="What's on your mind?" required></textarea>
+            <button type="submit" id="post-button">Post</button>
+        </form>
+        <div id="feed-container">
+            {% for post in posts %}
+                <div id="post-{{ post.id }}">
+                    <h2>{{ post.username }} <small>{{ post.timestamp }}</small></h2>
+                    <p>{{ post.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <button id="resource-button" onclick="window.location.href='{{ url_for('resources') }}'">Resources</button>
+        <button id="profile-button" onclick="window.location.href='{{ url_for('profile', username=session['username']) }}'">Profile</button>
+    </div>
+</body>
+</html>

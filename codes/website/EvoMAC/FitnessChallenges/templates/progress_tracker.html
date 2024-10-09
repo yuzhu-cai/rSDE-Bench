@@ -1,0 +1,88 @@
+'''
+HTML template for the progress tracker page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #progressTracker {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div id="progressTracker">
+        <h2>Progress Tracker</h2>
+        <div id="challengeName">
+            <h3>Select Challenge</h3>
+            <select id="challengeSelect">
+                {% for challenge in challenges %}
+                    <option value="{{ challenge }}">{{ challenge }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="currentProgress">
+            <h3>Your Current Progress</h3>
+            <textarea id="progressTextarea" rows="4" placeholder="Enter your current progress..."></textarea>
+            <button id="updateProgressButton" onclick="updateProgress()">Update Progress</button>
+        </div>
+        <div id="notesSection">
+            <h3>Your Notes</h3>
+            <p id="notes">{{ notes }}</p>
+            <textarea id="addNotesField" rows="4" placeholder="Add your notes..."></textarea>
+        </div>
+    </div>
+    <script>
+        function updateProgress() {
+            const progress = document.getElementById('progressTextarea').value;
+            const notes = document.getElementById('addNotesField').value;
+            const challengeName = document.getElementById('challengeSelect').value; // Get selected challenge
+            fetch('/update_progress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    progress: progress,
+                    notes: notes,
+                    challenge_name: challengeName // Include challenge name
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Progress updated successfully!');
+                    window.location.reload(); // Reload the page to see updated progress
+                } else {
+                    alert('Failed to update progress.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

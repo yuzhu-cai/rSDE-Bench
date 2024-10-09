@@ -1,0 +1,36 @@
+'''
+This file contains the frontend code for the Opportunity Details Page of the VolunteerMatch web application.
+It displays detailed information about a selected volunteer opportunity, including an application form with fields for the applicant's name and email, and a submit application button.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>VolunteerMatch - Opportunity Details</title>
+</head>
+<body>
+    <header>
+        <h1>VolunteerMatch</h1>
+    </header>
+    <div class="container">
+        <div id="opp-details-header">
+            <h2>Opportunity Details</h2>
+        </div>
+        <div id="opp-description">
+            <p>{{ opportunity.description }}</p>
+        </div>
+        <div class="apply-form">
+            <h3>Apply for this Opportunity</h3>
+            <div id="error-message" class="error-message"></div>
+            <form id="apply-form" action="{{ url_for('submit_application', opportunity_id=opportunity.id) }}" method="POST">
+                <input type="text" id="applicant-name" name="applicant_name" placeholder="Your Name" required>
+                <input type="email" id="applicant-email" name="applicant_email" placeholder="Your Email" required>
+                <button type="submit" id="submit-application">Submit Application</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

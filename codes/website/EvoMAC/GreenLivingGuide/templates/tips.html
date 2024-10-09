@@ -1,0 +1,48 @@
+'''
+This is the tips page for the GreenLivingGuide web application.
+It is dedicated to various tips for living sustainably, allowing users to view and submit new tips.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="tips-list">
+        <h2>Sustainable Living Tips</h2>
+        <ul>
+            {% if tips %}
+                {% for tip in tips %}
+                    <li><strong>{{ tip[0] }}</strong>: {{ tip[1] }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No tips have been submitted yet.</li>
+            {% endif %}
+        </ul>
+    </div>
+    <div id="new-tip-form">
+        <h3>Submit a New Tip</h3>
+        <form method="POST" action="{{ url_for('submit_tip') }}">
+            <label for="tip-title">Tip Title:</label>
+            <input type="text" id="tip-title" name="tip_title" required>
+            <label for="tip-description">Tip Description:</label>
+            <textarea id="tip-description" name="tip_description" required></textarea>
+            <button type="submit" id="submit-tip-button">Submit Tip</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div id="success-message">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div id="success-message" style="display:none;"></div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

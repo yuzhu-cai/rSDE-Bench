@@ -1,0 +1,27 @@
+'''
+This is the tips archive page for the DailyHealthTips web application.
+It allows users to view a historical list of all daily health tips and search for specific tips.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Archive</title>
+</head>
+<body>
+    <h1>Tips Archive</h1>
+    <form id="search_tips_form" action="/tips_archive" method="GET">
+        <input type="text" id="search_input" name="search_input" placeholder="Search tips..." required>
+        <button type="submit" id="search_button">Search</button>
+    </form>
+    <div id="tips_list">
+        <h2>All Tips</h2>
+        <ul>
+            {% for date, tip in tips %}
+                <li>{{ date }}: {{ tip }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

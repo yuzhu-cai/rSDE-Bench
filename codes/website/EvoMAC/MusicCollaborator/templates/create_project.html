@@ -1,0 +1,28 @@
+'''
+This file contains the frontend code for the create project page of the Music_Collaborator web application.
+It allows users to create a new music project by entering project details.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="create-project-container">
+        <h1>Create New Project</h1>
+        <form action="{{ url_for('dashboard') }}" method="post">
+            <label for="projectNameField">Project Name:</label>
+            <input type="text" id="projectNameField" name="project_name" required>
+            <label for="projectDescriptionField">Project Description:</label>
+            <textarea id="projectDescriptionField" name="project_description" required></textarea>
+            <label for="collaboratorsField">Collaborators (comma-separated):</label>
+            <input type="text" id="collaboratorsField" name="collaborators" required>
+            <button type="submit" id="createButton">Create Project</button>
+        </form>
+        <p><a href="{{ url_for('dashboard') }}" id="backToDashboardLink">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>

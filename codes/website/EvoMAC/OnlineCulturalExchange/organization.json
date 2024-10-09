@@ -1,0 +1,28 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` for the OnlineCulturalExchange web application.\n- The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'.\n- The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code.\n- File read and write operations in the backend code should start from the first line of the file, without any encryption, using plain text.\n- Frontend code files  `login.html`, `home.html`, `cultural_exchange.html`, `profile.html`, `contact.html`.",
+        "Programmer 2": "Develop the frontend code in `login.html` for the Login Page.\n- The Login Page should include a form with IDs  `login-form`, `username`, `password`, `login-button`, and `error-message`.\n- Successful login redirects to the Home Page, while unsuccessful login stays on the Login Page with an error message.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 3": "Develop the frontend code in `home.html` for the Home Page.\n- The Home Page should include a welcome message area with ID `welcome-message`, a list of cultural exchange topics with ID `culture-list`, and hyperlinks for `profile-link` and `contact-link`.\n- Users can navigate to the Profile Page, Contact Page, and specific Cultural Exchange Pages using the corresponding hyperlinks.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 4": "Develop the frontend code in `cultural_exchange.html` for the Cultural Exchange Page.\n- The Cultural Exchange Page should include a form with IDs  `exchange-form`, `title`, `description`, `submit-exchange`, and a list of submitted exchanges with ID `exchange-list`.\n- Users can return to the Home Page using the `home-link`.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 5": "Develop the frontend code in `profile.html` for the Profile Page.\n- The Profile Page should include a header with ID `profile-header`, a display area for the username with ID `username-display`, a logout button with ID `logout-button`, and a hyperlink to return to the Home Page with ID `home-link`.\n- Users can return to the Home Page and log out to redirect back to the Login Page.\n- All URLs in the frontend code should be routes, not HTML file names.",
+        "Programmer 6": "Develop the frontend code in `contact.html` for the Contact Page.\n- The Contact Page should include a form with IDs  `contact-form`, `contact-name`, `contact-email`, `contact-message`, `send-message-button`, and an area for submission status with ID `contact-confirmation`.\n- Users can return to the Home Page using the `home-link`.\n- All URLs in the frontend code should be routes, not HTML file names."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ]
+    }
+}

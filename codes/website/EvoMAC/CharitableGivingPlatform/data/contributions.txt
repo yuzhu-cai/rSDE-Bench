@@ -1,0 +1,2 @@
+johnDoe,SaveTheWhales,50
+janeSmith,HelpTheChildren,100

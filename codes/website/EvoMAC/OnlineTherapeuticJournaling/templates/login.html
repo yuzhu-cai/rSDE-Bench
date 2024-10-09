@@ -1,0 +1,25 @@
+'''
+This file implements the frontend code for the login page of the Online Therapeutic Journaling web application.
+It includes a form for user login with fields for username and password.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Login</h1>
+        <form id="login-form" action="{{ url_for('dashboard') }}" method="POST">
+            <label for="username-input">Username:</label>
+            <input type="text" id="username-input" name="username" required>
+            <label for="password-input">Password:</label>
+            <input type="password" id="password-input" name="password" required>
+            <button type="submit" id="login-button">Login</button>
+        </form>
+    </div>
+</body>
+</html>

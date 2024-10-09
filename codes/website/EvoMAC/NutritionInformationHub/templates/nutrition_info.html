@@ -1,0 +1,46 @@
+'''
+This is the nutrition information page for the Nutrition Information Hub.
+It provides a searchable database of foods with nutritional information displayed.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <div class="nutrition-info-container">
+        <h1 id="nutritionInfoTitle">Nutrition Information</h1>
+        <input type="text" id="searchField" placeholder="Search for a food item...">
+        <button id="searchButton" onclick="searchFood()">Search</button>
+        <div id="foodList"></div>
+    </div>
+    <script>
+        function searchFood() {
+            const searchQuery = document.getElementById('searchField').value;
+            fetch(`/search_nutrition?query=${encodeURIComponent(searchQuery)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const foodListDiv = document.getElementById('foodList');
+                    foodListDiv.innerHTML = ''; // Clear previous results
+                    if (data.results.length > 0) {
+                        data.results.forEach(food => {
+                            foodListDiv.innerHTML += `<div>${food}</div>`;
+                        });
+                    } else {
+                        foodListDiv.innerHTML = '<div>No results found.</div>';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // Invoke search functionality on page load to ensure foodList is displayed correctly
+        window.onload = function() {
+            const foodListDiv = document.getElementById('foodList');
+            foodListDiv.innerHTML = '<div>Welcome! Please search for a food item.</div>';
+        };
+    </script>
+</body>
+</html>

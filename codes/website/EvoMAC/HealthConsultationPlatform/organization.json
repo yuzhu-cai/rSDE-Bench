@@ -1,0 +1,16 @@
+{
+    "composition": {
+        "Programmer 1": "Update the backend code in app.py to fix the issue with the consultation scheduling page. Specifically, ensure that the function for handling the scheduling of consultations correctly processes the request and redirects users to the appropriate page. This includes confirming that the session username is correctly retrieved and that the consultation data is written to the consultations.txt file.",
+        "Programmer 2": "Update the frontend code in schedule_consultation.html to ensure that the form element has the ID `consultation_form`. This is necessary to ensure that the test for the consultation scheduling page passes successfully. Additionally, ensure that the confirmation message is displayed correctly after scheduling a consultation.",
+        "Programmer 3": "Update the frontend code in my_appointments.html to ensure that the button for leaving feedback is correctly implemented. This button should be defined with an ID `feedback_button` instead of using an `onclick` event. The button should redirect users to the feedback page when clicked."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ]
+    }
+}

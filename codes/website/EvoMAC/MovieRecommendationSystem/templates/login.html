@@ -1,0 +1,30 @@
+'''
+This is the HTML code for the User Login page of the Movie Recommendation System. It includes a login form with fields for username and password, a login button, an error message display, and a link to the registration page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+</head>
+<body>
+    <h1>User Login</h1>
+    <form id="loginForm" method="POST" action="/login">
+        <label for="usernameField">Username:</label>
+        <input type="text" id="usernameField" name="username" required>
+        <br>
+        <label for="passwordField">Password:</label>
+        <input type="password" id="passwordField" name="password" required>
+        <br>
+        <button type="submit" id="loginButton">Login</button>
+        <br>
+        <div id="errorMessage" style="color: red;">
+            {% if error %}
+                {{ error }}
+            {% endif %}
+        </div>
+    </form>
+    <p>Don't have an account? <a id="registerLink" href="/register">Register here</a></p>
+</body>
+</html>

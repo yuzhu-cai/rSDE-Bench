@@ -1,0 +1,37 @@
+'''
+This is the shopping cart page for the OnlineThriftStore web application.
+It shows the items added to the user's cart, allowing them to proceed to checkout or remove items.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <ul id="cart_items_list">
+            {% set total_price = 0 %}
+            {% for item in cart_items %}
+                {% set item_details = item_details %}
+                {% set item_info = item_details | selectattr('title', 'equalto', item) | first %}
+                <li>
+                    {{ item_info.title }} - ${{ item_info.price }}
+                    <form method="POST" action="{{ url_for('remove_item', item_title=item) }}">
+                        <button id="remove_item_button" type="submit">Remove</button>
+                    </form>
+                </li>
+                {% set total_price = total_price + item_info.price | float %}
+            {% endfor %}
+        </ul>
+        <div id="total_price_display">
+            <strong>Total Price:</strong> $<span id="total_price">{{ total_price }}</span>
+        </div>
+        <button id="checkout_button" onclick="location.href='{{ url_for('checkout') }}'">Checkout</button>
+        <button id="back_button" onclick="location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    </div>
+</body>
+</html>

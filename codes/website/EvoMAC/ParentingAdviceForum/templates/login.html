@@ -1,0 +1,29 @@
+'''
+This is the login page for the ParentingAdviceForum web application.
+It allows users to enter their username and password to log in or register a new account.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="username-input">Username:</label>
+            <input type="text" id="username-input" name="username" required>
+            <label for="password-input">Password:</label>
+            <input type="password" id="password-input" name="password" required>
+            <button type="submit" id="login-button">Login</button>
+            <a href="{{ url_for('register') }}" id="register-button">Register</a>
+        </form>
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

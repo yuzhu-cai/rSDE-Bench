@@ -1,0 +1,29 @@
+'''
+This is the resources page for the PetCareCommunity web application.
+It displays a list of resources with titles, descriptions, and links to external resources.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="resources-page">
+        <h1>Resources</h1>
+        <div id="resource-container">
+            {% for resource in resources %}
+                <div class="resource-item">
+                    <h2 id="resource-title">{{ resource.title }}</h2>
+                    <p id="resource-description">{{ resource.description }}</p>
+                    <a href="{{ resource.link }}" target="_blank">Visit Resource</a>
+                </div>
+            {% endfor %}
+        </div>
+        <button id="community-feed-button" onclick="window.location.href='{{ url_for('community_feed') }}'">Community Feed</button>
+        <button id="profile-button" onclick="window.location.href='{{ url_for('profile', username=session['username']) }}'">Profile</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+'''
+This is the recipe submission page for the RecipeHub web application.
+It allows users to submit their recipes by entering the title, ingredients, and instructions.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Recipe</title>
+</head>
+<body>
+    <h1>Submit Recipe</h1>
+    <form action="{{ url_for('submit_recipe') }}" method="post">
+        <label for="recipe_title_input">Recipe Title:</label>
+        <input type="text" id="recipe_title_input" name="recipe_title_input" required>
+        <br>
+        <label for="ingredients_input">Ingredients:</label>
+        <textarea id="ingredients_input" name="ingredients_input" required></textarea>
+        <br>
+        <label for="instructions_input">Instructions:</label>
+        <textarea id="instructions_input" name="instructions_input" required></textarea>
+        <br>
+        <button type="submit" id="submit_recipe_button">Submit Recipe</button>
+    </form>
+    {% if submission_success_message %}
+        <p id="submission_success_message">{{ submission_success_message }}</p>
+    {% endif %}
+    {% if submission_error_message %}
+        <p id="submission_error_message">{{ submission_error_message }}</p>
+    {% endif %}
+    <button id="back_to_home_button" onclick="window.location.href='{{ url_for('home') }}'">Back to Home</button>
+</body>
+</html>

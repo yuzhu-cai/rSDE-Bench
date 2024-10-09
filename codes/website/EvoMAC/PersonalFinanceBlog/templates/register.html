@@ -1,0 +1,36 @@
+'''
+This file contains the frontend code for the registration page of the PersonalFinanceBlog application.
+It allows new users to create an account.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Register</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('register') }}" method="POST">
+            <input type="text" id="register_username_field" name="register_username_field" placeholder="Username" required>
+            <input type="password" id="register_password_field" name="register_password_field" placeholder="Password" required>
+            <input type="password" id="confirm_password_field" name="confirm_password_field" placeholder="Confirm Password" required>
+            <input type="text" id="occupation_field" name="occupation_field" placeholder="Occupation" required>
+            <button type="submit" id="register_button">Register</button>
+        </form>
+        <p id="registration_success_message">{{ registration_success_message }}</p>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+</body>
+</html>

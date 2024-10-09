@@ -1,0 +1,27 @@
+'''
+This file implements the frontend for the main blog page of the Personal Blog web application.
+It displays the list of blog posts, allows users to create a new post, view existing ones, and logout.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+</head>
+<body>
+    <h1 id="blog_title">My Personal Blog</h1>
+    <p id="blog_message">{{ blog_message }}</p>
+    <button id="new_post_button" onclick="window.location.href='{{ url_for('new_post') }}'">Create New Post</button>
+    <button id="logout_button" onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+    <h2>Blog Posts</h2>
+    <ul id="post_list">
+        {% for post in post_list %}
+            <li>
+                <a href="{{ url_for('view_post', title=post.title) }}">{{ post.title }}</a>
+                <button id="view_post_button" onclick="window.location.href='{{ url_for('view_post', title=post.title) }}'">View Post</button>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

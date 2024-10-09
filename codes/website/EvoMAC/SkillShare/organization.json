@@ -1,0 +1,24 @@
+{
+    "composition": {
+        "Programmer 2": "Update the `skills.html` file to ensure that the remove skill buttons are generated correctly for each skill. Modify the button's ID to be unique for each skill entry by using a combination of the skill name or index in the ID (e.g., `removeSkillButton_{{ loop.index }}`). Ensure that the file is properly formatted and adheres to the design specifications.",
+        "Programmer 3": "Implement a new `data` directory if it does not exist, and create the necessary text files (`users.txt`, `skills.txt`, `profiles.txt`, and `about.txt`) with appropriate initial content to ensure the application can run without errors related to missing files.",
+        "Programmer 4": "Create a new `login.html` file that includes the required elements  username input field (ID `usernameInput`), password input field (ID `passwordInput`), login button (ID `loginButton`), and register button (ID `registerButton`). Ensure that the file is properly formatted and adheres to the design specifications.",
+        "Programmer 5": "Create a new `register.html` file that includes the required elements  username input field (ID `usernameInput`), password input field (ID `passwordInput`), and register button (ID `registerButton`). Ensure that the file is properly formatted and adheres to the design specifications.",
+        "Programmer 6": "Create a new `dashboard.html` file that includes the required elements  welcome message (ID `welcomeMessage`), featured skills section (ID `featuredSkillsSection`), view all skills button (ID `viewAllSkillsButton`), about SkillShare button (ID `aboutButton`), and profile link (ID `profileLink`). Ensure that the file is properly formatted and adheres to the design specifications.",
+        "Programmer 7": "Create a new `skills.html` file that includes the required elements  skills list (ID `skillsList`), add skill input (ID `newSkillInput`), add skill button (ID `addSkillButton`), and remove skill button (ID `removeSkillButton`), ensuring that the remove skill button is generated correctly for each skill.",
+        "Programmer 8": "Create a new `profile.html` file that includes the required elements  name field (ID `usernameInput`) and save changes button (ID `saveChangesButton`). Ensure that the file is properly formatted and adheres to the design specifications.",
+        "Programmer 9": "Create a new `about.html` file that includes the required elements  about section (ID `aboutSection`) and contact information (ID `contactInfo`). Ensure that the file is properly formatted and adheres to the design specifications."
+    },
+    "workflow": {
+        "Programmer 2": [],
+        "Programmer 3": [],
+        "Programmer 4": [],
+        "Programmer 5": [],
+        "Programmer 6": [],
+        "Programmer 7": [
+            "Programmer 2"
+        ],
+        "Programmer 8": [],
+        "Programmer 9": []
+    }
+}

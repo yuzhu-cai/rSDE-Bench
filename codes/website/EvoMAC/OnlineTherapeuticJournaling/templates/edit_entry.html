@@ -1,0 +1,25 @@
+'''
+This file implements the frontend code for the edit journal entry page of the Online Therapeutic Journaling web application.
+It includes a form for users to modify an existing journal entry with fields for title and content.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Journal Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Journal Entry</h1>
+        <form id="edit-entry-form" action="{{ url_for('edit_entry', entry_id=entry[0]) }}" method="POST">
+            <label for="edit-title-input">Title:</label>
+            <input type="text" id="edit-title-input" name="edit-title" value="{{ entry[2] }}" required>
+            <label for="edit-content-input">Content:</label>
+            <textarea id="edit-content-input" name="edit-content" required>{{ entry[3] }}</textarea>
+            <button type="submit" id="update-entry-button">Update Entry</button>
+        </form>
+    </div>
+</body>
+</html>

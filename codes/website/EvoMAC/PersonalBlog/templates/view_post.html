@@ -1,0 +1,22 @@
+'''
+This file implements the frontend for the view post page of the Personal Blog web application.
+It displays the full content of a selected blog post with options to edit or delete the post.
+Users can navigate back to the main blog page from here.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blog Post</title>
+</head>
+<body>
+    <h1 id="view_post_title">{{ view_post_title }}</h1>
+    <p id="view_post_content">{{ view_post_content }}</p>
+    <button id="edit_post_button" onclick="window.location.href='{{ url_for('edit_post', title=view_post_title) }}'">Edit Post</button>
+    <form action="{{ url_for('delete_post_route', title=view_post_title) }}" method="POST" style="display:inline;">
+        <button type="submit" id="delete_post_button" onclick="return confirm('Are you sure you want to delete this post?');">Delete Post</button>
+    </form>
+    <button id="back_to_blog_button" onclick="window.location.href='{{ url_for('main_blog') }}'">Back to Blog</button>
+</body>
+</html>

@@ -1,0 +1,3 @@
+1001,john_doe,1,7,2023-10-01,inactive
+1002,jane_smith,1,2,2023-10-09,inactive
+1003,john_doe,2,3,2023-10-09,active

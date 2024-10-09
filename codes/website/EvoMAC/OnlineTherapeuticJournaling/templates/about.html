@@ -1,0 +1,20 @@
+'''
+This file implements the frontend code for the about page of the Online Therapeutic Journaling web application.
+It includes a header with the ID `about-header`, a text description with the ID `about-description`, and contact information with the ID `contact-info`.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="about-header">About Us</h1>
+        <p id="about-description">This application is designed to help users engage in therapeutic journaling, providing a safe and secure environment for self-reflection and emotional expression.</p>
+        <p id="contact-info">For support, please contact us at support@onlinetherapeuticjournaling.com.</p>
+    </div>
+</body>
+</html>

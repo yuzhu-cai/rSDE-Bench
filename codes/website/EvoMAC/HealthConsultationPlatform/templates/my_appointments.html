@@ -1,0 +1,29 @@
+'''
+This is the frontend code for the Appointment Tracking Page of the Health Consultation Platform.
+It displays a list of upcoming appointments and past consultations for the user.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Appointments</title>
+</head>
+<body>
+    <h1>My Appointments</h1>
+    <table id="appointments_list">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment[1] }}</td>  <!-- Date -->
+            <td>{{ appointment[2] }}</td>  <!-- Time -->
+        </tr>
+        {% endfor %}
+    </table>
+    <button id="feedback_button" onclick="location.href='{{ url_for('feedback') }}'">Leave Feedback</button>
+    <button id="logout_button" onclick="location.href='{{ url_for('login') }}'">Logout</button>
+</body>
+</html>

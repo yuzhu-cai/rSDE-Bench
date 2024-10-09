@@ -1,0 +1,55 @@
+<!--
+This is the internship listings page for the RemoteInternshipMarketplace web application.
+It allows users to search for internships and view available internships.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Internships</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Available Internships</h1>
+    <input type="text" id="input_search" placeholder="Search for internships...">
+    <button id="btn_search_intership" onclick="searchInternships()">Search</button>
+    <h2>Search Results:</h2>
+    <ul id="list_results">
+        <!-- This list will be populated dynamically with search results -->
+    </ul>
+    <h2>All Available Internships:</h2>
+    <ul id="list_available_internships">
+        <!-- This list will be populated dynamically with all available internships -->
+        {% for internship in internships %}
+        <li>
+            {{ internship[1] }} 
+            <button id="btn_view_details_{{ internship[0] }}" onclick="window.location.href='{{ url_for('internship_details', internship_id=internship[0]) }}'">View Details</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <button onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    <script>
+        function searchInternships() {
+            const searchTerm = document.getElementById('input_search').value;
+            $.ajax({
+                url: '/search_internships',
+                method: 'GET',
+                data: { query: searchTerm },
+                success: function(data) {
+                    const resultsList = document.getElementById('list_results');
+                    resultsList.innerHTML = ''; // Clear previous results
+                    data.forEach(function(internship) {
+                        const li = document.createElement('li');
+                        li.textContent = internship.title;
+                        resultsList.appendChild(li);
+                    });
+                },
+                error: function() {
+                    alert('Error fetching search results.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

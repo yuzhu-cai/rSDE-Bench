@@ -1,0 +1,18 @@
+<!--
+This is the dashboard page for the VirtualWellnessRetreats web application.
+It provides options to book or manage bookings of retreats.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <button id="schedule_retreat_button" onclick="window.location.href='{{ url_for('schedule_retreat') }}'">Schedule a Retreat</button>
+    <button id="view_bookings_button" onclick="window.location.href='{{ url_for('view_bookings') }}'">View Bookings</button>
+    <button id="logout_button" onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+</body>
+</html>

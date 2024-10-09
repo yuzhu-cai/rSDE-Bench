@@ -1,0 +1,28 @@
+'''
+This is the edit subscription page for the GourmetFoodSubscription web application.
+It displays detailed information about a specific subscription selected by the user with pre-filled information about the subscription. This page allows users to edit the information of this subscription.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Subscription</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+</head>
+<body>
+    <div class="edit-subscription-container">
+        <h1>Edit Subscription</h1>
+        <form action="/edit_subscription" method="POST">
+            <label for="subscription_type_field">Subscription Type:</label>
+            <input type="text" id="subscription_type_field" name="subscription_type" required>
+            <label for="subscription_frequency_field">Frequency:</label>
+            <input type="text" id="subscription_frequency_field" name="subscription_frequency" required>
+            <label for="subscription_start_date_field">Start Date:</label>
+            <input type="date" id="subscription_start_date_field" name="subscription_start_date" required>
+            <button type="submit" id="save_subscription_button">Save Subscription</button>
+            <button type="button" id="cancel_button" onclick="window.location.href='/dashboard'">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

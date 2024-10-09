@@ -1,0 +1,2 @@
+bookTitle1|bookAuthor1|bookContent1
+bookTitle2|bookAuthor2|bookContent2

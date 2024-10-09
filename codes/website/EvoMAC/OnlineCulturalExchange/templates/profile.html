@@ -1,0 +1,30 @@
+'''
+This is the HTML code for the Profile Page of the OnlineCulturalExchange web application.
+It includes a header for the user profile, a display area for the username, a logout button, 
+and a hyperlink to return to the Home Page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="profile-header">
+        <h1>User Profile</h1>
+    </div>
+    <div id="username-display">
+        {% if session['username'] %}
+            <p>Username: {{ session['username'] }}</p>
+        {% else %}
+            <p>Not logged in.</p>
+        {% endif %}
+    </div>
+    <div>
+        <a id="logout-button" href="{{ url_for('login') }}">Logout</a>
+        <a id="home-link" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

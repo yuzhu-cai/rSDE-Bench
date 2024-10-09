@@ -1,0 +1,37 @@
+'''
+This is the search page for the Online Library Management System.
+It allows users to search for books in the library by entering keywords.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Search Books</h2>
+        <form action="{{ url_for('search_books') }}" method="GET">
+            <div>
+                <label for="search_field">Search:</label>
+                <input type="text" id="search_field" name="search_field" required>
+            </div>
+            <div>
+                <button type="submit" id="search_button">Search</button>
+            </div>
+        </form>
+        <h3>Search Results</h3>
+        <ul id="search_results">
+            {% if results %}
+                {% for book in results %}
+                    <li>{{ book[0] }} by {{ book[1] }} (ISBN: {{ book[2] }})</li>
+                {% endfor %}
+            {% else %}
+                <li>No results found.</li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

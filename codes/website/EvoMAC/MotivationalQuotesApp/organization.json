@@ -1,0 +1,36 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in app.py to handle routing for all frontend pages and manage file read/write operations. Fix the routing issues to ensure that the correct page URLs are used in the test cases. Ensure that the application can be accessed via the local port 5000, and that the login page can be directly accessed through the route '/'. Verify that all functions are implemented correctly, and ensure that file read and write operations start from the first line of the file, without any encryption, using plain text.",
+        "Programmer 2": "Develop the login page frontend code in templates/login.html. Ensure that the page includes a username input field, a password input field, a login button, and an about button. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases.",
+        "Programmer 3": "Develop the home page frontend code in templates/home.html. Ensure that the page displays a welcome message, a section for displaying quotes with edit and delete options, an add quote button, and a favorites button. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases.",
+        "Programmer 4": "Develop the add quote page frontend code in templates/add_quote.html. Ensure that the page includes a quote input field, an author input field, and a submit quote button. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases.",
+        "Programmer 5": "Develop the edit quote page frontend code in templates/edit_quote.html. Ensure that the page includes a quote input field, an author input field, and an update quote button. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases.",
+        "Programmer 6": "Develop the delete confirmation page frontend code in templates/delete_confirmation.html. Ensure that the page includes a confirmation message, a confirm deletion button, and a cancel button. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases.",
+        "Programmer 7": "Develop the favorites page frontend code in templates/favorites.html. Ensure that the page displays all quotes marked as favorites. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases.",
+        "Programmer 8": "Develop the about page frontend code in templates/about.html. Ensure that the page includes an application description and developer information. Verify that all URLs in the frontend code are routes, not HTML file names. Fix the IDs used in the HTML to match the expected IDs in the test cases."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ],
+        "Programmer 7": [
+            "Programmer 1"
+        ],
+        "Programmer 8": [
+            "Programmer 1"
+        ]
+    }
+}

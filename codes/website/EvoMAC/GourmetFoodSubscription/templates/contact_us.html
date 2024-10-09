@@ -1,0 +1,28 @@
+'''
+This is the contact us page for the GourmetFoodSubscription web application.
+It allows users to send inquiries or feedback to customer support.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for styling -->
+</head>
+<body>
+    <div class="contact-us-container">
+        <h1>Contact Us</h1>
+        <form action="/send_message" method="POST">
+            <label for="contact_name_field">Name:</label>
+            <input type="text" id="contact_name_field" name="name" required>
+            <label for="contact_email_field">Email:</label>
+            <input type="email" id="contact_email_field" name="email" required>
+            <label for="contact_message_field">Message:</label>
+            <textarea id="contact_message_field" name="message" required></textarea>
+            <button type="submit" id="send_message_button">Send Message</button>
+            <button type="button" id="back_button" onclick="window.location.href='/dashboard'">Back</button>
+        </form>
+    </div>
+</body>
+</html>

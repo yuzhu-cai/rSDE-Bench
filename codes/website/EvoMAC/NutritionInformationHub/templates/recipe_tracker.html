@@ -1,0 +1,77 @@
+'''
+This is the recipe tracker page for the Nutrition Information Hub.
+It allows users to input, save, and view various recipes that they have created or plan to prepare.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <div class="recipe-tracker-container">
+        <h1 id="recipeTrackerTitle">Recipe Tracker</h1>
+        <form id="recipeForm" onsubmit="saveRecipe(event)">
+            <label for="recipeNameField">Recipe Name:</label>
+            <input type="text" id="recipeNameField" name="recipeNameField" required>
+            <label for="ingredientsField">Ingredients:</label>
+            <textarea id="ingredientsField" name="ingredientsField" required></textarea>
+            <label for="instructionsField">Instructions:</label>
+            <textarea id="instructionsField" name="instructionsField" required></textarea>
+            <button type="submit" id="saveRecipeButton">Save Recipe</button>
+        </form>
+        <h2>Saved Recipes:</h2>
+        <div id="savedRecipesList"></div>
+    </div>
+    <script>
+        function saveRecipe(event) {
+            event.preventDefault();
+            const recipeName = document.getElementById('recipeNameField').value;
+            const ingredients = document.getElementById('ingredientsField').value;
+            const instructions = document.getElementById('instructionsField').value;
+            // Send the recipe data to the server
+            fetch('/save_recipe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    recipeName: recipeName,
+                    ingredients: ingredients,
+                    instructions: instructions
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text); });
+                }
+                return response.text();
+            })
+            .then(data => {
+                const savedRecipesDiv = document.getElementById('savedRecipesList');
+                savedRecipesDiv.innerHTML += `<div>${recipeName}|${ingredients}|${instructions}</div>`;
+                document.getElementById('recipeForm').reset();
+                loadSavedRecipes(); // Load saved recipes after saving a new one
+            })
+            .catch(error => alert('Error: ' + error.message));
+        }
+        function loadSavedRecipes() {
+            fetch('/get_saved_recipes')
+                .then(response => response.json())
+                .then(data => {
+                    const savedRecipesDiv = document.getElementById('savedRecipesList');
+                    savedRecipesDiv.innerHTML = ''; // Clear previous recipes
+                    data.recipes.forEach(recipe => {
+                        savedRecipesDiv.innerHTML += `<div>${recipe}</div>`;
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        // Load saved recipes when the page is loaded
+        window.onload = loadSavedRecipes;
+    </script>
+</body>
+</html>

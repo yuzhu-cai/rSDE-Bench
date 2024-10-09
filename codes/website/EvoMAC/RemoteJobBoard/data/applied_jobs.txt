@@ -1,0 +1,2 @@
+john_doe:Software Developer,Tech Company,Remote software development position for various projects.
+jane_smith:Project Manager,Business Solutions,Lead and manage teams on remote projects.

@@ -1,0 +1,2 @@
+john_doe,Max,3
+jane_smith,Luna,1

@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Improve the backend code in `app.py` to ensure that user sessions are handled correctly after login and that the internship listings page populates available internships properly. This includes \n- Implementing session management to keep track of logged-in users.\n- Modifying the `dashboard` route to fetch and pass internship data to the `dashboard.html` template.\n- Ensuring the `internship_listings` route reads from the `internships.txt` file and passes the data to the `internship_listings.html` template.\n- Fixing the issue where the login page does not render the registration link correctly, ensuring that the login process redirects users to the dashboard on successful login.",
+        "Programmer 2": "Enhance the frontend code in `internship_listings.html` to ensure that the list of available internships is populated dynamically based on the data passed from the backend. This includes \n- Implementing a loop to display all available internships in the `list_available_internships` section.\n- Ensuring that the button for viewing details of each internship is correctly linked to the corresponding internship ID.\n- Fixing the issue with the search functionality to ensure that it correctly fetches search results from the backend.",
+        "Programmer 3": "Update the frontend code in `dashboard.html` to display the list of internships dynamically. This includes \n- Implementing a loop to populate the `list_internships` section with internship titles fetched from the backend.\n- Ensuring that the welcome message and buttons are displayed correctly.",
+        "Programmer 4": "Implement the missing functionality for the `searchInternships` function in `internship_listings.html`. This includes \n- Implementing AJAX functionality to fetch search results from the backend based on the user's input in the search box.\n- Updating the `list_results` section with the search results returned from the backend."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 2"
+        ]
+    }
+}

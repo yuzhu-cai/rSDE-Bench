@@ -1,0 +1,46 @@
+'''
+This is the reports page for the ExpenseTracker web application. 
+It allows users to generate and view expense reports like monthly summaries and category analysis.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="report-select">
+        <h1>Expense Reports</h1>
+        <label for="report-type">Select Report Type:</label>
+        <select id="report-select" name="report-type">
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+            <option value="category">By Category</option>
+        </select>
+        <button id="generate-report-button" onclick="generateReport()">Generate Report</button>
+    </div>
+    <div id="report-output">
+        <h2>Generated Report</h2>
+        <div id="report-content">
+            <!-- Report content will be displayed here -->
+        </div>
+    </div>
+    <script>
+        function generateReport() {
+            const reportType = document.getElementById('report-select').value;
+            // Logic to generate report based on selected type
+            // This can be an AJAX call to the backend to fetch the report data
+            fetch(`/generate_report?type=${reportType}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('report-content').innerHTML = data.report;
+                })
+                .catch(error => {
+                    console.error('Error generating report:', error);
+                });
+        }
+    </script>
+</body>
+</html>

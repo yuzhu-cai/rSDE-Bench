@@ -1,0 +1,42 @@
+'''
+This is the community page for the GreenLivingGuide web application.
+It provides a space for users to engage with one another, share experiences, and ask questions about sustainable living.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="forum-posts">
+        <h2>Community Posts</h2>
+        <ul>
+            {% for post in posts %}
+                <li><strong>{{ post[0] }}</strong>: {{ post[1] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="new-post-form">
+        <h3>Create a New Post</h3>
+        <form method="POST" action="{{ url_for('submit_post') }}">
+            <label for="post-title">Post Title:</label>
+            <input type="text" id="post-title" name="post_title" required>
+            <label for="post-content">Post Content:</label>
+            <textarea id="post-content" name="post_content" required></textarea>
+            <button type="submit" id="post-button">Submit Post</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div id="success-message">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

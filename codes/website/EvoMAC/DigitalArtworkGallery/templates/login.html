@@ -1,0 +1,33 @@
+'''
+This is the login page for the DigitalArtworkGallery application. 
+It allows users to enter their credentials to log in.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="{{ url_for('handle_login') }}" method="POST">
+        <label for="username_field">Username:</label>
+        <input type="text" id="username_field" name="username" required>
+        <br>
+        <label for="password_field">Password:</label>
+        <input type="password" id="password_field" name="password" required>
+        <br>
+        <button type="submit" id="login_button">Login</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li id="error_message">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--
+This is the internship details page for the RemoteInternshipMarketplace web application.
+It displays the details of a specific internship, including the title, description, category, 
+and application deadline, along with buttons to apply for the internship or go back to the listings.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Details</title>
+</head>
+<body>
+    <h1 id="heading_internship_title">{{ title }}</h1>
+    <p id="para_internship_desc">{{ description }}</p>
+    <p id="para_internship_cate">Category: {{ category }}</p>
+    <p id="para_internship_ddl">Application Deadline: {{ deadline }}</p>
+    <button id="btn_apply_now" onclick="applyNow()">Apply Now</button>
+    <button id="btn_back_to_listings" onclick="window.location.href='{{ url_for('internship_listings') }}'">Back to Listings</button>
+    <script>
+        function applyNow() {
+            // Implement the functionality to apply for the internship
+            // This could involve making an AJAX call to the backend to submit the application
+            alert('Application submitted for the internship: {{ title }}');
+        }
+    </script>
+</body>
+</html>

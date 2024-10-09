@@ -1,0 +1,91 @@
+/*
+This CSS file contains styles for the web application to enhance the visual presentation of the HTML pages.
+*/
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    color: #333;
+}
+/* Login Page Styles */
+#login {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#username, #password {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#login_button {
+    width: 100%;
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#error_message {
+    color: red;
+    margin-top: 10px;
+}
+/* Festival List Page Styles */
+#festival_list {
+    width: 80%;
+    margin: 20px auto;
+}
+.festival_item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+#add_festival_page_button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Festival Details Page Styles */
+#festival_name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#back_to_list_button {
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Add Festival Page Styles */
+#add_festival_name, #add_festival_location, #add_festival_date, #add_festival_lineup {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#submit_button {
+    padding: 10px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#admin_message {
+    margin-top: 10px;
+}

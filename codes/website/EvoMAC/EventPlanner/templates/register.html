@@ -1,0 +1,39 @@
+'''
+This file contains the frontend code for the Registration Page of the EventPlanner web application. 
+It allows new users to create an account.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/register" method="POST">
+        <label for="register_username_field">Username:</label>
+        <input type="text" id="register_username_field" name="register_username_field" required>
+        <br>
+        <label for="register_password_field">Password:</label>
+        <input type="password" id="register_password_field" name="register_password_field" required>
+        <br>
+        <label for="confirm_password_field">Confirm Password:</label>
+        <input type="password" id="confirm_password_field" name="confirm_password_field" required>
+        <br>
+        <button type="submit" id="register_button">Register</button>
+    </form>
+    <div id="registration_success_message">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</body>
+</html>

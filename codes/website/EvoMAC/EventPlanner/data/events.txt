@@ -1,0 +1,2 @@
+1|Team Meeting|2024-08-30|Conference Room A|Discuss project updates.
+2|Annual Conference|2024-09-15|Grand Hall|Networking sessions.

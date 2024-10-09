@@ -1,0 +1,17 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of ALL pages, ensuring that each page contains the required elements as specified in the requirements document. This includes \n- Login Page  Check for username_input, password_input, login_button, and about_button.\n- Home Page  Check for welcome_message, quotes_display, add_quote_button, and favorites_button.\n- Add Quote Page  Check for quote_input, author_input, and submit_quote_button.\n- Edit Quote Page  Check for edit_quote_input, edit_author_input, and update_quote_button.\n- Delete Confirmation Page  Check for confirm_message, confirm_deletion_button, and cancel_button.\n- Favorites Page  Check for favorites_display.\n- About Page  Check for app_description and developer_info."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1",
+            "Programmer 2"
+        ]
+    }
+}

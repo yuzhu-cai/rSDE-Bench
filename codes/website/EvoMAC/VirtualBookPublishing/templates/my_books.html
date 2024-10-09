@@ -1,0 +1,46 @@
+'''
+This file implements the frontend code for the My Books Page of the VirtualBookPublishing web application.
+It displays a list of books published by the user, with options to delete or view details for each book.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>My Books</h1>
+        <ul id="booksList">
+            {% for book in books %}
+                <li>
+                    <span>{{ book.title }} by {{ book.author }}</span>
+                    <button id="viewBook_{{ loop.index0 }}" onclick="window.location.href='{{ url_for('book_details_page', index=loop.index0) }}'">View</button>
+                    <button onclick="deleteBook('{{ book.title }}')">Delete</button>
+                </li>
+            {% else %}
+                <li>No books published yet.</li>
+            {% endfor %}
+        </ul>
+        <button onclick="window.location.href='{{ url_for('dashboard_page') }}'">Back to Dashboard</button>
+    </div>
+    <script>
+        function deleteBook(title) {
+            if (confirm('Are you sure you want to delete this book?')) {
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '{{ url_for('delete_book') }}';
+                const hiddenField = document.createElement('input');
+                hiddenField.type = 'hidden';
+                hiddenField.name = 'title';
+                hiddenField.value = title;
+                form.appendChild(hiddenField);
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+    </script>
+</body>
+</html>

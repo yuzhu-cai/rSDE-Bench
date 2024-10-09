@@ -1,0 +1,42 @@
+<!--
+This is the schedule retreat page for the VirtualWellnessRetreats web application.
+It allows users to schedule retreats by entering detailed information.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Retreat</title>
+</head>
+<body>
+    <h1>Schedule a Retreat</h1>
+    <form action="{{ url_for('schedule_retreat') }}" method="POST">
+        <label for="retreat_title_field">Retreat Title:</label>
+        <input type="text" id="retreat_title_field" name="retreat_title_field" required>
+        <br>
+        <label for="retreat_date_field">Retreat Date:</label>
+        <input type="date" id="retreat_date_field" name="retreat_date_field" required>
+        <br>
+        <label for="retreat_time_field">Retreat Time:</label>
+        <input type="time" id="retreat_time_field" name="retreat_time_field" required>
+        <br>
+        <label for="retreat_instructor_field">Instructor:</label>
+        <input type="text" id="retreat_instructor_field" name="retreat_instructor_field" required>
+        <br>
+        <button type="submit" id="schedule_retreat_button">Schedule Retreat</button>
+    </form>
+    <button id="back_to_dashboard_button" onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+    <div id="success_message">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

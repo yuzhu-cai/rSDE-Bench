@@ -1,0 +1,2 @@
+2024-10-01|Groceries|50.00|Food
+2024-10-02|Transport|15.00|Travel

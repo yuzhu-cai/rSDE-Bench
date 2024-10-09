@@ -1,0 +1,16 @@
+{
+    "composition": {
+        "Programmer 1": "Fix the `view_expenses` function in `app.py` to handle malformed lines in the `expenses.txt` file. Implement a check to ensure that each line has the expected number of fields before unpacking them. If a line is malformed, skip it and log a warning message.",
+        "Programmer 2": "Fix the `delete_expense` function in `app.py` to handle malformed lines in the `expenses.txt` file. Implement a check to ensure that each line is correctly formatted before processing it for deletion. If a line is malformed, skip it and log a warning message. Ensure that the delete button in `view_expenses.html` submits the correct data to the delete route in `app.py` for the corresponding expense.",
+        "Programmer 3": "Modify the `view_expenses.html` file to ensure that each delete button has a unique identifier for each expense row. Update the button's ID to include the expense ID to prevent `NoSuchElementException` during testing. Ensure that the button's ID is consistent with the expected format for the test cases."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 2"
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+'''
+This is the registration page for the PortfolioSite web application.
+It facilitates new users in creating an account by filling out a form with their details.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="reg_email">Email:</label>
+        <input type="email" id="reg_email" name="reg_email" required>
+        <br>
+        <label for="reg_username">Username:</label>
+        <input type="text" id="reg_username" name="reg_username" required>
+        <br>
+        <label for="reg_password">Password:</label>
+        <input type="password" id="reg_password" name="reg_password" required>
+        <br>
+        <button type="submit" id="reg_button">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</body>
+</html>

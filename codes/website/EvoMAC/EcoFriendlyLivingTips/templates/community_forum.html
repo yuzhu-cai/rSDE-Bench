@@ -1,0 +1,34 @@
+'''
+HTML template for the community forum page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="forum-section">
+        <h2>Community Forum</h2>
+        <div id="forum-posts">
+            {% for post in posts %}
+                <div class="post">
+                    <strong>{{ post[0] }}:</strong> {{ post[1] }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="add-post-section">
+        <h3>Submit a New Post</h3>
+        <form action="{{ url_for('community_forum') }}" method="post" id="post-input-form">
+            <textarea id="post-input" name="post_content" placeholder="Share your thoughts on eco-friendly living..." required></textarea>
+            <button type="submit" id="submit-post-button">Post</button>
+        </form>
+    </div>
+    <div>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+'''
+This is the dashboard page for the SkillShare web application. 
+It serves as the landing page where users can see featured skills and navigate to other sections.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1 id="welcomeMessage">Welcome to SkillShare!</h1>
+    <div id="featuredSkillsSection">
+        <h2>Featured Skills</h2>
+        <ul id="skillsList">
+            {% for skill in user_skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button id="viewAllSkillsButton" onclick="window.location.href='{{ url_for('skills') }}'">View All Skills</button>
+    <button id="aboutButton" onclick="window.location.href='{{ url_for('about') }}'">About SkillShare</button>
+    <a id="profileLink" href="{{ url_for('profile') }}">Profile</a>
+</body>
+</html>

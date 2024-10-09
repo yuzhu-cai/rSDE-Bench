@@ -1,0 +1,22 @@
+'''
+This is the frontend code for the Freelancer Profile Page of the FreelancerMarketplace web application.
+It includes the freelancer's name and an information section.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="freelancer-profile-container">
+        <h1 id="freelancer_name">Freelancer Name</h1>
+        <div id="information">
+            <!-- Freelancer information will be displayed here -->
+        </div>
+        <button onclick="window.location.href='{{ url_for('home') }}'">Back to Home</button>
+    </div>
+</body>
+</html>

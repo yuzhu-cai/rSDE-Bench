@@ -1,0 +1,36 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` to handle routing for all frontend pages. The website should be accessible via the local port 5000, and the login page can be directly accessed through the route '/'. The backend code must implement routing for all frontend pages, ensuring that each route corresponds to the frontend code. Additionally, implement logic in the `login_page` function to handle POST requests for user login, checking the provided username and password against the stored user data in the `read_users` function. If the credentials are valid, redirect the user to the dashboard page. Ensure that file read and write operations in the backend code start from the first line of the file, without any encryption, using plain text.",
+        "Programmer 2": "Develop the frontend code for the Login Page in `login.html`. This page allows users to log in with their credentials. Ensure that the form action correctly points to the login route and that the page contains all required elements  Username Field (`username`), Password Field (`password`), Login Button (`loginBtn`), Registration Link (`registrationLink`), and About Link (`aboutLink`).",
+        "Programmer 3": "Develop the frontend code for the Registration Page in `registration.html`. Users can create a new account by providing a username and password. Ensure that the page contains all required elements  Username Field (`regUsername`), Password Field (`regPassword`), Submit Button (`regSubmit`), and Login Link (`loginLink`).",
+        "Programmer 4": "Develop the frontend code for the Dashboard Page in `dashboard.html`. This page provides an overview for the logged-in user, including options to create a new book or view previously published books. Ensure that the page contains all required elements  Welcome Message (`welcomeMsg`), Create New Book Button (`createBookBtn`), and View My Books Button (`viewBooksBtn`).",
+        "Programmer 5": "Develop the frontend code for the Create New Book Page in `create_book.html`. Users can enter the book's title, author, and content, and submit the information to be saved. Ensure that the page contains all required elements  Title Field (`bookTitle`), Author Field (`bookAuthor`), Content Area (`bookContent`), Submit Button (`submitBook`), and Cancel Button (`cancelCreate`).",
+        "Programmer 6": "Develop the frontend code for the View My Books Page in `my_books.html`. This page displays a list of books published by the user, with options to delete or view details for each book. Ensure that the page contains all required elements  Books List Container (`booksList`) and View Button for each book (`viewBook_<index>`).",
+        "Programmer 7": "Develop the frontend code for the View Book Details Page in `book_details.html`. This page shows the details of a selected book, including title, author, and content, with a return option to the My Books page. Ensure that the page contains all required elements  Title Display (`detailTitle`), Author Display (`detailAuthor`), Content Display (`detailContent`), and Back Button (`backToMyBooks`).",
+        "Programmer 8": "Develop the frontend code for the About Page in `about.html`. This page provides information about the application and ways to contact the support team. Ensure that the page contains all required elements  App Description (`appDescription`), Version Info (`versionInfo`), and Contact Information (`contactInfo`)."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ],
+        "Programmer 6": [
+            "Programmer 1"
+        ],
+        "Programmer 7": [
+            "Programmer 1"
+        ],
+        "Programmer 8": [
+            "Programmer 1"
+        ]
+    }
+}

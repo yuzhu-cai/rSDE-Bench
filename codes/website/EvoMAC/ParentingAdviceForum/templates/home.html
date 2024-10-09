@@ -1,0 +1,36 @@
+'''
+This is the home page for the ParentingAdviceForum web application.
+It welcomes users and provides navigation links to other sections of the forum.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <h1 id="welcome-message">Welcome to Parenting Advice Forum!</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('forum') }}" id="forum-link">Forum</a></li>
+                <li><a href="{{ url_for('post_advice') }}" id="post-advice-link">Post Advice</a></li>
+                <li><a href="{{ url_for('my_account') }}" id="my-account-link">My Account</a></li>
+                <li><a href="{{ url_for('contact_us') }}" id="contact-us-link">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section id="recent-posts">
+            <h2>Recent Posts</h2>
+            {% for post in recent_posts %}
+                <div class="post">
+                    <h3>{{ post.thread_title }}</h3>
+                    <p>{{ post.thread_content }}</p>
+                    <p><strong>Posted by:</strong> {{ post.username }}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+</body>
+</html>

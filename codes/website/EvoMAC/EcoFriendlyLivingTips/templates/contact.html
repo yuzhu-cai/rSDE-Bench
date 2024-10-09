@@ -1,0 +1,26 @@
+'''
+HTML template for the contact page.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="contact-form">
+        <h2>Contact Us</h2>
+        <form action="{{ url_for('contact') }}" method="post">
+            <input type="text" id="name-input" name="name" placeholder="Your Name" required>
+            <input type="email" id="email-input" name="email" placeholder="Your Email" required>
+            <textarea id="message-input" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" id="send-button">Send Message</button>
+        </form>
+    </div>
+    <div>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

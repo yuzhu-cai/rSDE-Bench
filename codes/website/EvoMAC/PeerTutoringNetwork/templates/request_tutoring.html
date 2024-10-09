@@ -1,0 +1,28 @@
+'''
+This is the request tutoring page for the PeerTutoringNetwork web application.
+It contains fields for tutoring subject, additional details, preferred date, a submit request button, and a link to return to the dashboard.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Tutoring</title>
+</head>
+<body>
+    <h1>Request Tutoring</h1>
+    <form action="{{ url_for('request_tutoring') }}" method="POST">
+        <label for="txt_subject">Tutoring Subject:</label>
+        <input type="text" id="txt_subject" name="txt_subject" required>
+        <br>
+        <label for="txt_details">Additional Details:</label>
+        <textarea id="txt_details" name="txt_details" required></textarea>
+        <br>
+        <label for="txt_date">Preferred Date:</label>
+        <input type="date" id="txt_date" name="txt_date" required>
+        <br>
+        <button type="submit" id="btn_submit_request">Submit Request</button>
+    </form>
+    <p><a href="{{ url_for('dashboard') }}" id="link_cancel">Return to Dashboard</a></p>
+</body>
+</html>

@@ -1,0 +1,128 @@
+Task:
+# Requirements Document for EventPlanner
+
+## 1. Objective
+Develop a comprehensive web application called 'EventPlanner' that enables users to create, view, manage, and search for events without the need for a SQL database, leveraging Python and storing data in local text files.
+
+## 2. Language
+The required development language for this application is Python.
+
+## 3. Page Design
+
+### 3.1. Login Page
+- **Page Title:** Login
+- **Overview:** This page allows users to log into the application with their credentials.
+- **Element IDs:**
+  - `username_field`: Input field for the username
+  - `password_field`: Input field for the password
+  - `login_button`: Button to submit login credentials
+  - `error_message`: Display area for login errors
+  - `register_link`: Link to the registration page
+
+### 3.2. Registration Page
+- **Page Title:** Register
+- **Overview:** This page allows new users to create an account.
+- **Element IDs:**
+  - `register_username_field`: Input field for the new username
+  - `register_password_field`: Input field for the new password
+  - `confirm_password_field`: Input field for confirming the password
+  - `register_button`: Button to submit registration details
+  - `registration_success_message`: Display area for registration confirmations or errors
+
+### 3.3. Dashboard Page
+- **Page Title:** Dashboard
+- **Overview:** This is the main page that displays the user's list of events and provides options to create, edit, or delete events.
+- **Element IDs:**
+  - `events_list`: Container to display all events' titles 
+  - `add_event_button`: Button to navigate to the Add Event page
+  - `search_event_button`: Button to navigate to the Search Event page
+  - `view_event_button`: Button to navigate to the View Event page (for each event in the Dashboard)
+  - `logout_button`: Button to log out of the application
+
+### 3.4. Add Event Page
+- **Page Title:** Add Event
+- **Overview:** This page allows users to create a new event by entering a title, date, location, and description.
+- **Element IDs:**
+  - `event_title_field`: Input field for the event title
+  - `event_date_field`: Input field for the event date
+  - `event_location_field`: Input field for the event location
+  - `event_description_field`: Textarea for the event description
+  - `save_event_button`: Button to save the new event and return to the dashboard
+  - `cancel_button`: Button to discard changes and return to the dashboard
+
+### 3.5. Search Event Page
+- **Page Title**: Search Event
+- **Overview**: This page allows users to search for events by entering a title or date.
+- **Element IDs**:
+  - `search_event_field`: Input field for the event title or date
+  - `search_event_button`: Button to start the search
+  - `search_event_result`: Container to display the search result
+  - `back_button`: Button to return to the dashboard
+
+### 3.6. View Event Page
+- **Page Title:** View Event
+- **Overview:** This page displays the details of a selected event, allowing users to read and edit it.
+- **Element IDs:**
+  - `event_title_field`: Display and edit area for the event title
+  - `event_date_field`: Display and edit area for the event date
+  - `event_location_field`: Display and edit area for the event location
+  - `event_description_field`: Display and edit area for the event description
+  - `edit_event_button`: Button to submit the edition
+  - `delete_event_button`: Button to delete the event
+  - `back_to_dashboard_button`: Button to return to the dashboard
+
+## 4. Data Storage
+
+### Data Format
+The application will store data in local text files located in the `data` directory. Each type of data will be saved in a separate file to organize the information efficiently.
+
+### Data Files
+- **User Data File (`users.txt`)**:
+  - Format: `username:password`
+  - Example:
+    ```
+    john_doe:abcd1234
+    jane_smith:xyz9876
+    ```
+
+- **Event Data File (`events.txt`)**:
+  - Format: `event_id|title|date|location|description`
+  - Example:
+    ```
+    1|Team Meeting|2024-08-30|Conference Room A|Discuss project updates.
+    2|Annual Conference|2024-09-15|Grand Hall|Networking sessions.
+    ```
+
+All text files will be created and accessed from the local `data` directory to ensure easy retrieval and management of information.
+
+Config:
+ChatEnvConfig.with_memory: False
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+ChatEnvConfig.background_prompt: ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of 'changing the digital world through programming'.
+ChatEnvConfig.set_free_port: True
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+
+
+Ideas:
+
+
+Language:
+
+
+Code_Version:
+16.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

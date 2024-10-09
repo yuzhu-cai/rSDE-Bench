@@ -1,0 +1,37 @@
+'''
+This is the contact us page for the ParentingAdviceForum web application.
+It allows users to send a message to the forum administrators.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="contact-us-container">
+        <h1>Contact Us</h1>
+        <form action="{{ url_for('contact_us') }}" method="post">
+            <label for="contact-name-input">Name:</label>
+            <input type="text" id="contact-name-input" name="contact_name" required>
+            <label for="contact-email-input">Email:</label>
+            <input type="email" id="contact-email-input" name="contact_email" required>
+            <label for="contact-message-area">Message:</label>
+            <textarea id="contact-message-area" name="contact_message" required></textarea>
+            <button type="submit" id="send-message-button">Send Message</button>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div id="confirmation-message"></div> <!-- Section for displaying flashed messages -->
+    </div>
+</body>
+</html>

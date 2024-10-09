@@ -1,0 +1,12 @@
+{
+    "composition": {
+        "Programmer 1": "Update the `contact_us.html` file to include a section for displaying flashed messages. This will ensure that the confirmation message (ID `confirmation-message`) is rendered correctly after a message is sent. The section should be placed within the form to allow for proper visibility after form submission.",
+        "Programmer 2": "Update the `app.py` file to ensure that the logic in the `contact_us` function correctly handles the flash message. This includes verifying that the flash message is set correctly upon successful form submission and that the user is redirected back to the contact us page to see the confirmation message."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ]
+    }
+}

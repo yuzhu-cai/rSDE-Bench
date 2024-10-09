@@ -1,0 +1,4 @@
+1|john_doe|Bank Update|2024-08-28|Banking|An update on bank account.
+2|john_doe|How to Invest|2023-09-15|Investment|A tutorial on investment.
+3|jane_smith|Flight Insurance|2023-12-23|Insurance|Flight Insurance.
+4|john_doe|Life Insurance|2022-01-01|Insurance|Life Insurance.

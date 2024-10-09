@@ -1,0 +1,32 @@
+<!--
+This is the registration page for the RemoteInternshipMarketplace web application.
+It allows users to input their username, first name, last name, email, password, 
+and confirm password to create a new account.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="{{ url_for('register') }}" method="post">
+        <label for="input_username">Username:</label>
+        <input type="text" id="input_username" name="input_username" required><br><br>
+        <label for="input_first_name">First Name:</label>
+        <input type="text" id="input_first_name" name="input_first_name" required><br><br>
+        <label for="input_last_name">Last Name:</label>
+        <input type="text" id="input_last_name" name="input_last_name" required><br><br>
+        <label for="input_email">Email:</label>
+        <input type="email" id="input_email" name="input_email" required><br><br>
+        <label for="input_password">Password:</label>
+        <input type="password" id="input_password" name="input_password" required><br><br>
+        <label for="input_confirm_password">Confirm Password:</label>
+        <input type="password" id="input_confirm_password" name="input_confirm_password" required><br><br>
+        <button type="submit" id="btn_register">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</body>
+</html>

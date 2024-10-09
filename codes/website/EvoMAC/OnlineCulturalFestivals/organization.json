@@ -1,0 +1,20 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the backend code in `app.py` to handle the login logic. This includes creating a route for `/login` that processes the login form submission, checks the provided credentials against the `user_data.txt` file, and redirects the user to the festival overview page upon successful login. If the login fails, it should return to the login page with an appropriate error message displayed in the `error-message` area. Additionally, ensure that the login process is correctly integrated with the festival overview and details pages to facilitate smooth navigation. Address the issue where the login process may not be completing successfully, which prevents access to subsequent pages.",
+        "Programmer 2": "Develop the frontend code for the festival overview page in `festival_overview.html`. This page should display a list of available cultural festivals and include a button to navigate to the user submissions page. Ensure that it correctly retrieves and displays the festival data from the backend. Confirm that the page contains the required elements as specified in the requirements document, including `festivals-list`, `festival_item_<index>` for each festival, and `submit-experience-button`. Address the issue where elements are not being found due to potential login failures.",
+        "Programmer 3": "Develop the frontend code for the festival details page in `festival_details.html`. This page should display detailed information about the selected festival and allow users to leave comments. Ensure that it retrieves the festival details and existing comments from the backend. Confirm that the page contains the required elements as specified in the requirements document, including `festival-title`, `festival-info`, `comments-section`, `comment-name`, `comment-input`, `submit-comment-button`, and `back-button`. Address the issue where elements are not being found due to potential login failures.",
+        "Programmer 4": "Develop the frontend code for the user submissions page in `user_submission.html`. This page should include a form for users to submit their experiences and display a success message upon submission. Ensure that it correctly processes the submission and provides feedback to the user. Confirm that the page contains the required elements as specified in the requirements document, including `submission-form`, `user-name`, `experience-description`, `submit-button`, and `success-message`. Address the issue where elements are not being found due to potential login failures."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 2"
+        ],
+        "Programmer 4": [
+            "Programmer 3"
+        ]
+    }
+}

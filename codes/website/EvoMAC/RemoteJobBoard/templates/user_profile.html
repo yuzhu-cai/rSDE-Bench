@@ -1,0 +1,32 @@
+'''
+This is the HTML template for the User Profile Page of the RemoteJobBoard web application.
+It displays user information, allows for edits, shows applied jobs, and includes a logout button.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="user-profile-container">
+        <h1>User Profile</h1>
+        <form action="{{ url_for('edit_profile') }}" method="post">
+            <label for="username-display">Username:</label>
+            <input type="text" id="username-display" name="username" value="{{ username }}" required>
+            <label for="email-display">Email:</label>
+            <input type="email" id="email-display" name="email" value="{{ email }}" required>
+            <button type="submit" id="edit-profile-button">Edit Profile</button>
+        </form>
+        <h2>Applied Jobs</h2>
+        <ul id="job-list">
+            {% for job in applied_jobs %}
+                <li>{{ job }}</li>
+            {% endfor %}
+        </ul>
+        <button id="logout-button" onclick="window.location.href='{{ url_for('login') }}'">Logout</button>
+    </div>
+</body>
+</html>

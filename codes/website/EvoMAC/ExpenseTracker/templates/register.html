@@ -1,0 +1,25 @@
+'''
+This is the registration page for the ExpenseTracker web application. 
+It allows users to input their credentials for registration.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="register-form">
+        <h1>User Register</h1>
+        <form action="{{ url_for('register') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" id="register-button">Register</button>
+        </form>
+    </div>
+</body>
+</html>

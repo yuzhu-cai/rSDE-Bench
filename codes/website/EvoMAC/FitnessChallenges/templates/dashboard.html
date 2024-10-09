@@ -1,0 +1,73 @@
+'''
+HTML template for the user dashboard.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #dashboard {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard">
+        <h2>Welcome, {{ username }}!</h2>
+        <div class="section" id="userProfile">
+            <h3>User Profile</h3>
+            <p>Username: {{ username }}</p>
+        </div>
+        <div class="section" id="currentChallenges">
+            <h3>Current Challenges</h3>
+            <ul>
+                {% for challenge in current_challenges %}
+                    <li>{{ challenge }}</li>
+                {% else %}
+                    <li>No current challenges.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="section" id="activityLog">
+            <h3>Activity Log</h3>
+            <ul>
+                {% for activity in activity_log %}
+                    <li>{{ activity }}</li>
+                {% else %}
+                    <li>No activity logged.</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <button id="startChallengeButton" onclick="window.location.href='{{ url_for('challenges') }}'">Start New Challenge</button>
+        <button id="logoutButton" onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+    </div>
+</body>
+</html>

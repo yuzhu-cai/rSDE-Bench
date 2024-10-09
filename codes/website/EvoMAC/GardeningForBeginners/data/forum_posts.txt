@@ -1,0 +1,2 @@
+user1,What is the best type of soil for indoor plants?,1
+user2,I recommend using premium potting soil for better growth.,2

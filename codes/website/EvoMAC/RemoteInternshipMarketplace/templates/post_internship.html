@@ -1,0 +1,27 @@
+<!--
+This is the post internship page for the RemoteInternshipMarketplace web application.
+It allows users to input the title, description, category, and application deadline for a new internship.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a New Internship</title>
+</head>
+<body>
+    <h1>Post a New Internship</h1>
+    <form action="{{ url_for('post_internship') }}" method="post">
+        <label for="input_internship_title">Internship Title:</label>
+        <input type="text" id="input_internship_title" name="input_internship_title" required><br><br>
+        <label for="input_internship_desc">Internship Description:</label>
+        <textarea id="input_internship_desc" name="input_internship_desc" required></textarea><br><br>
+        <label for="input_internship_category">Internship Category:</label>
+        <input type="text" id="input_internship_category" name="input_internship_category" required><br><br>
+        <label for="input_application_deadline">Application Deadline:</label>
+        <input type="date" id="input_application_deadline" name="input_application_deadline" required><br><br>
+        <button type="submit" id="btn_submit_internship">Submit</button>
+    </form>
+    <button onclick="window.location.href='{{ url_for('dashboard') }}'">Back to Dashboard</button>
+</body>
+</html>

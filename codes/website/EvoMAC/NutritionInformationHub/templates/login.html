@@ -1,0 +1,28 @@
+'''
+This is the login page for the Nutrition Information Hub.
+It allows users to enter their credentials to access the application.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>User Login</h1>
+        <form action="{{ url_for('do_login') }}" method="post">
+            <label for="usernameField">Username:</label>
+            <input type="text" id="usernameField" name="usernameField" required>
+            <label for="passwordField">Password:</label>
+            <input type="password" id="passwordField" name="passwordField" required>
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+        {% if errorMessage is not none %}
+            <div id="errorMessage" style="color: red; margin-top: 10px;">{{ errorMessage }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

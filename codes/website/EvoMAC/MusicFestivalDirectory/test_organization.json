@@ -1,0 +1,17 @@
+{
+    "composition": {
+        "Programmer 1": "Test whether the website can be accessed through local port 5000. In this test, you only need to test whether the login page of the website can be accessed through the local 5000 port.",
+        "Programmer 2": "Test whether the first page of the website is the login page and whether it can log in correctly based on the example data provided in the Task.",
+        "Programmer 3": "Test the elements and integrity of ALL pages, ensuring that the following elements are present \n- Login Page  Check for the presence of username field (ID  `username`), password field (ID  `password`), login button (ID  `login_button`), and error message display (ID  `error_message`).\n- Festival List Page  Check for the presence of festival list container (ID  `festival_list`), festival item links (ID  `festival_item_<index>`), and add new festival button (ID  `add_festival_page_button`).\n- Festival Details Page  Check for the presence of festival name display (ID  `festival_name`), location display (ID  `festival_location`), date display (ID  `festival_date`), lineup display (ID  `festival_lineup`), and back to list button (ID  `back_to_list_button`).\n- Add Festival Page  Check for the presence of festival name input (ID  `add_festival_name`), location input (ID  `add_festival_location`), date input (ID  `add_festival_date`), lineup input (ID  `add_festival_lineup`), submit button (ID  `submit_button`), and success/error message display (ID  `admin_message`)."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1",
+            "Programmer 2"
+        ]
+    }
+}

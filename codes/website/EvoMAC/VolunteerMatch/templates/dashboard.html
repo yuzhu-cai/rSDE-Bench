@@ -1,0 +1,36 @@
+'''
+This file contains the frontend code for the Volunteer Dashboard of the VolunteerMatch web application.
+It displays a list of available volunteer opportunities with an apply button for each opportunity and a logout button.
+'''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>VolunteerMatch - Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>VolunteerMatch</h1>
+    </header>
+    <div class="container">
+        <div id="dashboard-header">
+            <h2>Available Volunteer Opportunities</h2>
+            <a href="{{ url_for('login') }}" id="logout-button">Logout</a>
+        </div>
+        <div id="available-opportunities" class="available-opportunities">
+            {% for opportunity in opportunities %}
+            <div id="opportunity-{{ opportunity.id }}" class="opportunity-item">
+                <div class="opportunity-title">{{ opportunity.title }}</div>
+                <div id="opp-description">{{ opportunity.description }}</div>
+                <form action="{{ url_for('opportunity_details', opportunity_id=opportunity.id) }}" method="GET">
+                    <button type="submit" id="apply-button-{{ opportunity.id }}">Apply</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
