@@ -15,8 +15,8 @@ rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability 
 
 Make sure to use python 3.8 or later:
 ```
-conda create -n rsd_bench python=3.8
-conda activate rsd_bench
+conda create -n rsde_bench python=3.8
+conda activate rsde_bench
 ```
 
 Check out and install this repository:
