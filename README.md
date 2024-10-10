@@ -1,6 +1,7 @@
 # RSD-Bench: Requirement-Oriented Software Development Benchmark
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org")
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org)
+[![project](https://img.shields.io/badge/project-Page-blue)](https://yuzhu-cai.github.io/RSD-Bench/)
 
 Code and data for paper "[Evolving Multi-Agent Collaboration Networks via Textual Backpropagation](https://arxiv.org)".
 
