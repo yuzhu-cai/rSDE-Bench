@@ -1,2 +1,0 @@
-My First Blog Post|This is the content of my very first blog post.
-Exploring Python|Python is an amazing programming language that is versatile and easy to learn.

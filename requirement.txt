@@ -1,9 +1,0 @@
-numpy
-opencv-python
-openai
-anthropic
-google-generativeai
-pyautogui
-grpcio==1.64.1
-selenium==4.8.0
-Flask==3.0.3

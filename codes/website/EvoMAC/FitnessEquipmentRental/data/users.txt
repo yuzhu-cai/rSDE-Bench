@@ -1,2 +1,0 @@
-john_doe,password123,John Doe,john@example.com
-jane_smith,password456,Jane Smith,jane@example.com

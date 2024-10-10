@@ -1,2 +1,0 @@
-1,Treadmill,"High-quality treadmill for home use",10,15.00
-2,Dumbbells,"Set of 5kg and 10kg dumbbells",5,10.00

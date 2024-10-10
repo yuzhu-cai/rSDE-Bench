@@ -1,2 +1,0 @@
-john_doe:abcd1234:banker
-jane_smith:xyz9876:broker

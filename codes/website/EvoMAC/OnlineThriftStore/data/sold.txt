@@ -1,1 +1,0 @@
-john_doe|laptop|A laptop with high performance.|700.00|jane_smith

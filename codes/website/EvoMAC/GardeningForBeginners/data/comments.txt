@@ -1,2 +1,0 @@
-1,user1,Great advice, thanks!
-2,user2,I appreciate the suggestions.

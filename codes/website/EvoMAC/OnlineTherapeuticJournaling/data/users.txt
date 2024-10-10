@@ -1,2 +1,0 @@
-john_doe:password1
-jane_smith:password2

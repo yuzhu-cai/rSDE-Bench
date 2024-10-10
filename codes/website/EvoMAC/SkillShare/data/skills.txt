@@ -1,2 +1,0 @@
-johnDoe:Python,JavaScript,HTML
-hhh:abc,edf,mmm

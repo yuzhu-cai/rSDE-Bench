@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>RSD-Bench</title>
+    <meta name="description" content="RSD-Bench: Requirement-Oriented Software Development Benchmark">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:image" content="/logo.png">
+    <!-- <link rel="shortcut icon" href="https://www.swebench.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.swebench.com/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" type="image/png" href="./static/images/cmic.jpeg">
+    <link rel="stylesheet" href="./static/css/normalize.css">
+    <link rel="stylesheet" href="./static/css/fonts.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <!-- <link rel="stylesheet" href="./static/css/all.min.css" integrity="..." crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="./static/js/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H9XFCMDPNS");
+    </script>
+  </head>
+  <body>
+    <div style="padding-bottom: 50px">
+      <section style="background-color: var(--dark_accent_color)">
+        <div class="content-wrapper title-wrapper" style="flex-direction: column">
+          <div style="
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              padding-bottom: 15px;
+            ">
+            <!-- <h1 style="font-size: 60px; padding-top: 0.4em">RSD-Bench: Requirement-Oriented Software Development Benchmark</h1> -->
+            <h1 style="font-size: 50px; text-align: center;">RSD-Bench: Requirement-Oriented Software Development Benchmark</h1>
+            <!-- <img src="./static/images/swellama.png" style="height: 100px; padding-top: 0em; padding-left: 0.5em"> -->
+          </div>
+          <h3 class="title is-5">Code and data for paper: <a href="https://arxiv.org">Evolving Multi-Agent Collaboration Networks via Textual Backpropagation</a></h2>
+          <p style="text-align: center;margin-top:1em;">
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=XBbwb78AAAAJ&hl=zh-CN">Yue Hu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/yuzhu-cai">Yuzhu Cai</a><sup>1,2,3</sup>,</span>
+              <span class="author-block">
+                <a href="https://chezacar.github.io/">Yaxin Du</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/Kay1794">Xinyu Zhu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/Kay1794">Xiangrui Liu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/Kay1794">Zijie Yu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/Kay1794">Yuchen Hou</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/Kay1794">Shuo Tang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://siheng-chen.github.io/">Siheng Chen</a><sup>1,3</sup>
+              </span>
+  
+            </div>
+            <p style="text-align: center;margin-top:1em;"></p>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Cooperative Medianet Innovation Center, Shanghai Jiao Tong University,</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>2</sup>Beihang University, </span>
+              
+              <span class="author-block"><sup>3</sup>Shanghai AI Laboratory</span>
+            </div>
+          </p>
+          <div class="content-wrapper" style="margin-top: 2em">
+            <a href="https://arxiv.org">
+              <button class="outline mmteaser">
+                <i class="fa fa-paperclip"></i> Paper&nbsp;
+              </button>
+            </a>
+            <a href="https://arxiv.org"></a>
+              <button class="outline mmteaser">
+                <i class="ai ai-arxiv"></i> arXiv&nbsp;
+              </button>
+            </a>
+            <a href="https://github.com/yuzhu-cai/RSD-Bench">
+              <button class="outline mmteaser">
+                <i class="fab fa-github"></i> Code&nbsp;
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="main-container">
+        <div class="content-wrapper">
+          <div class="content-box">
+            <h2 class="text-title">Leaderboard</h2>
+            <ul class="tab">
+              <li><button id="tab-website" class="tablinks active" data-leaderboard="website">Website</button></li>
+              <li><button id="tab-game" class="tablinks" data-leaderboard="game">Game</button></li>
+            </ul>
+            
+            <div class="tabcontent" style="display: none;" id="leaderboard-game">
+              <table class="table scrollable">
+                <thead>
+                  <tr>
+                    <th><div class="sticky-header-content">Model</div></th>
+                    <th><div class="sticky-header-content">% Basic</div></th>
+                    <th><div class="sticky-header-content">% Advanced</div></th>
+                    <th><div class="sticky-header-content">Date</div></th>
+                    <th><div class="sticky-header-content">Codes</div></th>
+                    <th><div class="sticky-header-content">Results</div></th>
+                    <th><div class="sticky-header-content">Site</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        🥇✅
+                        
+                        
+                        
+                        EvoMAC
+                      </p>
+                    </td>
+                    <td><p class="number">77.54</p></td>
+                    <td><p class="number">51.60</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/EvoMAC">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/EvoMAC">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        🥈✅
+                        
+                        
+                        
+                        ChatDev
+                      </p>
+                    </td>
+                    <td><p class="number">53.63</p></td>
+                    <td><p class="number">32.26</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/ChatDev">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/ChatDev">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        🥉
+                        
+                        
+                        
+                        GPT-4o-Mini
+                      </p>
+                    </td>
+                    <td><p class="number">42.76</p></td>
+                    <td><p class="number">30.10</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/gpt-4o-mini">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/gpt-4o-mini">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        Claude-3.5-Sonnet
+                      </p>
+                    </td>
+                    <td><p class="number">44.20</p></td>
+                    <td><p class="number">18.29</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        Agentverse
+                      </p>
+                    </td>
+                    <td><p class="number">37.67</p></td>
+                    <td><p class="number">16.13</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/agentverse">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/agentverse">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        MapCoder
+                      </p>
+                    </td>
+                    <td><p class="number">29.71</p></td>
+                    <td><p class="number">7.52</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/mapcoder">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/mapcoder">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        Gemini-1.5-Flash
+                      </p>
+                    </td>
+                    <td><p class="number">21.74</p></td>
+                    <td><p class="number">6.45</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/gemini-1.5-flash">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/gemini-1.5-flash">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        Autogen
+                      </p>
+                    </td>
+                    <td><p class="number">17.39</p></td>
+                    <td><p class="number">0.00</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/autogen">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/autogen">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        MetaGPT
+                      </p>
+                    </td>
+                    <td><p class="number">16.67</p></td>
+                    <td><p class="number">0.00</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/game/metagpt">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/game/metagpt">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+                  
+                  
+                  
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="tabcontent" style="display: block;" id="leaderboard-website">
+              <table class="table scrollable">
+                <thead>
+                  <tr>
+                    <th><div class="sticky-header-content">Model</div></th>
+                    <th><div class="sticky-header-content">% Basic</div></th>
+                    <th><div class="sticky-header-content">% Advanced</div></th>
+                    <th><div class="sticky-header-content">Date</div></th>
+                    <th><div class="sticky-header-content">Codes</div></th>
+                    <th><div class="sticky-header-content">Results</div></th>
+                    <th><div class="sticky-header-content">Site</div></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        🥇✅
+                        
+                        
+                        
+                        EvoMAC
+                      </p>
+                    </td>
+                    <td><p class="number">89.38</p></td>
+                    <td><p class="number">65.05</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/EvoMAC">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/EvoMAC">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        🥈
+                        
+                        
+                        
+                        GPT-4o-Mini
+                      </p>
+                    </td>
+                    <td><p class="number">62.90</p></td>
+                    <td><p class="number">44.40</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/gpt-4o-mini">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/gpt-4o-mini">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        🥉✅
+                        
+                        
+                        
+                        ChatDev
+                      </p>
+                    </td>
+                    <td><p class="number">62.67</p></td>
+                    <td><p class="number">43.45</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/ChatDev">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/ChatDev">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        Claude-3.5-Sonnet
+                      </p>
+                    </td>
+                    <td><p class="number">58.90</p></td>
+                    <td><p class="number">37.11</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/claude-3.5-sonnet">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/claude-3.5-sonnet">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        MapCoder
+                      </p>
+                    </td>
+                    <td><p class="number">34.70</p></td>
+                    <td><p class="number">14.57</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/mapcoder">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/mapcoder">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        Gemini-1.5-Flash
+                      </p>
+                    </td>
+                    <td><p class="number">29.79</p></td>
+                    <td><p class="number">11.61</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/gemini-1.5-flash">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/gemini-1.5-flash">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        Autogen
+                      </p>
+                    </td>
+                    <td><p class="number">25.68</p></td>
+                    <td><p class="number">5.40</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/autogen">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/autogen">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        Agentverse
+                      </p>
+                    </td>
+                    <td><p class="number">15.41</p></td>
+                    <td><p class="number">0.00</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/agentverse">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/agentverse">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p class="model-type">
+                        ✅
+                        MetaGPT
+                      </p>
+                    </td>
+                    <td><p class="number">15.41</p></td>
+                    <td><p class="number">0.00</p></td>
+                    <td><p><span class="label-date">2024-07-02</span></p></td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/codes/website/metagpt">🔗</a>
+                        
+                        </p>
+                    </td>
+                    <td>
+                      <p style="text-align: center;">
+                      
+                          <a href="https://github.com/yuzhu-cai/RSD-Bench/tree/main/results/website/metagpt">🔗</a>
+                      
+                      </p>
+                  </td>
+                    <td>
+                        <p style="text-align: center;">
+                        
+                            <a href="https://github.com/yuzhu-cai/RSD-Bench">🔗</a>
+                        
+                        </p>
+                    </td>
+                  </tr>
+                
+                  
+                </tbody>
+              </table>
+            </div>
+            
+            <p class="text-content">
+              RSD-Bench involves two typical real-world software types: website and game, which can reflect
+              different coding capacities demanded in realistic software development. 
+              <br>
+              <span style="color:#0ea7ff;"><b>Website</b></span> emphasizes static and dynamic
+              content management, user interaction through forms and buttons, and ensuring page elements are
+              displayed and functional.
+              <br>
+              <span style="color:#0ea7ff;"><b>Game</b></span> requires handling
+              dynamic interactions, and real-time state changes, focusing on elements like
+              logic execution, initialization, and game state transitions. 
+              <br><br>
+
+              RSD-Bench introduces two requirement difficulty levels, including <b>basic</b> and <b>advanced</b>.
+              <br>
+              - The <span style="color:#0ea7ff;"><b>% Basic</b></span> metric refers to the percentage of RSD-Bench basic test cases
+              that were <i>passed</i> by the model.
+              <br>
+              - The <span style="color:#0ea7ff;"><b>% Advanced</b></span> metric refers to the percentage of RSD-Bench advanced test cases
+              that were <i>passed</i> by the model.
+              <br>
+              - <span style="color:#0ea7ff;"><b>✅ Checked</b></span> indicates that the model system operates as a multi-agent system, while the absence of ✅ Checked denotes a single-agent system.
+            </p>
+          </div>
+        </div>
+        <div class="content-wrapper">
+          <div class="content-box">
+            <h2 class="text-title">About</h2>
+            <img src="./static/images/Intro.jpg" style="width:80%;margin:auto;display:block;">
+            <p class="text-content">
+              RSD-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, RSD-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
+              Read more about RSD-bench in our <a href="https://arxiv.org" ,="" target="_blank">paper</a>!
+            </p>
+            <img src="./static/images/bench.png" style="width:80%;margin:auto;display:block;">
+            <p class="text-content">
+              RSD-Bench involves diverse requirements, each paired with a test case. Specifically, RSD-Bench provides 53 unique coding tasks and 616 test cases. 
+              It is divided into two typical real-world software types: game and website, and introduces two requirement difficulty levels, including basic and advanced, to reflect the
+              varying complexity of real-world software development tasks.
+            </p>
+            <h2 class="text-title">Features</h2>
+
+            
+            <p class="text-content">
+              <span style="color:#0ea7ff;"><b>Challenging and diverse software requirements.</b></span> RSD-Bench features long-context software
+              requirements (averaging 507/1011 words for game and website tasks, respectively), unlike instructionoriented benchmarks that rely on brief prompts. These detailed requirements better reflect
+              real-world lengthy and complex software development challenges.
+            </p>
+            <p class="text-content">
+              <span style="color:#0ea7ff;"><b>Requirement-aware precise and efficient evaluation.</b></span> RSD-Bench employs detailed software
+              requirements and automated unit tests to precisely measure how well generated software meets
+              its objectives. Generated codes are evaluated based on pass rates from running specific test cases,
+              offering an accurate and efficient process. In contrast, instruction-oriented benchmarks rely on brief
+              prompts, which lack constraints and make evaluation less reliable, often requiring labor-intensive or
+              indirect evaluation.
+            </p>
+
+            <h3 class="text-title" style="margin-bottom:0.5em">Citation</h3>
+            <pre id="citation"><code>[TODO]</code></pre>
+            <!-- <p class="text-content" style="margin-bottom: 0;">
+              <b>Disclaimer:</b> RSD-bench is for research purposes only. Models
+              trained and evaluated on SWE-bench can produce unexpected results.
+              We are not responsible for any damages caused by the use of
+              SWE-bench, including but not limited to, any loss of profit, data,
+              or use of data.
+            </p><p style="line-height: 1.6667em;">
+              <b>Usage:</b> If you would like to use this website template for your
+              own leaderboard, please send Carlos &amp; John an email requesting permission.
+              If granted, please make sure to acknowledge the SWE-bench team and link to
+              this leaderboard on the home page of the website.
+            </p> -->
+            <!-- <p class="text-content">
+              Correspondence to: <a href="mailto:carlosej@princeton.edu">carlosej@princeton.edu</a>,
+              <a href="mailto:jy1682@princeton.edu">johnby@stanford.edu</a>
+            </p> -->
+            <!-- <div class="content-wrapper" style="display: flex; flex-direction: row; margin-top: 0.5em;">
+              <a href="https://princeton-nlp.github.io/">
+                <img src="./static/images/sjtu.png" style="height: 5em;padding-top:0.5em;padding-right: 1em">
+              </a>
+              <a href="https://pli.princeton.edu/">
+                <img src="./static/images/buaa.png" style="height: 5em;padding-top:0.5em;padding-right: 1em">
+              </a>
+              <a href="https://cs.uchicago.edu/">
+                <img src="./static/images/ailab.png" style="height: 5em;padding-top:0.5em;padding-right: 1em">
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      function openLeaderboard(leaderboard) {
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        for (var i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++) {
+          tablinks[i].classList.remove("active");
+        }
+
+        document.getElementById(`leaderboard-${leaderboard}`).style.display = "block";
+        document.querySelector(`[data-leaderboard="${leaderboard}"]`).classList.add("active");
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var tabs = document.querySelectorAll('.tablinks');
+        tabs.forEach(function(tab) {
+          tab.addEventListener('click', function(event) {
+            openLeaderboard(this.getAttribute('data-leaderboard'));
+          });
+        });
+
+        // Open the 'lite' leaderboard by default
+        openLeaderboard('website');
+      });
+    </script>

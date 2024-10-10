@@ -1,2 +1,0 @@
-0;Pancakes;flour,eggs,milk;Mix ingredients;Cook on skillet until golden
-1;Spaghetti;spaghetti,tomato sauce;Boil spaghetti;Serve with sauce

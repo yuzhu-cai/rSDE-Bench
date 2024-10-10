@@ -1,2 +1,0 @@
-john_doe;Attended the Diwali Festival; it was unforgettable!
-jane_smith;The Holi Celebration brought back so many memories.

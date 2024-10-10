@@ -1,6 +1,0 @@
-'''
-This file contains the volunteer opportunities for the VolunteerMatch web application.
-It stores opportunities in the format: opportunity_id,opportunity_title,opportunity_desc.
-'''
-1,Opportunity Title 1,Description of opportunity 1
-2,Opportunity Title 2,Description of opportunity 2

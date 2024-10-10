@@ -1,2 +1,0 @@
-Summer_Song|First collaborative project for summer|john_doe,jane_smith
-Winter_Melody|A melody for winter|jane_smith,john_doe

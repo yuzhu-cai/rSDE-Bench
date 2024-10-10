@@ -1,2 +1,0 @@
-1,john_doe,2023-10-01 12:00:00,I love my golden retriever!
-2,jane_smith,2023-10-02 09:30:00,Just adopted a kitten!

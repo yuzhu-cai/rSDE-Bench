@@ -1,2 +1,0 @@
-1|john_doe|Morning Yoga|2024-09-01|08:00 AM|Instructor A
-2|john_doe|Mindfulness Meditation|2024-09-02|10:00 AM|Instructor B

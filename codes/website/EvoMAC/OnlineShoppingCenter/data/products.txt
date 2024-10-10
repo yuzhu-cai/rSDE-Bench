@@ -1,2 +1,0 @@
-001,Wireless Mouse,25.99
-002,Mechanical Keyboard,99.99

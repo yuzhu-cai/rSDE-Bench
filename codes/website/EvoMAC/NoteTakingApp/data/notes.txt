@@ -1,2 +1,0 @@
-1|Grocery List|Eggs, Milk, Bread
-2|Meeting Notes|Discussed project milestones and deadlines.

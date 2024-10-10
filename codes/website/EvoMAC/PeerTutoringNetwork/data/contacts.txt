@@ -1,2 +1,0 @@
-John Doe:johndoe@example.com:Need help with the site.
-Jane Doe:jane@example.com:Inquiry about tutoring hours.

@@ -1,3 +1,0 @@
-john_doe|Running|500|95
-john_doe|Swimming|300|93
-jane_smith|Boxing|300|82

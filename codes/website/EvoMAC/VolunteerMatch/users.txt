@@ -1,6 +1,0 @@
-'''
-This file contains the user credentials for the VolunteerMatch web application.
-It stores usernames and passwords in the format: username,password.
-'''
-username1,password1
-username2,password2

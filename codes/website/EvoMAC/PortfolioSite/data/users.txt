@@ -1,2 +1,0 @@
-username1,password1,email1@gmail.com
-username2,password2,email2@gmail.com

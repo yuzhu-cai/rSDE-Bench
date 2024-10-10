@@ -1,2 +1,0 @@
-johndoe:password123:johndoe@example.com
-janedoe:securepass456:janedoe@example.com

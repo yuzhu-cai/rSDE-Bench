@@ -1,2 +1,0 @@
-johndoe,001,2
-janesmith,002,1
