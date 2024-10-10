@@ -1,12 +1,12 @@
-# RSD-Bench: Requirement-Oriented Software Development Benchmark
+# rSDE-Bench: Requirement-Oriented Software Development Benchmark
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org)
-[![project](https://img.shields.io/badge/project-Page-blue)](https://yuzhu-cai.github.io/RSD-Bench/)
+[![project](https://img.shields.io/badge/project-Page-blue)](https://yuzhu-cai.github.io/rSDE-Bench/)
 
 Code and data for paper "[Evolving Multi-Agent Collaboration Networks via Textual Backpropagation](https://arxiv.org)".
 
 ## 👋 Overview
-RSD-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, RSD-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
+rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, rSDE-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
 
 <img src="assets/figs/evaluation.jpg">
 
@@ -21,8 +21,8 @@ conda activate rsd_bench
 
 Check out and install this repository:
 ```
-git clone https://github.com/yuzhu-cai/RSD-Bench.git
-cd RSD-Bench
+git clone https://github.com/yuzhu-cai/rSDE-Bench.git
+cd rSDE-Bench
 pip install -r requirement.txt
 ```
 
@@ -32,7 +32,7 @@ pip install -r requirement.txt
 > 
 > **Dependencies:** Make sure all dependencies are correctly installed and the appropriate Python environment is activated.
 
-Use the following command to generate the software included in `RSD-Bench` using the GPT, Claude, or Gemini APIs. The generated code will be stored in the `codes` directory.
+Use the following command to generate the software included in `rSDE-Bench` using the GPT, Claude, or Gemini APIs. The generated code will be stored in the `codes` directory.
 
 ```bash
 python run_infer.py
