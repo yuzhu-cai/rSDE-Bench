@@ -3,7 +3,7 @@
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org)
 [![project](https://img.shields.io/badge/project-Page-blue)](https://yuzhu-cai.github.io/rSDE-Bench/)
 
-Code and data for paper "[Evolving Multi-Agent Collaboration Networks via Textual Backpropagation](https://arxiv.org)".
+Code and data for paper "[Self-Evolving Multi-Agent Collaboration Networks for Software Development](https://arxiv.org)".
 
 ## 👋 Overview
 rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, rSDE-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
