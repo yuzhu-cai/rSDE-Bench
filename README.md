@@ -8,7 +8,7 @@ Code and data for paper "[Evolving Multi-Agent Collaboration Networks via Textua
 ## 👋 Overview
 rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, rSDE-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
 
-<img src="static/images/evaluation.jpg">
+<img src="static/images/Intro.jpg">
 
 
 ## 🚀 Set Up
