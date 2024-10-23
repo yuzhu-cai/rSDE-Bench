@@ -11,15 +11,15 @@ from inference.software import softwares
 def init_agent(model_name='gpt-4o-mini'):
     if model_name.startswith('gpt'):
         agent = OpenAILLM(
-            api_key='sk-None-PlSsvZRrvKcVQcuB4M8lT3BlbkFJlAeXF4O6TFnZ8fxj9CO4',
-            base_url='https://api.openai-proxy.com/v1',
+            api_key=# your api key,
+            base_url=# base url,
             model=model_name,
             description= "Generate complete code to finish this task:"
         )
     elif model_name.startswith('claude'):
         agent = ClaudeAILLM(
-            api_key='sk-None-PlSsvZRrvKcVQcuB4M8lT3BlbkFJlAeXF4O6TFnZ8fxj9CO4',
-            base_url='https://api.openai-proxy.com/v1',
+            api_key=# your api key,
+            base_url=# base url,
             model=model_name,
             description= "Generate complete code to finish this task:"
         )
@@ -33,9 +33,8 @@ def init_agent(model_name='gpt-4o-mini'):
         """
         # system_message = "Generate complete code to finish this task:"
         agent = GeminiAILLM(
-            # api_key='AIzaSyCG9bp4EZdmG1DkQ82OPe1YAkHVw6J7i2k',
-            api_key='AIzaSyAhBiVVIm67xiueIIDSvArOkZfO3G6GOtM',
-            base_url='https://generativelanguage.googleapis.com/v1beta',
+            api_key=# your api key,
+            base_url=# base url,
             model=model_name,
             description=system_message
         )
