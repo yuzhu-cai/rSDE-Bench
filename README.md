@@ -1,6 +1,6 @@
 # rSDE-Bench: Requirement-Oriented Software Development Benchmark
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2410.16946)
 [![project](https://img.shields.io/badge/project-Page-blue)](https://yuzhu-cai.github.io/rSDE-Bench/)
 
 Code and data for paper "[Self-Evolving Multi-Agent Collaboration Networks for Software Development](https://arxiv.org/abs/2410.16946)".
