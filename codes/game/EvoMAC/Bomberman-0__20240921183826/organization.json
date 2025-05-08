@@ -1,0 +1,26 @@
+{
+    "composition": {
+        "Programmer 1": "Fix the logging mechanism to ensure the log file remains open during the game execution and accurately logs all events in the required format. Modify the `update_log` function to handle the log file correctly and ensure that the log entries reflect the current game state after each action, including bomb explosions and injuries.",
+        "Programmer 2": "Implement the enemy movement logic to account for the player's position during the same game loop iteration. Ensure that enemies only move if they are not blocked by obstacles and consider the player's current position at the time of movement.",
+        "Programmer 3": "Adjust the explosion logic to ensure that the bomb's explosion correctly affects the player's health and the enemies' health. Ensure that the fire spreads correctly in all four cardinal directions and is blocked by obstacles.",
+        "Programmer 4": "Implement the victory condition to check if all enemies are defeated and display a victory message along with the player's score in the game interface. This includes creating a function to check the enemy health and updating the game interface accordingly.",
+        "Programmer 5": "Modify the bomb timer mechanism to avoid blocking the main game loop. Instead of using `time.sleep`, implement a non-blocking timer to manage bomb explosions."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1",
+            "Programmer 2",
+            "Programmer 3"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

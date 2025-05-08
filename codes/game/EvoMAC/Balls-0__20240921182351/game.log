@@ -1,0 +1,1 @@
+{"timestamp": 1726915285.7284539, "EVENT_TYPE": "GAME_OVER", "game_state": {"player": {"position": [0, 0], "radius": 20}, "active_enemies": [{"position": [0, 0], "radius": 15}, {"position": [0, 0], "radius": 25}], "fixed_enemies": [], "small_balls": []}}

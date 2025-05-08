@@ -1,0 +1,59 @@
+Task:
+
+Task: Develop a Bomberman Game
+Requirements:
+1. The game should feature a black background with a 13x13 grid, placing white obstacles in all even-numbered rows and columns, totaling 6x6 obstacles. There will be one player, represented in green, and two enemies, represented in red. The bombs placed by the player will be gray, and the fire will be orange.
+2. The player and enemies can move on the black squares of the grid, but cannot pass through obstacles. The player’s movement will be controlled using the arrow keys, while the enemies will automatically move towards the player. The player can place bombs using the space bar, which will explode after a short delay.
+3. After an explosion, fire will spread from the bomb's center in all four cardinal directions (up, down, left, right) for three squares. However, the fire can be blocked by obstacles.
+4. The player starts with a health value of 100, while each enemy starts with a health value of 10. Additionally, the player initializes with a score of 0. When an enemy encounters the player, the enemy's health drops to 0, and the player's health decreases by 10. If the player or an enemy is at the center of an explosion or in a fire zone, their health decreases by 10. When an enemy's health reaches 0, it disappears. If the player's health reaches 0, the player loses the game. Each time an enemy disappears, the player's score increases by 100.
+5. If all enemies are defeated, the player wins, and the game interface should display a victory message along with the player's score.
+6. When the game starts, a new log file named “game.log” should be created to record the game progress. The frst log entry should capture the initial state of the game. Whenever a new event occurs with the player, a new log entry should be written in real-time. The log should adhere to the following format. The EVENT_TYPE can only be one of the following: “INIT”, “MOVE_LEFT”, “MOVE_RIGHT”, “MOVE_UP”, “MOVE_DOWN”, “PLACE_BOMB”, "BOOM" or “INJURED”. The game_board_state should reflect the current state of the board in a list format consisting of 16 elements. These elements should record the value of each grid position in a left-to-right, top-to-bottom order. Blank positions are represented by 0, the player's position by 1, the enemies' positions by 2, bomb positions by 3, explosion fire positions by 4, and obstracts positions by -1. Players initialize at the top left corner of the game interface, while enemies randomly initialize at different locations. If not an impassable object, then objects at the same location will only record the largest object number for that position (for instance, if the player and an enemy are at the same location, it will be recorded as 2).
+{  
+    "timestamp": "timestamp"  ,  
+    "EVENT_TYPE": "INIT" | "MOVE_LEFT" | "MOVE_RIGHT" | "MOVE_UP" | "MOVE_DOWN" | "PLACE_BOMB" | "BOOM" | "INJURED",  
+    "game_board_state": [],
+     "player": {
+         "health": health_player,
+         "score": score
+     },
+    "enemies": [
+        { 
+            "health": health_enemy1
+        },
+        {  
+            "health": health_enemy2  
+        } 
+    ]
+}
+
+
+Config:
+ChatEnvConfig.with_memory: False
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+ChatEnvConfig.incremental_develop: False
+ChatEnvConfig.background_prompt: ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of 'changing the digital world through programming'.
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer, SimpleSystemer, SimpleProgrammer
+
+Modality:
+application
+
+Ideas:
+
+
+Language:
+ Python
+
+Code_Version:
+16.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

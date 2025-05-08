@@ -1,0 +1,18 @@
+{
+    "composition": {
+        "Programmer 1": "Implement collision detection and ball consumption logic. Ensure that when two balls collide, the smaller ball is consumed by the larger ball, and the player's radius is updated accordingly. Log the event correctly and handle the game over scenario when the player's ball is consumed.",
+        "Programmer 2": "Fix the `spawn_small_ball` function to ensure that small balls are correctly added to the game state. Verify the spawning logic and ensure that small balls are initialized correctly.",
+        "Programmer 3": "Update the `log_event` function to ensure that it captures the player's position and radius after all movements and events have been processed. This includes logging the correct state after consuming enemy balls and handling game over scenarios.",
+        "Programmer 4": "Ensure that the `check_collisions` function properly handles the case where the player's ball is consumed by an enemy ball. This includes logging the correct events and updating the player's radius."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ]
+    }
+}

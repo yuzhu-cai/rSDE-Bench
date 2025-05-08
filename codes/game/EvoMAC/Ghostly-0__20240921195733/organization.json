@@ -1,0 +1,22 @@
+{
+    "composition": {
+        "Programmer 1": "Fix the monster movement logic in the move_monster() function to ensure the monster chases the player's ghost correctly after activation. Ensure that the monster's position updates based on the player's ghost position and that it does not collide with walls.",
+        "Programmer 2": "Update the log_event function to open the log file in append mode ('a') instead of write mode ('w') to ensure that log entries are preserved across game sessions. Ensure that log entries are created correctly for all actions.",
+        "Programmer 3": "Modify the check_victory() function to ensure that the game status is set to \"win\" when the player eats all pellets and other ghosts. Ensure that the victory conditions are checked correctly during the game loop.",
+        "Programmer 4": "Update the move_ghost function to prevent the ghost from moving into walls or other ghosts when an invalid move occurs. Ensure that the ghost's position remains unchanged in such cases.",
+        "Programmer 5": "Update the move_monster function to check for wall collisions when moving the monster. Ensure that the monster does not move into walls and only moves towards the player's ghost if it is activated."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1"
+        ]
+    }
+}

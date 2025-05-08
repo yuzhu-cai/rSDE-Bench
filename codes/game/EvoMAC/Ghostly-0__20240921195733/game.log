@@ -1,0 +1,3 @@
+{"timestamp": 1726921160.096736, "event_type": "eat_other_ghost", "move_direction": "left", "ghost_position": [0, 5], "monster_position": [-1, -1], "game_status": "ongoing"}
+{"timestamp": 1726921160.09944, "event_type": "eat_superpellet", "move_direction": "right", "ghost_position": [5, 5], "monster_position": [-1, -1], "game_status": "ongoing"}
+{"timestamp": 1726921160.1014988, "event_type": "monster_eat_ghost", "move_direction": "", "ghost_position": [5, 5], "monster_position": [1, 1], "game_status": "lose"}

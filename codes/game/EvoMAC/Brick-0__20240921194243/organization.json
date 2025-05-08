@@ -1,0 +1,16 @@
+{
+    "composition": {
+        "Programmer 1": "Fix the brick splitting logic to ensure that new bricks are created with a life value of 2 when splitting from a brick with a life of 3. Update the `split` method in the Brick class to correctly set the life of new bricks and ensure the original brick is marked as having 0 life in the log entry.",
+        "Programmer 2": "Correct the logging mechanism in the `log_event` function to ensure that the original brick's life is accurately represented after splitting. Ensure that the original brick is removed from the `bricks_info` list after it splits.",
+        "Programmer 3": "Adjust the ball's initial position to ensure it starts at the center of the game window. Update the calculations in the Ball class to set the correct initial coordinates.",
+        "Programmer 4": "Update the `create_bricks` function to ensure that the y-coordinates of the bricks are positioned correctly according to the user requirements."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [],
+        "Programmer 4": []
+    }
+}

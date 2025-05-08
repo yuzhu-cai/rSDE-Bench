@@ -1,0 +1,39 @@
+
+Task: Develop a Battle of Balls Game
+Requirements:
+1. Different balls will be distinguished by their colors.
+2. The player moves using the up, down, left, and right arrow keys, but with the player's ball as a reference frame, other balls move relative to the player's ball, and the player's ball always remains in the center of the game interface.
+3. When two balls collide, the smaller ball (with a smaller radius) will be consumed by the larger ball (with a larger radius), causing the larger ball to grow in size proportionately to the radius of the consumed ball. Player ball can also consume smaller enemy balls. When the ball is consumed, the corresponding radius should be recorded as -1 in the log.
+4. The game ends if the player's ball is consumed.
+5. In addition to the player's ball, initialize four enemy balls that have the same radius but are slightly smaller than the player's ball. One fixed enemy ball and three active enemy balls.
+6. Small, non-player, and enemy balls will continuously spawn on the map (much smaller than the initial sizes of the player and enemy balls). When consumed, they will increase in size.
+7. When the game starts, a new log file named "game.log" should be created to record the game's progress. The first log entry should capture the initial state of the game. Whenever a new event occurs involving the player, a new log entry should be written in real-time. The log should adhere to the following format. The EVENT_TYPE can only be one of the following: "INIT", "MOVE_LEFT", "MOVE_RIGHT", "MOVE_UP", "MOVE_DOWN". The center of the game interface will serve as the origin(0, 0), with the positive x-direction pointing right and the positive y-direction pointing upwards.
+{
+    "timestamp": timestamp,
+    "EVENT_TYPE": "INIT" | "MOVE_LEFT" | "MOVE_RIGHT" | "MOVE_UP" | "MOVE_DOWN",
+    "game_state": {
+        "player": {
+            "position": [xp, yp],
+            "radius": radius,
+        },
+        "active_enemies": [
+            {
+                "position": [xe1, ye1],  
+                "radius": radius1
+            },
+            {  
+                "position": [xe2, ye2],  
+                "radius": radius2
+            },
+            {  
+                "position": [xe3, ye3],  
+                "radius": radius3
+            }
+        ],
+        "fixed_enemies": [
+            {
+                "position": [xe4, ye4],  
+                "radius": radius4
+            },
+        ]
+}

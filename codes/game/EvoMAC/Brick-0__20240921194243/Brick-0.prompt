@@ -1,0 +1,23 @@
+
+Task: Develop a Brick Breaker game.
+Requirements:
+1. The objective of the game is to break all the bricks by bouncing the ball off the paddle and hitting the bricks.
+2. The paddle is controllable by the player using the left and right arrow keys to move left and right.
+3. As the paddle hits the ball, or the ball hits the walls (including the top and sides of the game window) or bricks, the ball will bounce off.
+4. Each brick starts with 3 lifes. Each time the ball hits a brick, the hit brick will split into two smaller bricks:
+    - The size of the new bricks is half the size of the original brick and they together fit into the original position (one left and one right).
+    - The new bricks will have a life value reduced by 1 from the original brick.
+5. When a brick has 0 life, it will disappear. 
+6. Game start setting: Once left or right arrow key is pressed, the game starts. Bricks are arranged on the top of the game window, and the paddle is placed at the bottom of the game window.
+7. As the game starts, the ball will be launched from the center of the game window and move upwards to the bricks.
+7. As the game starts, a log file named 'game.log' should be created to record the game's progress. Each log entry should follow this format:
+{
+    "timestamp": timestamp,
+    "EVENT_TYPE": "PADDLE_MOVE_LEFT" | "PADDLE_MOVE_RIGHT" | "BOUNCE_WALL" | "BOUNCE_PADDLE" | "BOUNCE_BRICK" | "BALL_LOST",
+    "paddle_position": [x,y],
+    "ball_position": [x,y],
+    "bricks_info": [[brick1_x, brick1_y, brick1_life], [brick2_x, brick2_y, brick2_life], [brick3_x, brick3_y, brick3_life], ...]
+}
+    Note: - bricks_info contains the x coordinate, y coordinate, and remaining life for all bricks. If the brick has 0 life, it's info should be [null, null, 0]
+          - If a brick splits, it's bricks_info should change from [brickn_x, brickn_y, brickn_life] to [[brickn1_x, brickn1_y, brickn1_life], [brickn2_x, brickn2_y, brickn2_life]] where brickn represents the original brick.
+8. The game ends when the ball falls off the screen.
