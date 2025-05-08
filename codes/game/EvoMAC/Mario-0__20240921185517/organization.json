@@ -1,0 +1,23 @@
+{
+    "composition": {
+        "Programmer 1": "Fix logging of mushroom position after hitting the block and ensure it is logged correctly. Update the log_event function to reflect the correct state of the game after each action, especially for mushroom interactions. Ensure that the score is accumulated correctly when Mario touches the mushroom.",
+        "Programmer 2": "Adjust the mushroom movement logic to ensure it changes direction correctly upon hitting the game window borders. Ensure that the mushroom's position is reset to [None, None] after Mario touches it. Fix the logging of the score to ensure it reflects the correct values after each event.",
+        "Programmer 3": "Ensure that the enemy position is updated immediately after the elimination event is triggered and logged correctly. Update the log_event function to log the correct enemy position after elimination.",
+        "Programmer 4": "Review and fix the logging of the score to ensure it reflects the correct values after each event, particularly for reaching the flagpole and eliminating enemies. Ensure that the log entry for \"REACH_FLAG\" is created before the game loop exits.",
+        "Programmer 5": "Modify the log_event function to ensure that it is imported correctly in the test file. Ensure that the function is accessible for testing purposes.",
+        "Programmer 6": "Adjust the game logic to raise a SystemExit exception when Mario collides with an enemy, so that the tests can accurately reflect the expected behavior."
+    },
+    "workflow": {
+        "Programmer 1": [
+            "Programmer 2",
+            "Programmer 4"
+        ],
+        "Programmer 2": [],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [],
+        "Programmer 5": [],
+        "Programmer 6": []
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "composition": {
+        "Programmer 1": "Implement the firing logic for the player's tank and the enemies, including bullet movement and collision detection. This will involve creating functions to handle bullet creation, movement, and checking for hits on the player and enemy tanks.",
+        "Programmer 2": "Implement the health reduction logic for both the player and enemies when hit by bullets, including the destruction of tanks and logging their health points when they reach zero. This will involve creating functions to manage health changes and tank destruction.",
+        "Programmer 3": "Implement the scoring system for destroying enemy tanks and the game-ending conditions. This will involve creating functions to update the score and check for game-over conditions based on player and enemy health."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 2"
+        ]
+    }
+}

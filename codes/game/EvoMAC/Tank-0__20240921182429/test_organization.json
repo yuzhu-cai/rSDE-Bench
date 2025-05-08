@@ -1,0 +1,28 @@
+{
+    "composition": {
+        "Programmer 1": "Carefully test the logging mechanism according to the task requirements. The log should happen immediately after the action is taken, recording the most recent state. Ensure the logging order is correct, with basic operations recorded first, followed by subsequent events. Verify that the data format, keys, and values are accurate, paying attention to the nested data type and checking each element.",
+        "Programmer 2": "Test the logging mechanism for special triggered conditions, such as when the player's health drops to zero or when an enemy tank is destroyed. Ensure that the log captures these events accurately and reflects the correct game state.",
+        "Programmer 3": "Test the value initialization required by the task to ensure they are correctly achieved, particularly focusing on the coordinates of the player and enemies, as well as their health points.",
+        "Programmer 4": "Test the function inputs and the global variables imported in each function. Ensure that the input values and global variables used in the function are valid and involved when the function is called.",
+        "Programmer 5": "Test each event in the task to ensure it is implemented correctly and that the logic triggered matches the conditions outlined in the task description."
+    },
+    "workflow": {
+        "Programmer 1": [
+            "Programmer 3",
+            "Programmer 5"
+        ],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [],
+        "Programmer 4": [
+            "Programmer 1",
+            "Programmer 5"
+        ],
+        "Programmer 5": [
+            "Programmer 1",
+            "Programmer 2",
+            "Programmer 3"
+        ]
+    }
+}

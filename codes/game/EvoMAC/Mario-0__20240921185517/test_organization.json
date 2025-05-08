@@ -1,0 +1,27 @@
+{
+    "composition": {
+        "Programmer 1": "Carefully test the logging mechanism according to the task requirements! The log should happen immediately after the action is taken, record the most recent state. Remember the logging order is very important, record basic operation first then record the subsequent events. Ensure the data format, keys and values are accurate and right! Pay attention to the nested data type and carefully check each element.",
+        "Programmer 2": "Test the logging mechanism for the special triggered conditions, such as when Mario touches the mushroom, hits the block, or reaches the flagpole.",
+        "Programmer 3": "Test the value initialization required by the task are correctly achieved, paying attention to the coordinates of Mario, the block, the enemy, and the flagpole.",
+        "Programmer 4": "Test the function inputs and the global variable are imported in each function, ensuring the input values and global variables used in the function are valid and involved when the function is called.",
+        "Programmer 5": "Test each event in the task is implemented and that the logic triggered matches the conditions in the task description."
+    },
+    "workflow": {
+        "Programmer 1": [],
+        "Programmer 2": [
+            "Programmer 1"
+        ],
+        "Programmer 3": [
+            "Programmer 1"
+        ],
+        "Programmer 4": [
+            "Programmer 1"
+        ],
+        "Programmer 5": [
+            "Programmer 1",
+            "Programmer 2",
+            "Programmer 3",
+            "Programmer 4"
+        ]
+    }
+}
