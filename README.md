@@ -7,7 +7,7 @@ Code and data for paper "[Self-Evolving Multi-Agent Collaboration Networks for S
 
 ## 📰 News
 
-- The implementation and integration of Evomac are now included in the [MasLab](https://github.com/MASWorks/MASLab) ！！！
+- The implementation and integration of Evomac are now included in the [MasLab](https://github.com/MASWorks/MASLab) !
 
 
 ## 👋 Overview
