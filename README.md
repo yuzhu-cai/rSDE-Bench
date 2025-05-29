@@ -5,6 +5,11 @@
 
 Code and data for paper "[Self-Evolving Multi-Agent Collaboration Networks for Software Development](https://arxiv.org/abs/2410.16946)".
 
+## 📰 News
+
+- The implementation and integration of Evomac are now included in the [MasLab](https://github.com/MASWorks/MASLab) ！！！
+
+
 ## 👋 Overview
 rSDE-Bench is a requirement-oriented benchmark designed to evaluate the ability of models to handle software-level coding tasks. Unlike instruction-based approaches, rSDE-Bench uses detailed software requirements as input, specifying each functionality and constraint of the software. The benchmark includes automatic evaluation through unit tests, providing a more realistic assessment aligned with real-world software development practices.
 
